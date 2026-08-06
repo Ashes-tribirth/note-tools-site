@@ -167,6 +167,40 @@
     font-weight: 500;
   }
 
+  .policy-wrap {
+    max-width: 900px;
+    margin: 0 auto 4rem;
+    padding: 0 2rem;
+  }
+  .policy {
+    border-top: 1px solid #EEEEEE;
+    border-bottom: 1px solid #EEEEEE;
+  }
+  .policy summary {
+    padding: 1rem 0;
+    color: #777;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    list-style-position: inside;
+  }
+  .policy-content {
+    padding: 0 0 1.5rem;
+    color: #777;
+    font-size: 0.82rem;
+    line-height: 1.8;
+  }
+  .policy-content h2 {
+    margin: 1.25rem 0 0.45rem;
+    color: #555;
+    font-size: 0.9rem;
+  }
+  .policy-content p { margin-bottom: 0.7rem; }
+  .policy-content ul {
+    margin: 0.3rem 0 0.9rem 1.4rem;
+  }
+  .policy-content li { margin-bottom: 0.3rem; }
+
   .footer {
     padding: 2.5rem 2rem;
     text-align: center;
@@ -200,6 +234,31 @@
     <div id="toolsGrid">
       <div class="loading-state">読み込み中...</div>
     </div>
+  </div>
+
+  <div class="policy-wrap">
+    <details class="policy">
+      <summary>掲載対象・免責事項</summary>
+      <div class="policy-content">
+        <h2>掲載対象について</h2>
+        <p>noteでの「書く・読む・分析する・管理する・交流する・販売する」といった活動を、具体的に助ける目的で作られたツールを掲載しています。</p>
+        <p>Webサービス、アプリ、ブラウザ拡張機能、GPT、スクリプト、テンプレートなど、形は問いません。作者本人の記事などから、機能・利用方法・公開状況を確認できるものを対象とします。</p>
+        <p>次のものは原則として掲載しません。</p>
+        <ul>
+          <li>note向けの機能や設計がない一般的なサービス</li>
+          <li>ノウハウ記事や作り方の解説</li>
+          <li>コピペして使うプロンプト単体</li>
+          <li>機能や公開予定が確認できない構想段階のもの</li>
+          <li>作者や一次情報を確認できないもの</li>
+          <li>不正アクセス、過度な自動取得、スパム、権利侵害など、noteの利用規約や関連ルールに反するおそれが高いツール</li>
+        </ul>
+        <p>一般的なサービスを利用していても、note向けの独立した仕組みとして公開されているツールやGPTは掲載対象とします。</p>
+
+        <h2>免責事項</h2>
+        <p>掲載時点で確認できる情報をもとに紹介していますが、各ツールの動作、安全性、正確性、継続提供、noteの利用規約への適合性を当サイトが保証するものではありません。</p>
+        <p>ツールの仕様や利用条件、noteの利用規約は変更される場合があります。利用する際は、作者が示す最新情報とnoteの利用規約をご自身で確認してください。ツールの利用によって生じた損害やトラブルについて、当サイトは責任を負いません。</p>
+      </div>
+    </details>
   </div>
 
   <div class="footer">
