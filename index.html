@@ -430,6 +430,28 @@ function escapeHTML(str) {
   return div.innerHTML;
 }
 
+function allowedHttpsUrl(rawUrl, allowedHostname) {
+  try {
+    const url = new URL(rawUrl);
+    const isAllowed = url.protocol === 'https:' &&
+                      url.hostname === allowedHostname &&
+                      url.port === '' &&
+                      url.username === '' &&
+                      url.password === '';
+    return isAllowed ? url.href : '';
+  } catch {
+    return '';
+  }
+}
+
+function safeNoteUrl(rawUrl) {
+  return allowedHttpsUrl(rawUrl, 'note.com');
+}
+
+function safeThumbnailUrl(rawUrl) {
+  return allowedHttpsUrl(rawUrl, 'assets.st-note.com');
+}
+
 function renderTools() {
   const searchTerm = document.getElementById('searchInput').value.toLowerCase();
   const category = document.getElementById('categoryFilter').value;
@@ -461,11 +483,17 @@ function renderTools() {
     const st = statusLabel(tool.status);
     const key = toolKey(tool);
     const isFavorite = favorites.has(key);
+    const noteUrl = safeNoteUrl(tool.link);
+    const thumbnailUrl = safeThumbnailUrl(tool.thumbnail);
+    const cardContentStart = noteUrl
+      ? `<a class="card-link" href="${escapeHTML(noteUrl)}" target="_blank" rel="noopener noreferrer">`
+      : '<div class="card-link">';
+    const cardContentEnd = noteUrl ? '</a>' : '</div>';
     return `
     <article class="card">
       <button class="favorite-btn${isFavorite ? ' is-favorite' : ''}" type="button" data-key="${escapeHTML(encodeURIComponent(key))}" aria-label="${isFavorite ? 'お気に入りから削除' : 'お気に入りに追加'}" aria-pressed="${isFavorite}">${isFavorite ? '★' : '☆'}</button>
-      <a class="card-link" href="${escapeHTML(tool.link)}" target="_blank" rel="noopener noreferrer">
-        ${showThumbnails && tool.thumbnail ? `<img class="card-thumbnail" src="${escapeHTML(tool.thumbnail)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">` : ''}
+      ${cardContentStart}
+        ${showThumbnails && thumbnailUrl ? `<img class="card-thumbnail" src="${escapeHTML(thumbnailUrl)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">` : ''}
         <div class="card-inner">
           <div class="card-top">
             <div class="card-title">${escapeHTML(tool.name)}</div>
@@ -475,7 +503,7 @@ function renderTools() {
           <div class="card-desc">${escapeHTML(tool.description)}</div>
           <div class="card-category">${escapeHTML(tool.category)}</div>
         </div>
-      </a>
+      ${cardContentEnd}
     </article>
     `;
   }).join('');
