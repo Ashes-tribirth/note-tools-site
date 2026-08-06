@@ -138,7 +138,26 @@
     display: block;
     background: white;
     overflow: hidden;
+    position: relative;
   }
+  .card-link { color: inherit; text-decoration: none; display: block; height: 100%; }
+  .favorite-btn {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    z-index: 2;
+    width: 2.2rem;
+    height: 2.2rem;
+    border: 1px solid #E4E4E4;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.94);
+    color: #999;
+    font-size: 1.2rem;
+    line-height: 1;
+    cursor: pointer;
+  }
+  .favorite-btn:hover { color: #7568B5; border-color: #C9C2E8; }
+  .favorite-btn.is-favorite { color: #7568B5; background: #F2F0FA; }
   .card-thumbnail {
     width: 100%;
     aspect-ratio: 1.91 / 1;
@@ -259,6 +278,14 @@
     <div class="filter-row">
       <select id="categoryFilter"><option value="">すべてのカテゴリ</option></select>
       <select id="statusFilter"><option value="">すべてのステータス</option></select>
+      <select id="thumbnailDisplay" aria-label="記事サムネの表示設定">
+        <option value="show">サムネを表示</option>
+        <option value="hide">サムネを非表示</option>
+      </select>
+      <select id="favoriteFilter" aria-label="お気に入りの表示設定">
+        <option value="all">すべて表示</option>
+        <option value="favorites">お気に入りのみ</option>
+      </select>
       <button id="resetBtn">条件をクリア</button>
       <span id="resultCount"></span>
     </div>
@@ -407,6 +434,9 @@ function renderTools() {
   const searchTerm = document.getElementById('searchInput').value.toLowerCase();
   const category = document.getElementById('categoryFilter').value;
   const status = document.getElementById('statusFilter').value;
+  const showThumbnails = document.getElementById('thumbnailDisplay').value === 'show';
+  const favoritesOnly = document.getElementById('favoriteFilter').value === 'favorites';
+  const favorites = getFavorites();
 
   const filtered = allTools.filter(tool => {
     const matchSearch = tool.name.toLowerCase().includes(searchTerm) ||
@@ -414,11 +444,12 @@ function renderTools() {
                        tool.description.toLowerCase().includes(searchTerm);
     const matchCategory = !category || tool.category === category;
     const matchStatus = !status || tool.status === status;
-    return matchSearch && matchCategory && matchStatus;
+    const matchFavorite = !favoritesOnly || favorites.has(toolKey(tool));
+    return matchSearch && matchCategory && matchStatus && matchFavorite;
   });
 
   document.getElementById('resultCount').textContent = `${filtered.length} 件`;
-  document.getElementById('resetBtn').style.display = (searchTerm || category || status) ? 'inline-block' : 'none';
+  document.getElementById('resetBtn').style.display = (searchTerm || category || status || favoritesOnly) ? 'inline-block' : 'none';
 
   const grid = document.getElementById('toolsGrid');
   if (filtered.length === 0) {
@@ -428,33 +459,73 @@ function renderTools() {
 
   grid.innerHTML = filtered.map((tool) => {
     const st = statusLabel(tool.status);
+    const key = toolKey(tool);
+    const isFavorite = favorites.has(key);
     return `
-    <a class="card" href="${escapeHTML(tool.link)}" target="_blank" rel="noopener noreferrer">
-      ${tool.thumbnail ? `<img class="card-thumbnail" src="${escapeHTML(tool.thumbnail)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">` : ''}
-      <div class="card-inner">
-        <div class="card-top">
-          <div class="card-title">${escapeHTML(tool.name)}</div>
-          <span class="badge" style="color:${st.color};">${escapeHTML(st.text)}</span>
+    <article class="card">
+      <button class="favorite-btn${isFavorite ? ' is-favorite' : ''}" type="button" data-key="${escapeHTML(encodeURIComponent(key))}" aria-label="${isFavorite ? 'お気に入りから削除' : 'お気に入りに追加'}" aria-pressed="${isFavorite}">${isFavorite ? '★' : '☆'}</button>
+      <a class="card-link" href="${escapeHTML(tool.link)}" target="_blank" rel="noopener noreferrer">
+        ${showThumbnails && tool.thumbnail ? `<img class="card-thumbnail" src="${escapeHTML(tool.thumbnail)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">` : ''}
+        <div class="card-inner">
+          <div class="card-top">
+            <div class="card-title">${escapeHTML(tool.name)}</div>
+            <span class="badge" style="color:${st.color};">${escapeHTML(st.text)}</span>
+          </div>
+          <div class="card-author">${escapeHTML(tool.author)}</div>
+          <div class="card-desc">${escapeHTML(tool.description)}</div>
+          <div class="card-category">${escapeHTML(tool.category)}</div>
         </div>
-        <div class="card-author">${escapeHTML(tool.author)}</div>
-        <div class="card-desc">${escapeHTML(tool.description)}</div>
-        <div class="card-category">${escapeHTML(tool.category)}</div>
-      </div>
-    </a>
+      </a>
+    </article>
     `;
   }).join('');
+}
+
+function toolKey(tool) {
+  return `${tool.name}|||${tool.author}`;
+}
+
+function getFavorites() {
+  try {
+    const saved = JSON.parse(localStorage.getItem('favoriteTools') || '[]');
+    return new Set(Array.isArray(saved) ? saved : []);
+  } catch {
+    return new Set();
+  }
+}
+
+function toggleFavorite(key) {
+  const favorites = getFavorites();
+  favorites.has(key) ? favorites.delete(key) : favorites.add(key);
+  localStorage.setItem('favoriteTools', JSON.stringify([...favorites]));
+  renderTools();
 }
 
 function attachListeners() {
   document.getElementById('searchInput').addEventListener('input', renderTools);
   document.getElementById('categoryFilter').addEventListener('change', renderTools);
   document.getElementById('statusFilter').addEventListener('change', renderTools);
+  document.getElementById('thumbnailDisplay').addEventListener('change', (event) => {
+    localStorage.setItem('thumbnailDisplay', event.target.value);
+    renderTools();
+  });
+  document.getElementById('favoriteFilter').addEventListener('change', renderTools);
+  document.getElementById('toolsGrid').addEventListener('click', (event) => {
+    const button = event.target.closest('.favorite-btn');
+    if (button) toggleFavorite(decodeURIComponent(button.dataset.key));
+  });
   document.getElementById('resetBtn').addEventListener('click', () => {
     document.getElementById('searchInput').value = '';
     document.getElementById('categoryFilter').value = '';
     document.getElementById('statusFilter').value = '';
+    document.getElementById('favoriteFilter').value = 'all';
     renderTools();
   });
+}
+
+const savedThumbnailDisplay = localStorage.getItem('thumbnailDisplay');
+if (savedThumbnailDisplay === 'show' || savedThumbnailDisplay === 'hide') {
+  document.getElementById('thumbnailDisplay').value = savedThumbnailDisplay;
 }
 
 loadTools();
