@@ -83,39 +83,87 @@ body > * {
 }
 
 .filter-row {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: minmax(180px, 1.35fr) minmax(150px, 1fr) minmax(145px, 0.9fr) minmax(145px, 0.9fr) auto;
+  gap: 0.65rem;
   align-items: center;
+  padding: 0.8rem;
+  border: 1px solid #E9E6F1;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 8px 24px rgba(72, 59, 104, 0.06);
+  backdrop-filter: blur(8px);
 }
 
 select {
-  padding: 0.65rem 1rem;
-  border: 1px solid #E4E4E4;
-  border-radius: 6px;
-  font-size: 0.85rem;
-  background: #FFFFFF;
-  color: #444;
+  width: 100%;
+  min-width: 0;
+  padding: 0.72rem 2.25rem 0.72rem 0.9rem;
+  border: 1px solid #E4E0EC;
+  border-radius: 10px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  background-color: #FFFFFF;
+  color: #4B4655;
   cursor: pointer;
   outline: none;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.9) inset;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+select:hover {
+  border-color: #CDC6DF;
+  background-color: #FCFBFE;
+}
+
+select:focus {
+  border-color: #A69BD9;
+  box-shadow: 0 0 0 3px rgba(166, 155, 217, 0.16);
+}
+
+#categoryFilter {
+  border-left: 3px solid #A69BD9;
+}
+
+#statusFilter {
+  border-left: 3px solid #82B39A;
+}
+
+#thumbnailDisplay {
+  border-left: 3px solid #D7A76C;
+}
+
+#favoriteFilter {
+  border-left: 3px solid #D78AA3;
 }
 
 #resetBtn {
-  padding: 0.65rem 1rem;
-  background: transparent;
-  border: none;
+  padding: 0.7rem 0.85rem;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  background: #F6F3FB;
   cursor: pointer;
-  font-size: 0.85rem;
-  color: #A69BD9;
+  font-size: 0.78rem;
+  color: #7667A5;
   display: none;
-  font-weight: 500;
-  text-decoration: underline;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+#resetBtn:hover {
+  border-color: #DDD6ED;
+  background: #EEE9F7;
 }
 
 #resultCount {
-  margin-left: auto;
-  font-size: 0.82rem;
-  color: #BBB;
+  grid-column: 1 / -1;
+  justify-self: end;
+  margin-top: -0.1rem;
+  padding-right: 0.15rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #9C96A7;
 }
 
 .grid-wrap {
@@ -205,32 +253,41 @@ select {
 
 .favorite-btn {
   flex: 0 0 auto;
-  width: 1.5rem;
-  height: 1.5rem;
-  margin-top: -0.05rem;
+  width: 1.75rem;
+  height: 1.75rem;
+  margin-top: -0.12rem;
   padding: 0;
-  border: 0;
-  background: transparent;
-  color: #B9B1C7;
-  font-size: 1.2rem;
+  border: 1px solid #E6DEE7;
+  border-radius: 50%;
+  background: #FFFFFF;
+  color: #B8AFBD;
+  font-size: 1rem;
   line-height: 1;
   cursor: pointer;
-  transition: color 0.15s ease, transform 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 3px rgba(75, 55, 75, 0.08);
+  transition: color 0.15s ease, border-color 0.15s ease, background-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .favorite-btn:hover {
-  color: #C97C98;
-  transform: scale(1.08);
+  color: #C96F8F;
+  border-color: #E2B6C5;
+  background: #FFF7FA;
+  box-shadow: 0 3px 8px rgba(201, 111, 143, 0.14);
+  transform: translateY(-1px);
 }
 
 .favorite-btn:focus-visible {
   outline: 2px solid #D8A5B7;
   outline-offset: 3px;
-  border-radius: 4px;
 }
 
 .favorite-btn.is-favorite {
-  color: #D96B8A;
+  color: #D85F86;
+  border-color: #E6AFC1;
+  background: #FDEEF3;
 }
 
 .card-title {
@@ -319,9 +376,44 @@ select {
   border-top: 1px solid #EEEEEE;
 }
 
+@media (max-width: 900px) {
+  .filter-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  #resetBtn {
+    justify-self: start;
+  }
+
+  #resultCount {
+    grid-column: auto;
+    align-self: center;
+    margin-top: 0;
+  }
+}
+
 @media (max-width: 640px) {
   body::before {
     width: 110vw;
     opacity: 0.035;
+  }
+
+  .controls {
+    padding: 2rem 1rem;
+  }
+
+  .filter-row {
+    grid-template-columns: 1fr;
+    gap: 0.55rem;
+    padding: 0.7rem;
+  }
+
+  #resetBtn,
+  #resultCount {
+    grid-column: 1;
+  }
+
+  #resultCount {
+    justify-self: end;
   }
 }
