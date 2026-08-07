@@ -87,6 +87,58 @@
 <script>
 let allTools = [];
 
+const CATEGORY_ORDER = [
+  '記事を探す・読む',
+  '記事を書く・編集する',
+  '画像・デザインを作る',
+  '保存・管理する',
+  '交流・通知を管理する',
+  '活動を分析・記録する',
+  'データを取得・出力する',
+  '表示・操作環境を変える'
+];
+
+function normalizeCategory(tool) {
+  const name = tool.name;
+  const oldCategory = tool.category;
+
+  const exactOverrides = {
+    'note-saver': '保存・管理する',
+    'noteしおり': '保存・管理する',
+    'Note Reader Enhancer': '表示・操作環境を変える',
+    'noteの記事で目次を固定表示するChrome拡張機能': '表示・操作環境を変える',
+    'NoteBubble': '記事を書く・編集する',
+    'WXRリーダー': '保存・管理する',
+    'Note Article Master': '保存・管理する',
+    'note log／おすすめページKIT': '保存・管理する',
+    'Mini-Link': '画像・デザインを作る',
+    'リッチテキスト画像クリッパー': '画像・デザインを作る',
+    'SNS投稿作成ツール': '記事を書く・編集する'
+  };
+
+  if (exactOverrides[name]) return exactOverrides[name];
+
+  const categoryMap = {
+    'コメント・通知管理': '交流・通知を管理する',
+    '記事読む・保存': '記事を探す・読む',
+    '表示カスタマイズ': '表示・操作環境を変える',
+    '活動・数字記録': '活動を分析・記録する',
+    'CSV取得': 'データを取得・出力する',
+    'バックアップ・再利用': '保存・管理する',
+    '記事検索・整理': '記事を探す・読む',
+    'タイトル・タグ生成': '記事を書く・編集する',
+    '執筆支援': '記事を書く・編集する',
+    '見出し画像作成': '画像・デザインを作る',
+    '表・グラフ作成': '画像・デザインを作る',
+    '縦書き画像作成': '画像・デザインを作る',
+    'GIF変換': '画像・デザインを作る',
+    '記事移行': 'データを取得・出力する',
+    'SNS投稿支援': '記事を書く・編集する'
+  };
+
+  return categoryMap[oldCategory] || '保存・管理する';
+}
+
 function statusLabel(status) {
   if (status.includes('無料')) return { text: '無料', color: '#3A8A5E' };
   if (status.includes('有料')) return { text: '有料', color: '#B8722E' };
@@ -124,45 +176,39 @@ function parseCSV(text) {
 async function loadTools() {
   try {
     const csvPath = './note%20tools.csv';
-    console.log('Fetching CSV from:', csvPath);
-
     const response = await fetch(csvPath);
-    console.log('Fetch response status:', response.status);
-
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
+    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
 
     const csvText = await response.text();
-    console.log('CSV loaded, length:', csvText.length);
-
     const rows = parseCSV(csvText).filter(r => r.some(cell => cell.trim() !== ''));
-    console.log('Parsed rows:', rows.length);
 
-    allTools = rows.slice(1).map(r => ({
-      name: (r[0] || '').trim(),
-      author: (r[1] || '').trim(),
-      category: (r[2] || '').trim(),
-      description: (r[3] || '').trim(),
-      status: (r[4] || '').trim(),
-      link: (r[5] || '').trim(),
-      updatedAt: (r[6] || '').trim(),
-      thumbnail: (r[7] || '').trim()
-    }));
-
-    console.log('Tools loaded:', allTools.length);
-
-    const categories = [...new Set(allTools.map(t => t.category))].filter(Boolean).sort();
-    const statuses = [...new Set(allTools.map(t => t.status))].filter(Boolean).sort();
+    allTools = rows.slice(1).map(r => {
+      const tool = {
+        name: (r[0] || '').trim(),
+        author: (r[1] || '').trim(),
+        category: (r[2] || '').trim(),
+        description: (r[3] || '').trim(),
+        status: (r[4] || '').trim(),
+        link: (r[5] || '').trim(),
+        updatedAt: (r[6] || '').trim(),
+        thumbnail: (r[7] || '').trim()
+      };
+      tool.originalCategory = tool.category;
+      tool.category = normalizeCategory(tool);
+      return tool;
+    });
 
     const categorySelect = document.getElementById('categoryFilter');
-    categories.forEach(cat => {
+    CATEGORY_ORDER.forEach(category => {
+      const count = allTools.filter(t => t.category === category).length;
+      if (!count) return;
       const option = document.createElement('option');
-      option.value = cat;
-      option.textContent = `${cat} (${allTools.filter(t => t.category === cat).length})`;
+      option.value = category;
+      option.textContent = `${category} (${count})`;
       categorySelect.appendChild(option);
     });
 
+    const statuses = [...new Set(allTools.map(t => t.status))].filter(Boolean).sort();
     const statusSelect = document.getElementById('statusFilter');
     statuses.forEach(status => {
       const option = document.createElement('option');
@@ -176,7 +222,7 @@ async function loadTools() {
   } catch (error) {
     console.error('Error loading tools:', error);
     document.getElementById('toolsGrid').innerHTML =
-      `<div class="empty-state">データの読み込みに失敗しました。<br>エラー: ${error.message}</div>`;
+      `<div class="empty-state">データの読み込みに失敗しました。<br>エラー: ${escapeHTML(error.message)}</div>`;
   }
 }
 
@@ -200,13 +246,8 @@ function allowedHttpsUrl(rawUrl, allowedHostname) {
   }
 }
 
-function safeNoteUrl(rawUrl) {
-  return allowedHttpsUrl(rawUrl, 'note.com');
-}
-
-function safeThumbnailUrl(rawUrl) {
-  return allowedHttpsUrl(rawUrl, 'assets.st-note.com');
-}
+function safeNoteUrl(rawUrl) { return allowedHttpsUrl(rawUrl, 'note.com'); }
+function safeThumbnailUrl(rawUrl) { return allowedHttpsUrl(rawUrl, 'assets.st-note.com'); }
 
 function renderTools() {
   const searchTerm = document.getElementById('searchInput').value.toLowerCase();
@@ -219,7 +260,8 @@ function renderTools() {
   const filtered = allTools.filter(tool => {
     const matchSearch = tool.name.toLowerCase().includes(searchTerm) ||
                        tool.author.toLowerCase().includes(searchTerm) ||
-                       tool.description.toLowerCase().includes(searchTerm);
+                       tool.description.toLowerCase().includes(searchTerm) ||
+                       tool.category.toLowerCase().includes(searchTerm);
     const matchCategory = !category || tool.category === category;
     const matchStatus = !status || tool.status === status;
     const matchFavorite = !favoritesOnly || favorites.has(toolKey(tool));
@@ -271,14 +313,11 @@ function renderTools() {
           <div class="card-category">${escapeHTML(tool.category)}</div>
         ${bodyEnd}
       </div>
-    </article>
-    `;
+    </article>`;
   }).join('');
 }
 
-function toolKey(tool) {
-  return `${tool.name}|||${tool.author}`;
-}
+function toolKey(tool) { return `${tool.name}|||${tool.author}`; }
 
 function getFavorites() {
   try {
