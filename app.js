@@ -296,7 +296,7 @@ function renderTools() {
   );
 
   elements.count.textContent = `${filtered.length} 件`;
-  elements.reset.style.display = search || category || price || favoritesOnly ? 'inline-block' : 'none';
+  elements.reset.hidden = !(search || category || price || favoritesOnly);
 
   elements.grid.innerHTML = filtered.length
     ? filtered.map(tool => createCard(tool, showThumbnails, favorites)).join('')
