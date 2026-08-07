@@ -53,14 +53,14 @@ const LEGACY_CATEGORY_MAP = {
 };
 
 const PRICE_BADGES = {
-  '無料': ['無料', '#3A8A5E'],
-  '条件付き無料': ['一部無料', '#4A769F'],
-  '1～500円': ['～500円', '#B8722E'],
-  '501～1,000円': ['～1,000円', '#B8722E'],
-  '1,001～3,000円': ['～3,000円', '#A36635'],
-  '3,001円以上': ['3,001円～', '#955A43'],
-  '月額・メンバーシップ': ['限定', '#3B6FA6'],
-  '価格不明': ['価格不明', '#888']
+  '無料': ['無料', 'free'],
+  '条件付き無料': ['一部無料', 'conditional'],
+  '1～500円': ['～500円', 'low'],
+  '501～1,000円': ['～1,000円', 'low'],
+  '1,001～3,000円': ['～3,000円', 'mid'],
+  '3,001円以上': ['3,001円～', 'high'],
+  '月額・メンバーシップ': ['限定', 'membership'],
+  '価格不明': ['価格不明', 'unknown']
 };
 
 const FAVORITES_KEY = 'favoriteTools';
@@ -246,7 +246,7 @@ function toggleFavorite(key) {
 }
 
 function createCard(tool, showThumbnails, favorites) {
-  const [badgeText, badgeColor] = PRICE_BADGES[tool.priceCategory];
+  const [badgeText, badgeClass] = PRICE_BADGES[tool.priceCategory];
   const key = toolKey(tool);
   const isFavorite = favorites.has(key);
   const noteUrl = safeNoteUrl(tool.link);
@@ -255,8 +255,8 @@ function createCard(tool, showThumbnails, favorites) {
 
   const thumbnail = showThumbnails && thumbnailUrl
     ? noteUrl
-      ? `<a class="card-thumbnail-link" href="${safeUrl}" target="_blank" rel="noopener noreferrer"><img class="card-thumbnail" src="${escapeHTML(thumbnailUrl)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentElement.remove()"></a>`
-      : `<img class="card-thumbnail" src="${escapeHTML(thumbnailUrl)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">`
+      ? `<a class="card-thumbnail-link" href="${safeUrl}" target="_blank" rel="noopener noreferrer"><img class="card-thumbnail" src="${escapeHTML(thumbnailUrl)}" alt="" loading="lazy" referrerpolicy="no-referrer"></a>`
+      : `<img class="card-thumbnail" src="${escapeHTML(thumbnailUrl)}" alt="" loading="lazy" referrerpolicy="no-referrer">`
     : '';
 
   const title = noteUrl
@@ -276,7 +276,7 @@ function createCard(tool, showThumbnails, favorites) {
     ? `<div class="card-status-detail">${escapeHTML(tool.rawStatus)}</div>`
     : '';
 
-  return `<article class="card">${thumbnail}<div class="card-inner"><div class="card-top"><div class="card-title-wrap"><button class="favorite-btn${isFavorite ? ' is-favorite' : ''}" type="button" data-key="${escapeHTML(encodeURIComponent(key))}" aria-label="${isFavorite ? 'お気に入りから削除' : 'お気に入りに追加'}" aria-pressed="${isFavorite}">${isFavorite ? '♥' : '♡'}</button>${title}</div><div class="badge-stack"><span class="badge" style="color:${badgeColor};">${escapeHTML(badgeText)}</span>${availability}</div></div>${bodyStart}<div class="card-author">${escapeHTML(tool.author)}</div><div class="card-desc">${escapeHTML(tool.description)}</div>${statusDetail}<div class="card-category">${escapeHTML(tool.category)}</div>${bodyEnd}</div></article>`;
+  return `<article class="card">${thumbnail}<div class="card-inner"><div class="card-top"><div class="card-title-wrap"><button class="favorite-btn${isFavorite ? ' is-favorite' : ''}" type="button" data-key="${escapeHTML(encodeURIComponent(key))}" aria-label="${isFavorite ? 'お気に入りから削除' : 'お気に入りに追加'}" aria-pressed="${isFavorite}">${isFavorite ? '♥' : '♡'}</button>${title}</div><div class="badge-stack"><span class="badge badge-${badgeClass}">${escapeHTML(badgeText)}</span>${availability}</div></div>${bodyStart}<div class="card-author">${escapeHTML(tool.author)}</div><div class="card-desc">${escapeHTML(tool.description)}</div>${statusDetail}<div class="card-category">${escapeHTML(tool.category)}</div>${bodyEnd}</div></article>`;
 }
 
 function renderTools() {
@@ -311,6 +311,13 @@ function resetFilters() {
   renderTools();
 }
 
+function removeBrokenThumbnail(event) {
+  const image = event.target;
+  if (!(image instanceof HTMLImageElement) || !image.classList.contains('card-thumbnail')) return;
+  const link = image.closest('.card-thumbnail-link');
+  (link || image).remove();
+}
+
 function attachListeners() {
   elements.search.addEventListener('input', renderTools);
   elements.category.addEventListener('change', renderTools);
@@ -330,6 +337,8 @@ function attachListeners() {
     event.stopPropagation();
     toggleFavorite(decodeURIComponent(button.dataset.key));
   });
+
+  elements.grid.addEventListener('error', removeBrokenThumbnail, true);
 }
 
 function restoreDisplaySettings() {
