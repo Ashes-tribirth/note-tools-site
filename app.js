@@ -1,120 +1,362 @@
-let allTools = [];
-
 const CATEGORY_ORDER = [
-  '記事を探す・読む', '記事を書く・編集する', '画像・デザインを作る', '保存・管理する',
-  '交流・通知を管理する', '活動を分析・記録する', 'データを取得・出力する', '表示・操作環境を変える'
+  '記事を探す・読む',
+  '記事を書く・編集する',
+  '画像・デザインを作る',
+  '保存・管理する',
+  '交流・通知を管理する',
+  '活動を分析・記録する',
+  'データを取得・出力する',
+  '表示・操作環境を変える'
 ];
-const PRICE_ORDER = ['無料', '条件付き無料', '1～500円', '501～1,000円', '1,001～3,000円', '3,001円以上', '月額・メンバーシップ', '価格不明'];
+
+const PRICE_ORDER = [
+  '無料',
+  '条件付き無料',
+  '1～500円',
+  '501～1,000円',
+  '1,001～3,000円',
+  '3,001円以上',
+  '月額・メンバーシップ',
+  '価格不明'
+];
+
+const CATEGORY_BY_NAME = {
+  'note-saver': '保存・管理する',
+  'noteしおり': '保存・管理する',
+  'Note Reader Enhancer': '表示・操作環境を変える',
+  'noteの記事で目次を固定表示するChrome拡張機能': '表示・操作環境を変える',
+  'NoteBubble': '記事を書く・編集する',
+  'WXRリーダー': '保存・管理する',
+  'Note Article Master': '保存・管理する',
+  'note log／おすすめページKIT': '保存・管理する',
+  'Mini-Link': '画像・デザインを作る',
+  'リッチテキスト画像クリッパー': '画像・デザインを作る',
+  'SNS投稿作成ツール': '記事を書く・編集する'
+};
+
+const LEGACY_CATEGORY_MAP = {
+  'コメント・通知管理': '交流・通知を管理する',
+  '記事読む・保存': '記事を探す・読む',
+  '表示カスタマイズ': '表示・操作環境を変える',
+  '活動・数字記録': '活動を分析・記録する',
+  'CSV取得': 'データを取得・出力する',
+  'バックアップ・再利用': '保存・管理する',
+  '記事検索・整理': '記事を探す・読む',
+  'タイトル・タグ生成': '記事を書く・編集する',
+  '執筆支援': '記事を書く・編集する',
+  '見出し画像作成': '画像・デザインを作る',
+  '表・グラフ作成': '画像・デザインを作る',
+  '縦書き画像作成': '画像・デザインを作る',
+  'GIF変換': '画像・デザインを作る',
+  '記事移行': 'データを取得・出力する',
+  'SNS投稿支援': '記事を書く・編集する'
+};
+
+const PRICE_BADGES = {
+  '無料': ['無料', '#3A8A5E'],
+  '条件付き無料': ['一部無料', '#4A769F'],
+  '1～500円': ['～500円', '#B8722E'],
+  '501～1,000円': ['～1,000円', '#B8722E'],
+  '1,001～3,000円': ['～3,000円', '#A36635'],
+  '3,001円以上': ['3,001円～', '#955A43'],
+  '月額・メンバーシップ': ['限定', '#3B6FA6'],
+  '価格不明': ['価格不明', '#888']
+};
+
+const FAVORITES_KEY = 'favoriteTools';
+const THUMBNAIL_KEY = 'thumbnailDisplay';
+
+const elements = {
+  search: document.getElementById('searchInput'),
+  category: document.getElementById('categoryFilter'),
+  price: document.getElementById('priceFilter'),
+  thumbnails: document.getElementById('thumbnailDisplay'),
+  favoritesOnly: document.getElementById('favoriteFilter'),
+  reset: document.getElementById('resetBtn'),
+  count: document.getElementById('resultCount'),
+  grid: document.getElementById('toolsGrid'),
+  updatedAt: document.getElementById('pageUpdatedAt')
+};
+
+let allTools = [];
 
 function normalizeCategory(tool) {
   if (CATEGORY_ORDER.includes(tool.category)) return tool.category;
-  const exact = {
-    'note-saver':'保存・管理する','noteしおり':'保存・管理する','Note Reader Enhancer':'表示・操作環境を変える',
-    'noteの記事で目次を固定表示するChrome拡張機能':'表示・操作環境を変える','NoteBubble':'記事を書く・編集する',
-    'WXRリーダー':'保存・管理する','Note Article Master':'保存・管理する','note log／おすすめページKIT':'保存・管理する',
-    'Mini-Link':'画像・デザインを作る','リッチテキスト画像クリッパー':'画像・デザインを作る','SNS投稿作成ツール':'記事を書く・編集する'
-  };
-  if (exact[tool.name]) return exact[tool.name];
-  const map = {
-    'コメント・通知管理':'交流・通知を管理する','記事読む・保存':'記事を探す・読む','表示カスタマイズ':'表示・操作環境を変える',
-    '活動・数字記録':'活動を分析・記録する','CSV取得':'データを取得・出力する','バックアップ・再利用':'保存・管理する',
-    '記事検索・整理':'記事を探す・読む','タイトル・タグ生成':'記事を書く・編集する','執筆支援':'記事を書く・編集する',
-    '見出し画像作成':'画像・デザインを作る','表・グラフ作成':'画像・デザインを作る','縦書き画像作成':'画像・デザインを作る',
-    'GIF変換':'画像・デザインを作る','記事移行':'データを取得・出力する','SNS投稿支援':'記事を書く・編集する'
-  };
-  return map[tool.category] || '保存・管理する';
+  return CATEGORY_BY_NAME[tool.name] || LEGACY_CATEGORY_MAP[tool.category] || '保存・管理する';
 }
 
-function deriveStatus(rawStatus) {
-  const raw = rawStatus || '';
-  const availability = raw.includes('開発中') ? '開発中' : raw.includes('休止') ? '休止中' : raw.includes('終了') ? '公開終了' : '公開中';
+function deriveStatus(rawStatus = '') {
+  const availability = rawStatus.includes('開発中')
+    ? '開発中'
+    : rawStatus.includes('休止')
+      ? '休止中'
+      : rawStatus.includes('終了')
+        ? '公開終了'
+        : '公開中';
+
   let priceCategory = '価格不明';
-  if (raw.includes('メンバーシップ')) priceCategory = '月額・メンバーシップ';
-  else if (raw.includes('基本無料') || raw.includes('無料体験') || raw.includes('リポストで無料') || raw.includes('API利用料別')) priceCategory = '条件付き無料';
-  else if (raw === '無料' || raw.startsWith('無料（HTML公開')) priceCategory = '無料';
-  else {
-    const match = raw.replace(/,/g, '').match(/(\d{1,6})\s*円/);
+
+  if (rawStatus.includes('メンバーシップ')) {
+    priceCategory = '月額・メンバーシップ';
+  } else if (
+    rawStatus.includes('基本無料') ||
+    rawStatus.includes('無料体験') ||
+    rawStatus.includes('リポストで無料') ||
+    rawStatus.includes('API利用料別')
+  ) {
+    priceCategory = '条件付き無料';
+  } else if (rawStatus === '無料' || rawStatus.startsWith('無料（HTML公開')) {
+    priceCategory = '無料';
+  } else {
+    const match = rawStatus.replace(/,/g, '').match(/(\d{1,6})\s*円/);
     if (match) {
       const price = Number(match[1]);
-      priceCategory = price <= 500 ? '1～500円' : price <= 1000 ? '501～1,000円' : price <= 3000 ? '1,001～3,000円' : '3,001円以上';
+      priceCategory = price <= 500
+        ? '1～500円'
+        : price <= 1000
+          ? '501～1,000円'
+          : price <= 3000
+            ? '1,001～3,000円'
+            : '3,001円以上';
     }
   }
+
   return { availability, priceCategory };
 }
 
-function priceBadge(tool) {
-  const labels = {
-    '無料':['無料','#3A8A5E'],'条件付き無料':['一部無料','#4A769F'],'1～500円':['～500円','#B8722E'],
-    '501～1,000円':['～1,000円','#B8722E'],'1,001～3,000円':['～3,000円','#A36635'],'3,001円以上':['3,001円～','#955A43'],
-    '月額・メンバーシップ':['限定','#3B6FA6'],'価格不明':['価格不明','#888']
-  };
-  const [text,color] = labels[tool.priceCategory];
-  return { text, color };
+function parseCSV(text) {
+  const rows = [];
+  let row = [];
+  let field = '';
+  let inQuotes = false;
+
+  for (let i = 0; i < text.length; i++) {
+    const char = text[i];
+    const next = text[i + 1];
+
+    if (inQuotes) {
+      if (char === '"' && next === '"') {
+        field += '"';
+        i++;
+      } else if (char === '"') {
+        inQuotes = false;
+      } else {
+        field += char;
+      }
+    } else if (char === '"') {
+      inQuotes = true;
+    } else if (char === ',') {
+      row.push(field);
+      field = '';
+    } else if (char === '\n') {
+      row.push(field);
+      rows.push(row);
+      row = [];
+      field = '';
+    } else if (char !== '\r') {
+      field += char;
+    }
+  }
+
+  if (field.length || row.length) {
+    row.push(field);
+    rows.push(row);
+  }
+
+  return rows;
 }
 
-function parseCSV(text) {
-  const rows=[]; let row=[], field='', inQuotes=false;
-  for (let i=0;i<text.length;i++) {
-    const c=text[i], n=text[i+1];
-    if (inQuotes) { if (c==='"'&&n==='"'){field+='"';i++;} else if(c==='"')inQuotes=false; else field+=c; }
-    else if(c==='"')inQuotes=true; else if(c===','){row.push(field);field='';} else if(c==='\n'){row.push(field);rows.push(row);row=[];field='';} else if(c!=='\r')field+=c;
+function rowToTool(row) {
+  const tool = {
+    name: (row[0] || '').trim(),
+    author: (row[1] || '').trim(),
+    category: (row[2] || '').trim(),
+    description: (row[3] || '').trim(),
+    rawStatus: (row[4] || '').trim(),
+    link: (row[5] || '').trim(),
+    updatedAt: (row[6] || '').trim(),
+    thumbnail: (row[7] || '').trim()
+  };
+
+  tool.category = normalizeCategory(tool);
+  return Object.assign(tool, deriveStatus(tool.rawStatus));
+}
+
+function populateSelect(select, order, key) {
+  order.forEach(value => {
+    const count = allTools.filter(tool => tool[key] === value).length;
+    if (count) select.add(new Option(`${value} (${count})`, value));
+  });
+}
+
+function populateFilters() {
+  populateSelect(elements.category, CATEGORY_ORDER, 'category');
+  populateSelect(elements.price, PRICE_ORDER, 'priceCategory');
+}
+
+function updatePageDate() {
+  const latest = allTools
+    .map(tool => tool.updatedAt)
+    .filter(Boolean)
+    .sort()
+    .at(-1) || '—';
+
+  elements.updatedAt.textContent = `最終更新 ${latest.replaceAll('-', '.')}`;
+}
+
+function escapeHTML(value) {
+  const div = document.createElement('div');
+  div.textContent = value;
+  return div.innerHTML;
+}
+
+function allowedHttpsUrl(rawUrl, host) {
+  try {
+    const url = new URL(rawUrl);
+    return url.protocol === 'https:' &&
+      url.hostname === host &&
+      !url.port &&
+      !url.username &&
+      !url.password
+      ? url.href
+      : '';
+  } catch {
+    return '';
   }
-  if(field.length||row.length){row.push(field);rows.push(row);} return rows;
+}
+
+const safeNoteUrl = url => allowedHttpsUrl(url, 'note.com');
+const safeThumbnailUrl = url => allowedHttpsUrl(url, 'assets.st-note.com');
+const toolKey = tool => `${tool.name}|||${tool.author}`;
+
+function getFavorites() {
+  try {
+    const saved = JSON.parse(localStorage.getItem(FAVORITES_KEY) || '[]');
+    return new Set(Array.isArray(saved) ? saved : []);
+  } catch {
+    return new Set();
+  }
+}
+
+function toggleFavorite(key) {
+  const favorites = getFavorites();
+  favorites.has(key) ? favorites.delete(key) : favorites.add(key);
+  localStorage.setItem(FAVORITES_KEY, JSON.stringify([...favorites]));
+  renderTools();
+}
+
+function createCard(tool, showThumbnails, favorites) {
+  const [badgeText, badgeColor] = PRICE_BADGES[tool.priceCategory];
+  const key = toolKey(tool);
+  const isFavorite = favorites.has(key);
+  const noteUrl = safeNoteUrl(tool.link);
+  const thumbnailUrl = safeThumbnailUrl(tool.thumbnail);
+  const safeUrl = escapeHTML(noteUrl);
+
+  const thumbnail = showThumbnails && thumbnailUrl
+    ? noteUrl
+      ? `<a class="card-thumbnail-link" href="${safeUrl}" target="_blank" rel="noopener noreferrer"><img class="card-thumbnail" src="${escapeHTML(thumbnailUrl)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentElement.remove()"></a>`
+      : `<img class="card-thumbnail" src="${escapeHTML(thumbnailUrl)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">`
+    : '';
+
+  const title = noteUrl
+    ? `<a class="card-title-link" href="${safeUrl}" target="_blank" rel="noopener noreferrer"><span class="card-title">${escapeHTML(tool.name)}</span></a>`
+    : `<div class="card-title-link"><span class="card-title">${escapeHTML(tool.name)}</span></div>`;
+
+  const bodyStart = noteUrl
+    ? `<a class="card-body-link" href="${safeUrl}" target="_blank" rel="noopener noreferrer">`
+    : '<div class="card-body-link">';
+  const bodyEnd = noteUrl ? '</a>' : '</div>';
+
+  const availability = tool.availability !== '公開中'
+    ? `<span class="availability-badge">${escapeHTML(tool.availability)}</span>`
+    : '';
+
+  const statusDetail = tool.rawStatus && tool.rawStatus !== badgeText
+    ? `<div class="card-status-detail">${escapeHTML(tool.rawStatus)}</div>`
+    : '';
+
+  return `<article class="card">${thumbnail}<div class="card-inner"><div class="card-top"><div class="card-title-wrap"><button class="favorite-btn${isFavorite ? ' is-favorite' : ''}" type="button" data-key="${escapeHTML(encodeURIComponent(key))}" aria-label="${isFavorite ? 'お気に入りから削除' : 'お気に入りに追加'}" aria-pressed="${isFavorite}">${isFavorite ? '♥' : '♡'}</button>${title}</div><div class="badge-stack"><span class="badge" style="color:${badgeColor};">${escapeHTML(badgeText)}</span>${availability}</div></div>${bodyStart}<div class="card-author">${escapeHTML(tool.author)}</div><div class="card-desc">${escapeHTML(tool.description)}</div>${statusDetail}<div class="card-category">${escapeHTML(tool.category)}</div>${bodyEnd}</div></article>`;
+}
+
+function renderTools() {
+  const search = elements.search.value.toLowerCase();
+  const category = elements.category.value;
+  const price = elements.price.value;
+  const showThumbnails = elements.thumbnails.checked;
+  const favoritesOnly = elements.favoritesOnly.checked;
+  const favorites = getFavorites();
+
+  const filtered = allTools.filter(tool =>
+    [tool.name, tool.author, tool.description, tool.category, tool.rawStatus]
+      .some(value => value.toLowerCase().includes(search)) &&
+    (!category || tool.category === category) &&
+    (!price || tool.priceCategory === price) &&
+    (!favoritesOnly || favorites.has(toolKey(tool)))
+  );
+
+  elements.count.textContent = `${filtered.length} 件`;
+  elements.reset.style.display = search || category || price || favoritesOnly ? 'inline-block' : 'none';
+
+  elements.grid.innerHTML = filtered.length
+    ? filtered.map(tool => createCard(tool, showThumbnails, favorites)).join('')
+    : '<div class="empty-state">該当するツールが見つかりません</div>';
+}
+
+function resetFilters() {
+  elements.search.value = '';
+  elements.category.value = '';
+  elements.price.value = '';
+  elements.favoritesOnly.checked = false;
+  renderTools();
+}
+
+function attachListeners() {
+  elements.search.addEventListener('input', renderTools);
+  elements.category.addEventListener('change', renderTools);
+  elements.price.addEventListener('change', renderTools);
+  elements.favoritesOnly.addEventListener('change', renderTools);
+  elements.reset.addEventListener('click', resetFilters);
+
+  elements.thumbnails.addEventListener('change', event => {
+    localStorage.setItem(THUMBNAIL_KEY, event.target.checked ? 'show' : 'hide');
+    renderTools();
+  });
+
+  elements.grid.addEventListener('click', event => {
+    const button = event.target.closest('.favorite-btn');
+    if (!button) return;
+    event.preventDefault();
+    event.stopPropagation();
+    toggleFavorite(decodeURIComponent(button.dataset.key));
+  });
+}
+
+function restoreDisplaySettings() {
+  const saved = localStorage.getItem(THUMBNAIL_KEY);
+  if (saved === 'show' || saved === 'hide') {
+    elements.thumbnails.checked = saved === 'show';
+  }
 }
 
 async function loadTools() {
   try {
-    const response=await fetch('./note%20tools.csv');
-    if(!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-    const rows=parseCSV(await response.text()).filter(r=>r.some(cell=>cell.trim()!==''));
-    allTools=rows.slice(1).map(r=>{
-      const tool={name:(r[0]||'').trim(),author:(r[1]||'').trim(),category:(r[2]||'').trim(),description:(r[3]||'').trim(),rawStatus:(r[4]||'').trim(),link:(r[5]||'').trim(),updatedAt:(r[6]||'').trim(),thumbnail:(r[7]||'').trim()};
-      tool.category=normalizeCategory(tool); Object.assign(tool,deriveStatus(tool.rawStatus)); return tool;
-    });
-    populateFilters(); updatePageDate(); renderTools(); attachListeners();
-  } catch(error) {
-    console.error(error); document.getElementById('toolsGrid').innerHTML=`<div class="empty-state">データの読み込みに失敗しました。<br>エラー: ${escapeHTML(error.message)}</div>`;
+    const response = await fetch('./note%20tools.csv');
+    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+
+    const rows = parseCSV(await response.text())
+      .filter(row => row.some(cell => cell.trim() !== ''));
+
+    allTools = rows.slice(1).map(rowToTool);
+    populateFilters();
+    updatePageDate();
+    renderTools();
+    attachListeners();
+  } catch (error) {
+    console.error(error);
+    elements.grid.innerHTML = `<div class="empty-state">データの読み込みに失敗しました。<br>エラー: ${escapeHTML(error.message)}</div>`;
   }
 }
 
-function populateFilters() {
-  const categorySelect=document.getElementById('categoryFilter');
-  CATEGORY_ORDER.forEach(category=>{const count=allTools.filter(t=>t.category===category).length;if(count)categorySelect.add(new Option(`${category} (${count})`,category));});
-  const priceSelect=document.getElementById('priceFilter');
-  PRICE_ORDER.forEach(price=>{const count=allTools.filter(t=>t.priceCategory===price).length;if(count)priceSelect.add(new Option(`${price} (${count})`,price));});
-}
-function updatePageDate(){const latest=allTools.map(t=>t.updatedAt).filter(Boolean).sort().at(-1)||'—';document.getElementById('pageUpdatedAt').textContent=`最終更新 ${latest.replaceAll('-','.')}`;}
-function escapeHTML(str){const div=document.createElement('div');div.textContent=str;return div.innerHTML;}
-function allowedHttpsUrl(rawUrl,host){try{const u=new URL(rawUrl);return u.protocol==='https:'&&u.hostname===host&&!u.port&&!u.username&&!u.password?u.href:'';}catch{return '';}}
-const safeNoteUrl=url=>allowedHttpsUrl(url,'note.com');
-const safeThumbnailUrl=url=>allowedHttpsUrl(url,'assets.st-note.com');
-
-function renderTools(){
-  const search=document.getElementById('searchInput').value.toLowerCase(), category=document.getElementById('categoryFilter').value, price=document.getElementById('priceFilter').value;
-  const showThumbs=document.getElementById('thumbnailDisplay').checked, favoritesOnly=document.getElementById('favoriteFilter').checked, favorites=getFavorites();
-  const filtered=allTools.filter(t=>[t.name,t.author,t.description,t.category,t.rawStatus].some(v=>v.toLowerCase().includes(search))&&(!category||t.category===category)&&(!price||t.priceCategory===price)&&(!favoritesOnly||favorites.has(toolKey(t))));
-  document.getElementById('resultCount').textContent=`${filtered.length} 件`;
-  document.getElementById('resetBtn').style.display=(search||category||price||favoritesOnly)?'inline-block':'none';
-  const grid=document.getElementById('toolsGrid');
-  if(!filtered.length){grid.innerHTML='<div class="empty-state">該当するツールが見つかりません</div>';return;}
-  grid.innerHTML=filtered.map(tool=>{
-    const badge=priceBadge(tool), key=toolKey(tool), fav=favorites.has(key), noteUrl=safeNoteUrl(tool.link), thumb=safeThumbnailUrl(tool.thumbnail);
-    const bodyStart=noteUrl?`<a class="card-body-link" href="${escapeHTML(noteUrl)}" target="_blank" rel="noopener noreferrer">`:'<div class="card-body-link">', bodyEnd=noteUrl?'</a>':'</div>';
-    const availability=tool.availability!=='公開中'?`<span class="availability-badge">${escapeHTML(tool.availability)}</span>`:'';
-    const detail=tool.rawStatus&&tool.rawStatus!==badge.text?`<div class="card-status-detail">${escapeHTML(tool.rawStatus)}</div>`:'';
-    return `<article class="card">${showThumbs&&thumb?(noteUrl?`<a class="card-thumbnail-link" href="${escapeHTML(noteUrl)}" target="_blank" rel="noopener noreferrer"><img class="card-thumbnail" src="${escapeHTML(thumb)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentElement.remove()"></a>`:`<img class="card-thumbnail" src="${escapeHTML(thumb)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">`):''}<div class="card-inner"><div class="card-top"><div class="card-title-wrap"><button class="favorite-btn${fav?' is-favorite':''}" type="button" data-key="${escapeHTML(encodeURIComponent(key))}" aria-label="${fav?'お気に入りから削除':'お気に入りに追加'}" aria-pressed="${fav}">${fav?'♥':'♡'}</button>${noteUrl?`<a class="card-title-link" href="${escapeHTML(noteUrl)}" target="_blank" rel="noopener noreferrer">`:'<div class="card-title-link">'}<span class="card-title">${escapeHTML(tool.name)}</span>${noteUrl?'</a>':'</div>'}</div><div class="badge-stack"><span class="badge" style="color:${badge.color};">${escapeHTML(badge.text)}</span>${availability}</div></div>${bodyStart}<div class="card-author">${escapeHTML(tool.author)}</div><div class="card-desc">${escapeHTML(tool.description)}</div>${detail}<div class="card-category">${escapeHTML(tool.category)}</div>${bodyEnd}</div></article>`;
-  }).join('');
-}
-
-const toolKey=tool=>`${tool.name}|||${tool.author}`;
-function getFavorites(){try{const saved=JSON.parse(localStorage.getItem('favoriteTools')||'[]');return new Set(Array.isArray(saved)?saved:[]);}catch{return new Set();}}
-function toggleFavorite(key){const f=getFavorites();f.has(key)?f.delete(key):f.add(key);localStorage.setItem('favoriteTools',JSON.stringify([...f]));renderTools();}
-function attachListeners(){
-  document.getElementById('searchInput').addEventListener('input',renderTools);document.getElementById('categoryFilter').addEventListener('change',renderTools);document.getElementById('priceFilter').addEventListener('change',renderTools);
-  document.getElementById('thumbnailDisplay').addEventListener('change',e=>{localStorage.setItem('thumbnailDisplay',e.target.checked?'show':'hide');renderTools();});
-  document.getElementById('favoriteFilter').addEventListener('change',renderTools);
-  document.getElementById('toolsGrid').addEventListener('click',e=>{const b=e.target.closest('.favorite-btn');if(b){e.preventDefault();e.stopPropagation();toggleFavorite(decodeURIComponent(b.dataset.key));}});
-  document.getElementById('resetBtn').addEventListener('click',()=>{document.getElementById('searchInput').value='';document.getElementById('categoryFilter').value='';document.getElementById('priceFilter').value='';document.getElementById('favoriteFilter').checked=false;renderTools();});
-}
-const savedThumbnailDisplay=localStorage.getItem('thumbnailDisplay');if(savedThumbnailDisplay==='show'||savedThumbnailDisplay==='hide')document.getElementById('thumbnailDisplay').checked=savedThumbnailDisplay==='show';
+restoreDisplaySettings();
 loadTools();
