@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>noteツール一覧</title>
 <link rel="stylesheet" href="./style.css">
+<link rel="stylesheet" href="./controls.css">
 </head>
 <body>
 
@@ -19,18 +20,26 @@
       <input type="text" id="searchInput" placeholder="ツール名・作者・キーワードで検索">
     </div>
     <div class="filter-row">
-      <select id="categoryFilter"><option value="">すべてのカテゴリ</option></select>
-      <select id="statusFilter"><option value="">すべてのステータス</option></select>
-      <select id="thumbnailDisplay" aria-label="記事サムネの表示設定">
-        <option value="show">サムネを表示</option>
-        <option value="hide">サムネを非表示</option>
-      </select>
-      <select id="favoriteFilter" aria-label="お気に入りの表示設定">
-        <option value="all">すべて表示</option>
-        <option value="favorites">お気に入りのみ</option>
-      </select>
-      <button id="resetBtn">条件をクリア</button>
-      <span id="resultCount"></span>
+      <div class="select-filters">
+        <select id="categoryFilter"><option value="">すべてのカテゴリ</option></select>
+        <select id="statusFilter"><option value="">すべてのステータス</option></select>
+      </div>
+      <div class="toggle-filters" aria-label="表示設定">
+        <label class="toggle-control toggle-thumbnail">
+          <input type="checkbox" id="thumbnailDisplay" checked>
+          <span class="toggle-track" aria-hidden="true"><span class="toggle-knob"></span></span>
+          <span class="toggle-text">サムネ表示</span>
+        </label>
+        <label class="toggle-control toggle-favorite">
+          <input type="checkbox" id="favoriteFilter">
+          <span class="toggle-track" aria-hidden="true"><span class="toggle-knob"></span></span>
+          <span class="toggle-text">お気に入りのみ</span>
+        </label>
+      </div>
+      <div class="filter-meta">
+        <button id="resetBtn">条件をクリア</button>
+        <span id="resultCount"></span>
+      </div>
     </div>
   </div>
 
@@ -203,8 +212,8 @@ function renderTools() {
   const searchTerm = document.getElementById('searchInput').value.toLowerCase();
   const category = document.getElementById('categoryFilter').value;
   const status = document.getElementById('statusFilter').value;
-  const showThumbnails = document.getElementById('thumbnailDisplay').value === 'show';
-  const favoritesOnly = document.getElementById('favoriteFilter').value === 'favorites';
+  const showThumbnails = document.getElementById('thumbnailDisplay').checked;
+  const favoritesOnly = document.getElementById('favoriteFilter').checked;
   const favorites = getFavorites();
 
   const filtered = allTools.filter(tool => {
@@ -292,7 +301,7 @@ function attachListeners() {
   document.getElementById('categoryFilter').addEventListener('change', renderTools);
   document.getElementById('statusFilter').addEventListener('change', renderTools);
   document.getElementById('thumbnailDisplay').addEventListener('change', (event) => {
-    localStorage.setItem('thumbnailDisplay', event.target.value);
+    localStorage.setItem('thumbnailDisplay', event.target.checked ? 'show' : 'hide');
     renderTools();
   });
   document.getElementById('favoriteFilter').addEventListener('change', renderTools);
@@ -308,14 +317,14 @@ function attachListeners() {
     document.getElementById('searchInput').value = '';
     document.getElementById('categoryFilter').value = '';
     document.getElementById('statusFilter').value = '';
-    document.getElementById('favoriteFilter').value = 'all';
+    document.getElementById('favoriteFilter').checked = false;
     renderTools();
   });
 }
 
 const savedThumbnailDisplay = localStorage.getItem('thumbnailDisplay');
 if (savedThumbnailDisplay === 'show' || savedThumbnailDisplay === 'hide') {
-  document.getElementById('thumbnailDisplay').value = savedThumbnailDisplay;
+  document.getElementById('thumbnailDisplay').checked = savedThumbnailDisplay === 'show';
 }
 
 loadTools();
