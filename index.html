@@ -102,6 +102,8 @@ function normalizeCategory(tool) {
   const name = tool.name;
   const oldCategory = tool.category;
 
+  if (CATEGORY_ORDER.includes(oldCategory)) return oldCategory;
+
   const exactOverrides = {
     'note-saver': '保存・管理する',
     'noteしおり': '保存・管理する',
