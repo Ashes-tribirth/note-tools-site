@@ -1,0 +1,100 @@
+name: Migrate categories once
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  migrate:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Normalize CSV categories
+        shell: python
+        run: |
+          import csv
+          from pathlib import Path
+
+          category_map = {
+              'コメント・通知管理': '交流・通知を管理する',
+              '記事読む・保存': '記事を探す・読む',
+              '表示カスタマイズ': '表示・操作環境を変える',
+              '活動・数字記録': '活動を分析・記録する',
+              'CSV取得': 'データを取得・出力する',
+              'バックアップ・再利用': '保存・管理する',
+              '記事検索・整理': '記事を探す・読む',
+              'タイトル・タグ生成': '記事を書く・編集する',
+              '執筆支援': '記事を書く・編集する',
+              '見出し画像作成': '画像・デザインを作る',
+              '表・グラフ作成': '画像・デザインを作る',
+              '縦書き画像作成': '画像・デザインを作る',
+              'GIF変換': '画像・デザインを作る',
+              '記事移行': 'データを取得・出力する',
+              'SNS投稿支援': '記事を書く・編集する',
+          }
+          overrides = {
+              'note-saver': '保存・管理する',
+              'noteしおり': '保存・管理する',
+              'Note Reader Enhancer': '表示・操作環境を変える',
+              'noteの記事で目次を固定表示するChrome拡張機能': '表示・操作環境を変える',
+              'NoteBubble': '記事を書く・編集する',
+              'WXRリーダー': '保存・管理する',
+              'Note Article Master': '保存・管理する',
+              'note log／おすすめページKIT': '保存・管理する',
+              'Mini-Link': '画像・デザインを作る',
+              'リッチテキスト画像クリッパー': '画像・デザインを作る',
+              'SNS投稿作成ツール': '記事を書く・編集する',
+          }
+          allowed = {
+              '記事を探す・読む', '記事を書く・編集する', '画像・デザインを作る',
+              '保存・管理する', '交流・通知を管理する', '活動を分析・記録する',
+              'データを取得・出力する', '表示・操作環境を変える'
+          }
+
+          csv_path = Path('note tools.csv')
+          with csv_path.open('r', encoding='utf-8-sig', newline='') as f:
+              rows = list(csv.reader(f))
+
+          if not rows or len(rows[0]) != 8:
+              raise SystemExit('CSV header or column count is invalid')
+
+          for row in rows[1:]:
+              if len(row) != 8:
+                  raise SystemExit(f'Invalid column count: {row}')
+              row[2] = overrides.get(row[0], category_map.get(row[2], row[2]))
+              if row[2] not in allowed:
+                  raise SystemExit(f'Unknown category: {row[0]} / {row[2]}')
+
+          with csv_path.open('w', encoding='utf-8-sig', newline='') as f:
+              csv.writer(f, lineterminator='\n').writerows(rows)
+
+          index_path = Path('index.html')
+          index = index_path.read_text(encoding='utf-8')
+          marker = "  const oldCategory = tool.category;\n"
+          compatibility = "\n  if (CATEGORY_ORDER.includes(oldCategory)) return oldCategory;\n"
+          if compatibility.strip() not in index:
+              index = index.replace(marker, marker + compatibility, 1)
+              index_path.write_text(index, encoding='utf-8')
+
+          Path('.github/workflows/migrate-categories.yml').unlink()
+      - name: Validate and commit
+        run: |
+          python - <<'PY'
+          import csv
+          from collections import Counter
+          with open('note tools.csv', encoding='utf-8-sig', newline='') as f:
+              rows = list(csv.reader(f))
+          assert len(rows) == 78, len(rows)
+          assert all(len(row) == 8 for row in rows)
+          print(Counter(row[2] for row in rows[1:]))
+          PY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "note tools.csv" index.html .github/workflows/migrate-categories.yml
+          git commit -m "CSVカテゴリを8分類へ統一"
+          git push
