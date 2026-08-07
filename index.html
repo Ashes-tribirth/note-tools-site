@@ -4,371 +4,84 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>noteツール一覧</title>
+<link rel="icon" type="image/png" href="./sky-compass.png">
+<link rel="apple-touch-icon" href="./sky-compass.png">
 <link rel="stylesheet" href="./style.css">
 <link rel="stylesheet" href="./controls.css">
+<script src="./app.js" defer></script>
 </head>
 <body>
-
-  <div class="header">
+  <header class="header">
     <p class="eyebrow">note tools directory</p>
     <h1>noteツール一覧</h1>
     <p>noteクリエイターが作った便利ツールを、探しやすく整理しました。</p>
-  </div>
+    <p id="pageUpdatedAt" class="page-updated">最終更新 読み込み中</p>
+  </header>
 
-  <div class="controls">
-    <div class="search-wrap">
-      <input type="text" id="searchInput" placeholder="ツール名・作者・キーワードで検索">
-    </div>
-    <div class="filter-row">
-      <div class="select-filters">
-        <select id="categoryFilter"><option value="">すべてのカテゴリ</option></select>
-        <select id="statusFilter"><option value="">すべてのステータス</option></select>
+  <main>
+    <section class="controls" aria-label="ツール検索と絞り込み">
+      <div class="search-wrap">
+        <input type="text" id="searchInput" placeholder="ツール名・作者・キーワードで検索">
       </div>
-      <div class="toggle-filters" aria-label="表示設定">
-        <label class="toggle-control toggle-thumbnail">
-          <input type="checkbox" id="thumbnailDisplay" checked>
-          <span class="toggle-track" aria-hidden="true"><span class="toggle-knob"></span></span>
-          <span class="toggle-text">サムネ表示</span>
-        </label>
-        <label class="toggle-control toggle-favorite">
-          <input type="checkbox" id="favoriteFilter">
-          <span class="toggle-track" aria-hidden="true"><span class="toggle-knob"></span></span>
-          <span class="toggle-text">お気に入りのみ</span>
-        </label>
-      </div>
-      <div class="filter-meta">
-        <button id="resetBtn">条件をクリア</button>
-        <span id="resultCount"></span>
-      </div>
-    </div>
-  </div>
-
-  <div class="grid-wrap">
-    <div id="toolsGrid">
-      <div class="loading-state">読み込み中...</div>
-    </div>
-  </div>
-
-  <div class="policy-wrap">
-    <details class="policy">
-      <summary>掲載対象・免責事項</summary>
-      <div class="policy-content">
-        <h2>掲載対象について</h2>
-        <p>noteでの「書く・読む・分析する・管理する・交流する・販売する」といった活動を、具体的に助ける目的で作られたツールを掲載しています。</p>
-        <p>Webサービス、アプリ、ブラウザ拡張機能、GPT、スクリプト、テンプレートなど、形は問いません。作者本人の記事などから、機能・利用方法・公開状況を確認できるものを対象とします。</p>
-        <p>次のものは原則として掲載しません。</p>
-        <ul>
-          <li>note向けの機能や設計がない一般的なサービス</li>
-          <li>ノウハウ記事や作り方の解説</li>
-          <li>コピペして使うプロンプト単体</li>
-          <li>機能や公開予定が確認できない構想段階のもの</li>
-          <li>作者や一次情報を確認できないもの</li>
-          <li>不正アクセス、過度な自動取得、スパム、権利侵害など、noteの利用規約や関連ルールに反するおそれが高いツール</li>
-        </ul>
-        <p>一般的なサービスを利用していても、note向けの独立した仕組みとして公開されているツールやGPTは掲載対象とします。</p>
-
-        <h2>免責事項</h2>
-        <p>各カードの見出し画像は、掲載先の記事を識別しやすくする目的で表示しています。画像の著作権は各権利者に帰属します。記事側で画像が変更・削除された場合、当サイトの表示にも影響することがあります。</p>
-        <p>掲載時点で確認できる情報をもとに紹介していますが、各ツールの動作、安全性、正確性、継続提供、noteの利用規約への適合性を当サイトが保証するものではありません。</p>
-        <p>ツールの仕様や利用条件、noteの利用規約は変更される場合があります。利用する際は、作者が示す最新情報とnoteの利用規約をご自身で確認してください。ツールの利用によって生じた損害やトラブルについて、当サイトは責任を負いません。</p>
-
-        <h2>掲載内容の修正・削除について</h2>
-        <p>本サイトに掲載されているご自身の記事・ツール・サムネイルについて、掲載内容の修正または削除をご希望の場合は、<a href="https://note.com/flux_water" target="_blank" rel="noopener noreferrer">運営者・凌霄花のnoteページ</a>からご連絡ください。</p>
-        <p>ご本人からのご連絡であることを確認したうえで、速やかに対応します。掲載の削除、サムネイルのみの非表示、説明文や公開状況の修正など、ご希望の内容をお知らせください。削除理由をご説明いただく必要はありません。</p>
-      </div>
-    </details>
-  </div>
-
-  <div class="footer">
-    <p>noteクリエイターが作成したツールをまとめています</p>
-    <p>最終更新: 2026-08-07</p>
-  </div>
-
-<script>
-let allTools = [];
-
-const CATEGORY_ORDER = [
-  '記事を探す・読む',
-  '記事を書く・編集する',
-  '画像・デザインを作る',
-  '保存・管理する',
-  '交流・通知を管理する',
-  '活動を分析・記録する',
-  'データを取得・出力する',
-  '表示・操作環境を変える'
-];
-
-function normalizeCategory(tool) {
-  const name = tool.name;
-  const oldCategory = tool.category;
-
-  if (CATEGORY_ORDER.includes(oldCategory)) return oldCategory;
-
-  const exactOverrides = {
-    'note-saver': '保存・管理する',
-    'noteしおり': '保存・管理する',
-    'Note Reader Enhancer': '表示・操作環境を変える',
-    'noteの記事で目次を固定表示するChrome拡張機能': '表示・操作環境を変える',
-    'NoteBubble': '記事を書く・編集する',
-    'WXRリーダー': '保存・管理する',
-    'Note Article Master': '保存・管理する',
-    'note log／おすすめページKIT': '保存・管理する',
-    'Mini-Link': '画像・デザインを作る',
-    'リッチテキスト画像クリッパー': '画像・デザインを作る',
-    'SNS投稿作成ツール': '記事を書く・編集する'
-  };
-
-  if (exactOverrides[name]) return exactOverrides[name];
-
-  const categoryMap = {
-    'コメント・通知管理': '交流・通知を管理する',
-    '記事読む・保存': '記事を探す・読む',
-    '表示カスタマイズ': '表示・操作環境を変える',
-    '活動・数字記録': '活動を分析・記録する',
-    'CSV取得': 'データを取得・出力する',
-    'バックアップ・再利用': '保存・管理する',
-    '記事検索・整理': '記事を探す・読む',
-    'タイトル・タグ生成': '記事を書く・編集する',
-    '執筆支援': '記事を書く・編集する',
-    '見出し画像作成': '画像・デザインを作る',
-    '表・グラフ作成': '画像・デザインを作る',
-    '縦書き画像作成': '画像・デザインを作る',
-    'GIF変換': '画像・デザインを作る',
-    '記事移行': 'データを取得・出力する',
-    'SNS投稿支援': '記事を書く・編集する'
-  };
-
-  return categoryMap[oldCategory] || '保存・管理する';
-}
-
-function statusLabel(status) {
-  if (status.includes('無料')) return { text: '無料', color: '#3A8A5E' };
-  if (status.includes('有料')) return { text: '有料', color: '#B8722E' };
-  if (status.includes('開発中')) return { text: '開発中', color: '#8B5FBF' };
-  if (status.includes('メンバーシップ')) return { text: '限定', color: '#3B6FA6' };
-  return { text: status, color: '#888' };
-}
-
-function parseCSV(text) {
-  const rows = [];
-  let row = [];
-  let field = '';
-  let inQuotes = false;
-
-  for (let i = 0; i < text.length; i++) {
-    const char = text[i];
-    const next = text[i + 1];
-
-    if (inQuotes) {
-      if (char === '"' && next === '"') { field += '"'; i++; }
-      else if (char === '"') { inQuotes = false; }
-      else { field += char; }
-    } else {
-      if (char === '"') { inQuotes = true; }
-      else if (char === ',') { row.push(field); field = ''; }
-      else if (char === '\n') { row.push(field); rows.push(row); row = []; field = ''; }
-      else if (char === '\r') { }
-      else { field += char; }
-    }
-  }
-  if (field.length > 0 || row.length > 0) { row.push(field); rows.push(row); }
-  return rows;
-}
-
-async function loadTools() {
-  try {
-    const csvPath = './note%20tools.csv';
-    const response = await fetch(csvPath);
-    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-
-    const csvText = await response.text();
-    const rows = parseCSV(csvText).filter(r => r.some(cell => cell.trim() !== ''));
-
-    allTools = rows.slice(1).map(r => {
-      const tool = {
-        name: (r[0] || '').trim(),
-        author: (r[1] || '').trim(),
-        category: (r[2] || '').trim(),
-        description: (r[3] || '').trim(),
-        status: (r[4] || '').trim(),
-        link: (r[5] || '').trim(),
-        updatedAt: (r[6] || '').trim(),
-        thumbnail: (r[7] || '').trim()
-      };
-      tool.originalCategory = tool.category;
-      tool.category = normalizeCategory(tool);
-      return tool;
-    });
-
-    const categorySelect = document.getElementById('categoryFilter');
-    CATEGORY_ORDER.forEach(category => {
-      const count = allTools.filter(t => t.category === category).length;
-      if (!count) return;
-      const option = document.createElement('option');
-      option.value = category;
-      option.textContent = `${category} (${count})`;
-      categorySelect.appendChild(option);
-    });
-
-    const statuses = [...new Set(allTools.map(t => t.status))].filter(Boolean).sort();
-    const statusSelect = document.getElementById('statusFilter');
-    statuses.forEach(status => {
-      const option = document.createElement('option');
-      option.value = status;
-      option.textContent = status;
-      statusSelect.appendChild(option);
-    });
-
-    renderTools();
-    attachListeners();
-  } catch (error) {
-    console.error('Error loading tools:', error);
-    document.getElementById('toolsGrid').innerHTML =
-      `<div class="empty-state">データの読み込みに失敗しました。<br>エラー: ${escapeHTML(error.message)}</div>`;
-  }
-}
-
-function escapeHTML(str) {
-  const div = document.createElement('div');
-  div.textContent = str;
-  return div.innerHTML;
-}
-
-function allowedHttpsUrl(rawUrl, allowedHostname) {
-  try {
-    const url = new URL(rawUrl);
-    const isAllowed = url.protocol === 'https:' &&
-                      url.hostname === allowedHostname &&
-                      url.port === '' &&
-                      url.username === '' &&
-                      url.password === '';
-    return isAllowed ? url.href : '';
-  } catch {
-    return '';
-  }
-}
-
-function safeNoteUrl(rawUrl) { return allowedHttpsUrl(rawUrl, 'note.com'); }
-function safeThumbnailUrl(rawUrl) { return allowedHttpsUrl(rawUrl, 'assets.st-note.com'); }
-
-function renderTools() {
-  const searchTerm = document.getElementById('searchInput').value.toLowerCase();
-  const category = document.getElementById('categoryFilter').value;
-  const status = document.getElementById('statusFilter').value;
-  const showThumbnails = document.getElementById('thumbnailDisplay').checked;
-  const favoritesOnly = document.getElementById('favoriteFilter').checked;
-  const favorites = getFavorites();
-
-  const filtered = allTools.filter(tool => {
-    const matchSearch = tool.name.toLowerCase().includes(searchTerm) ||
-                       tool.author.toLowerCase().includes(searchTerm) ||
-                       tool.description.toLowerCase().includes(searchTerm) ||
-                       tool.category.toLowerCase().includes(searchTerm);
-    const matchCategory = !category || tool.category === category;
-    const matchStatus = !status || tool.status === status;
-    const matchFavorite = !favoritesOnly || favorites.has(toolKey(tool));
-    return matchSearch && matchCategory && matchStatus && matchFavorite;
-  });
-
-  document.getElementById('resultCount').textContent = `${filtered.length} 件`;
-  document.getElementById('resetBtn').style.display = (searchTerm || category || status || favoritesOnly) ? 'inline-block' : 'none';
-
-  const grid = document.getElementById('toolsGrid');
-  if (filtered.length === 0) {
-    grid.innerHTML = '<div class="empty-state">該当するツールが見つかりません</div>';
-    return;
-  }
-
-  grid.innerHTML = filtered.map((tool) => {
-    const st = statusLabel(tool.status);
-    const key = toolKey(tool);
-    const isFavorite = favorites.has(key);
-    const noteUrl = safeNoteUrl(tool.link);
-    const thumbnailUrl = safeThumbnailUrl(tool.thumbnail);
-    const titleStart = noteUrl
-      ? `<a class="card-title-link" href="${escapeHTML(noteUrl)}" target="_blank" rel="noopener noreferrer">`
-      : '<div class="card-title-link">';
-    const titleEnd = noteUrl ? '</a>' : '</div>';
-    const bodyStart = noteUrl
-      ? `<a class="card-body-link" href="${escapeHTML(noteUrl)}" target="_blank" rel="noopener noreferrer">`
-      : '<div class="card-body-link">';
-    const bodyEnd = noteUrl ? '</a>' : '</div>';
-
-    return `
-    <article class="card">
-      ${showThumbnails && thumbnailUrl
-        ? noteUrl
-          ? `<a class="card-thumbnail-link" href="${escapeHTML(noteUrl)}" target="_blank" rel="noopener noreferrer"><img class="card-thumbnail" src="${escapeHTML(thumbnailUrl)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentElement.remove()"></a>`
-          : `<img class="card-thumbnail" src="${escapeHTML(thumbnailUrl)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">`
-        : ''}
-      <div class="card-inner">
-        <div class="card-top">
-          <div class="card-title-wrap">
-            <button class="favorite-btn${isFavorite ? ' is-favorite' : ''}" type="button" data-key="${escapeHTML(encodeURIComponent(key))}" aria-label="${isFavorite ? 'お気に入りから削除' : 'お気に入りに追加'}" aria-pressed="${isFavorite}">${isFavorite ? '♥' : '♡'}</button>
-            ${titleStart}<span class="card-title">${escapeHTML(tool.name)}</span>${titleEnd}
-          </div>
-          <span class="badge" style="color:${st.color};">${escapeHTML(st.text)}</span>
+      <div class="filter-row">
+        <div class="select-filters">
+          <select id="categoryFilter" aria-label="カテゴリ"><option value="">すべてのカテゴリ</option></select>
+          <select id="priceFilter" aria-label="料金"><option value="">すべての料金</option></select>
         </div>
-        ${bodyStart}
-          <div class="card-author">${escapeHTML(tool.author)}</div>
-          <div class="card-desc">${escapeHTML(tool.description)}</div>
-          <div class="card-category">${escapeHTML(tool.category)}</div>
-        ${bodyEnd}
+        <div class="toggle-filters" aria-label="表示設定">
+          <label class="toggle-control toggle-thumbnail">
+            <input type="checkbox" id="thumbnailDisplay" checked>
+            <span class="toggle-track" aria-hidden="true"><span class="toggle-knob"></span></span>
+            <span class="toggle-text">サムネ表示</span>
+          </label>
+          <label class="toggle-control toggle-favorite">
+            <input type="checkbox" id="favoriteFilter">
+            <span class="toggle-track" aria-hidden="true"><span class="toggle-knob"></span></span>
+            <span class="toggle-text">お気に入りのみ</span>
+          </label>
+        </div>
+        <div class="filter-meta">
+          <button id="resetBtn">条件をクリア</button>
+          <span id="resultCount"></span>
+        </div>
       </div>
-    </article>`;
-  }).join('');
-}
+    </section>
 
-function toolKey(tool) { return `${tool.name}|||${tool.author}`; }
+    <div class="grid-wrap">
+      <div id="toolsGrid"><div class="loading-state">読み込み中...</div></div>
+    </div>
 
-function getFavorites() {
-  try {
-    const saved = JSON.parse(localStorage.getItem('favoriteTools') || '[]');
-    return new Set(Array.isArray(saved) ? saved : []);
-  } catch {
-    return new Set();
-  }
-}
+    <div class="policy-wrap">
+      <details class="policy">
+        <summary>掲載対象・免責事項</summary>
+        <div class="policy-content">
+          <h2>掲載対象について</h2>
+          <p>noteでの「書く・読む・分析する・管理する・交流する・販売する」といった活動を、具体的に助ける目的で作られたツールを掲載しています。</p>
+          <p>Webサービス、アプリ、ブラウザ拡張機能、GPT、スクリプト、テンプレートなど、形は問いません。作者本人の記事などから、機能・利用方法・公開状況を確認できるものを対象とします。</p>
+          <p>次のものは原則として掲載しません。</p>
+          <ul>
+            <li>note向けの機能や設計がない一般的なサービス</li>
+            <li>ノウハウ記事や作り方の解説</li>
+            <li>コピペして使うプロンプト単体</li>
+            <li>機能や公開予定が確認できない構想段階のもの</li>
+            <li>作者や一次情報を確認できないもの</li>
+            <li>不正アクセス、過度な自動取得、スパム、権利侵害など、noteの利用規約や関連ルールに反するおそれが高いツール</li>
+          </ul>
+          <p>一般的なサービスを利用していても、note向けの独立した仕組みとして公開されているツールやGPTは掲載対象とします。</p>
 
-function toggleFavorite(key) {
-  const favorites = getFavorites();
-  favorites.has(key) ? favorites.delete(key) : favorites.add(key);
-  localStorage.setItem('favoriteTools', JSON.stringify([...favorites]));
-  renderTools();
-}
+          <h2>免責事項</h2>
+          <p>各カードの見出し画像は、掲載先の記事を識別しやすくする目的で表示しています。画像の著作権は各権利者に帰属します。記事側で画像が変更・削除された場合、当サイトの表示にも影響することがあります。</p>
+          <p>掲載時点で確認できる情報をもとに紹介していますが、各ツールの動作、安全性、正確性、継続提供、noteの利用規約への適合性を当サイトが保証するものではありません。</p>
+          <p>ツールの仕様や利用条件、noteの利用規約は変更される場合があります。利用する際は、作者が示す最新情報とnoteの利用規約をご自身で確認してください。ツールの利用によって生じた損害やトラブルについて、当サイトは責任を負いません。</p>
 
-function attachListeners() {
-  document.getElementById('searchInput').addEventListener('input', renderTools);
-  document.getElementById('categoryFilter').addEventListener('change', renderTools);
-  document.getElementById('statusFilter').addEventListener('change', renderTools);
-  document.getElementById('thumbnailDisplay').addEventListener('change', (event) => {
-    localStorage.setItem('thumbnailDisplay', event.target.checked ? 'show' : 'hide');
-    renderTools();
-  });
-  document.getElementById('favoriteFilter').addEventListener('change', renderTools);
-  document.getElementById('toolsGrid').addEventListener('click', (event) => {
-    const button = event.target.closest('.favorite-btn');
-    if (button) {
-      event.preventDefault();
-      event.stopPropagation();
-      toggleFavorite(decodeURIComponent(button.dataset.key));
-    }
-  });
-  document.getElementById('resetBtn').addEventListener('click', () => {
-    document.getElementById('searchInput').value = '';
-    document.getElementById('categoryFilter').value = '';
-    document.getElementById('statusFilter').value = '';
-    document.getElementById('favoriteFilter').checked = false;
-    renderTools();
-  });
-}
+          <h2>掲載内容の修正・削除について</h2>
+          <p>本サイトに掲載されているご自身の記事・ツール・サムネイルについて、掲載内容の修正または削除をご希望の場合は、<a href="https://note.com/flux_water" target="_blank" rel="noopener noreferrer">運営者・凌霄花のnoteページ</a>からご連絡ください。</p>
+          <p>ご本人からのご連絡であることを確認したうえで、速やかに対応します。掲載の削除、サムネイルのみの非表示、説明文や公開状況の修正など、ご希望の内容をお知らせください。削除理由をご説明いただく必要はありません。</p>
+        </div>
+      </details>
+    </div>
+  </main>
 
-const savedThumbnailDisplay = localStorage.getItem('thumbnailDisplay');
-if (savedThumbnailDisplay === 'show' || savedThumbnailDisplay === 'hide') {
-  document.getElementById('thumbnailDisplay').checked = savedThumbnailDisplay === 'show';
-}
-
-loadTools();
-</script>
+  <footer class="footer"><p>noteクリエイターが作成したツールをまとめています</p></footer>
 </body>
 </html>
