@@ -75,7 +75,8 @@ const elements = {
   reset: document.getElementById('resetBtn'),
   count: document.getElementById('resultCount'),
   grid: document.getElementById('toolsGrid'),
-  updatedAt: document.getElementById('pageUpdatedAt')
+  updatedAt: document.getElementById('pageUpdatedAt'),
+  updateLog: document.getElementById('updateLogList')
 };
 
 let allTools = [];
@@ -208,6 +209,40 @@ function escapeHTML(value) {
   const div = document.createElement('div');
   div.textContent = value;
   return div.innerHTML;
+}
+
+function formatShortDate(date) {
+  const [year, month, day] = date.split('-');
+  if (!year || !month || !day) return date;
+  return `${year.slice(-2)}/${month}/${day}`;
+}
+
+function renderUpdateLog(updates) {
+  if (!elements.updateLog) return;
+
+  if (!Array.isArray(updates) || updates.length === 0) {
+    elements.updateLog.innerHTML = '<p>更新履歴はまだありません</p>';
+    return;
+  }
+
+  elements.updateLog.innerHTML = updates.map(update => {
+    const date = escapeHTML(update.date || '');
+    const summary = escapeHTML(update.summary || '');
+    return `<p><time datetime="${date}">${formatShortDate(date)}</time><span>${summary}</span></p>`;
+  }).join('');
+}
+
+async function loadUpdateLog() {
+  if (!elements.updateLog) return;
+
+  try {
+    const response = await fetch('./updates.json');
+    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+    renderUpdateLog(await response.json());
+  } catch (error) {
+    console.error(error);
+    elements.updateLog.innerHTML = '<p>更新履歴の読み込みに失敗しました</p>';
+  }
 }
 
 function allowedHttpsUrl(rawUrl, host) {
@@ -368,4 +403,5 @@ async function loadTools() {
 }
 
 restoreDisplaySettings();
+loadUpdateLog();
 loadTools();
