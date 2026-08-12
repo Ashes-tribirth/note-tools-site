@@ -78,6 +78,45 @@ body > * {
   padding: 2.5rem 2rem;
 }
 
+.update-log {
+  margin-bottom: 1.1rem;
+  padding: 0.85rem 0.95rem;
+  border: 1px solid #E9E6F1;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.78);
+  color: #6F6878;
+}
+
+.update-log h2 {
+  margin-bottom: 0.35rem;
+  color: #5F5868;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.update-log-list {
+  max-height: 5.25rem;
+  overflow-y: auto;
+  padding-right: 0.35rem;
+}
+
+.update-log-list p {
+  display: flex;
+  gap: 0.8rem;
+  align-items: baseline;
+  min-height: 1.75rem;
+  border-top: 1px solid #F1EEF6;
+  font-size: 0.8rem;
+}
+
+.update-log-list p:first-child { border-top: 0; }
+
+.update-log-list time {
+  flex: 0 0 4.5rem;
+  color: #8D8498;
+  font-weight: 700;
+}
+
 .search-wrap { margin-bottom: 1.5rem; }
 
 #searchInput {

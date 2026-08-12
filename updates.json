@@ -1,0 +1,26 @@
+[
+  {
+    "date": "2026-08-12",
+    "summary": "追加1件　更新3件　機能追加：更新履歴",
+    "source": "ローラー指示スレッド",
+    "details": "Note Commanderを追加。NoteGrow、ポン出しビルダー＋、SAMUNE PRESSを更新。更新履歴欄を追加。"
+  },
+  {
+    "date": "2026-08-09",
+    "summary": "追加3件　更新2件",
+    "source": "ローラー指示スレッド",
+    "details": "Daily Driver、note Cube Blocks、note Creator Summaryを追加。noteReader、おはヨミ nextを更新。"
+  },
+  {
+    "date": "2026-08-07",
+    "summary": "機能追加：サムネ表示切替・お気に入り・設定保存",
+    "source": "疑問解答スレッド・ローラー指示スレッド",
+    "details": "掲載数を64件から77件へ更新。既存掲載情報も確認できた範囲で更新。サムネ表示切替、お気に入り登録・絞り込み、設定保存を追加。"
+  },
+  {
+    "date": "2026-08-05",
+    "summary": "サイト公開",
+    "source": "疑問解答スレッド・GitHub Pages",
+    "details": "note Tools CompassをGitHub Pagesで公開。"
+  }
+]
