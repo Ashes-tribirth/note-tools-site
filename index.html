@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' https://assets.st-note.com; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://static.cloudflareinsights.com; style-src 'self'; img-src 'self' https://assets.st-note.com; connect-src 'self' https://cloudflareinsights.com; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <title>note Tools Compass</title>
 <meta name="description" content="noteクリエイターが作った便利ツールを、検索・絞り込みで探しやすく整理したサイトです。">
@@ -102,5 +102,9 @@
   </main>
 
   <footer class="footer"><p>noteクリエイターが作成したツールをまとめています</p></footer>
+
+  <!-- Cloudflare Web Analytics -->
+  <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"5397c00c48ac4b6b983cba4af36a3416"}'></script>
+  <!-- End Cloudflare Web Analytics -->
 </body>
 </html>
