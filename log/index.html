@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src https://sora-note-log.ashestribirth.chatgpt.site; style-src 'self'; script-src 'self'; img-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>そら版 note log</title>
+<meta name="description" content="そらのnote活動を毎朝記録する公開ダッシュボード">
+<link rel="stylesheet" href="./style.css">
+<script src="./app.js" defer></script>
+</head>
+<body>
+<main>
+<header><a class="brand" href="./"><b>✦</b><span><strong>そら版 note log</strong><small>note activity archive</small></span></a><div><span id="status" class="status">● 接続確認中</span><button id="theme" aria-label="配色を切り替える">☾</button></div></header>
+<section class="hero"><div><p class="eyebrow">2026.08.13 START</p><h1>数字の向こうに、<em>次の一手</em>を見つける。</h1><p>そらのnote活動を毎日記録。PV・スキ・コメントの動きを、記事づくりに使える形でまとめます。</p></div><aside><span>LAST RECORD</span><strong id="recordDate">--.--</strong><small id="recordTime">--:-- JST</small></aside></section>
+<section id="stats" class="stats"></section>
+<section class="follow"><div><span>CONNECTION TREND</span><h2>つながりの推移</h2><small>毎朝自動記録</small></div><div><span>FOLLOWING</span><strong id="following">—</strong><small>フォロー中</small></div><div class="featured"><span>FOLLOWERS</span><strong id="followers">—</strong><small>フォロワー</small></div><div><span>前日から</span><strong id="followDiff">—</strong><small>フォロワー</small></div></section>
+<section class="grid">
+<article class="panel trend"><div class="title"><div><span>DAILY TREND</span><h2>活動の推移</h2></div><small id="days">記録 —日目</small></div><div id="trendBars" class="bars"></div><p id="trendNote">データを読み込んでいます</p></article>
+<article class="panel ranking"><div class="title"><div><span>ARTICLE RANKING</span><h2>記事ランキング</h2></div><div class="tabs"><button data-metric="pv" class="active">PV</button><button data-metric="likes">スキ</button><button data-metric="comments">コメント</button></div></div><input id="search" placeholder="記事名を検索" aria-label="記事名を検索"><div id="ranking"></div></article>
+<article class="panel mini"><div class="title"><div><span>HIDDEN GEM</span><h2>埋もれた良記事</h2></div></div><h3 id="gemTitle">—</h3><p id="gemStats">—</p></article>
+<article class="panel mini"><div class="title"><div><span>CONTENT MIX</span><h2>記事の構成</h2></div></div><div id="donut" class="donut"><span id="mixPercent">—</span></div><p id="mixText">—</p></article>
+</section>
+<footer><b>そら版 note log</b><span>毎朝 6:20ごろ自動更新予定</span><small>Data since 2026.08.13</small></footer>
+</main>
+</body>
+</html>
