@@ -20,37 +20,6 @@ const PRICE_ORDER = [
   '価格不明'
 ];
 
-const CATEGORY_BY_NAME = {
-  'note-saver': '保存・管理する',
-  'noteしおり': '保存・管理する',
-  'Note Reader Enhancer': '表示・操作環境を変える',
-  'noteの記事で目次を固定表示するChrome拡張機能': '表示・操作環境を変える',
-  'NoteBubble': '記事を書く・編集する',
-  'WXRリーダー': '保存・管理する',
-  'Note Article Master': '保存・管理する',
-  'note log／おすすめページKIT': '保存・管理する',
-  'Mini-Link': '画像・デザインを作る',
-  'リッチテキスト画像クリッパー': '画像・デザインを作る',
-  'SNS投稿作成ツール': '記事を書く・編集する'
-};
-
-const LEGACY_CATEGORY_MAP = {
-  'コメント・通知管理': '交流・通知を管理する',
-  '記事読む・保存': '記事を探す・読む',
-  '表示カスタマイズ': '表示・操作環境を変える',
-  '活動・数字記録': '活動を分析・記録する',
-  'CSV取得': 'データを取得・出力する',
-  'バックアップ・再利用': '保存・管理する',
-  '記事検索・整理': '記事を探す・読む',
-  'タイトル・タグ生成': '記事を書く・編集する',
-  '執筆支援': '記事を書く・編集する',
-  '見出し画像作成': '画像・デザインを作る',
-  '表・グラフ作成': '画像・デザインを作る',
-  '縦書き画像作成': '画像・デザインを作る',
-  'GIF変換': '画像・デザインを作る',
-  '記事移行': 'データを取得・出力する',
-  'SNS投稿支援': '記事を書く・編集する'
-};
 
 const PRICE_BADGES = {
   '無料': ['無料', 'free'],
@@ -82,8 +51,7 @@ const elements = {
 let allTools = [];
 
 function normalizeCategory(tool) {
-  if (CATEGORY_ORDER.includes(tool.category)) return tool.category;
-  return CATEGORY_BY_NAME[tool.name] || LEGACY_CATEGORY_MAP[tool.category] || '保存・管理する';
+  return CATEGORY_ORDER.includes(tool.category) ? tool.category : '保存・管理する';
 }
 
 function deriveStatus(rawStatus = '') {
