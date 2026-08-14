@@ -316,11 +316,8 @@ select:focus {
 }
 
 .card {
-  position: relative;
-  display: block;
   overflow: hidden;
   background: white;
-  text-decoration: none;
 }
 
 .card-thumbnail-link,

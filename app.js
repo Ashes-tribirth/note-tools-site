@@ -20,7 +20,6 @@ const PRICE_ORDER = [
   '価格不明'
 ];
 
-
 const PRICE_BADGES = {
   '無料': ['無料', 'free'],
   '条件付き無料': ['一部無料', 'conditional'],
