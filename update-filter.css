@@ -1,0 +1,32 @@
+.update-log-filter {
+  appearance: none;
+  margin: 0;
+  padding: 0.08rem 0.24rem;
+  border: 0;
+  border-radius: 5px;
+  background: transparent;
+  color: #7667A5;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+  line-height: inherit;
+  text-decoration: underline dotted;
+  text-underline-offset: 0.18em;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.update-log-filter:hover {
+  background: #F3EFF9;
+  color: #5F4F96;
+}
+
+.update-log-filter:focus-visible {
+  outline: 2px solid #A69BD9;
+  outline-offset: 2px;
+}
+
+.update-log-filter.is-active {
+  background: #EDE7F7;
+  color: #59488D;
+  text-decoration: none;
+}

@@ -34,6 +34,11 @@ const PRICE_BADGES = {
 const FAVORITES_KEY = 'favoriteTools';
 const THUMBNAIL_KEY = 'thumbnailDisplay';
 
+const updateFilterStyles = document.createElement('link');
+updateFilterStyles.rel = 'stylesheet';
+updateFilterStyles.href = './update-filter.css';
+document.head.append(updateFilterStyles);
+
 const elements = {
   search: document.getElementById('searchInput'),
   category: document.getElementById('categoryFilter'),
@@ -48,6 +53,8 @@ const elements = {
 };
 
 let allTools = [];
+let updateLogEntries = [];
+let activeChangeFilter = null;
 
 function normalizeCategory(tool) {
   return CATEGORY_ORDER.includes(tool.category) ? tool.category : '保存・管理する';
@@ -184,6 +191,29 @@ function formatShortDate(date) {
   return `${year.slice(-2)}/${month}/${day}`;
 }
 
+function changeTypeFromSummaryPart(part) {
+  if (/^追加\d+件$/.test(part)) return 'added';
+  if (/^更新\d+件$/.test(part)) return 'updated';
+  return '';
+}
+
+function renderUpdateSummary(update) {
+  const summary = update.summary || '';
+  const parts = summary.split(/(追加\d+件|更新\d+件)/g).filter(Boolean);
+
+  return parts.map(part => {
+    const type = changeTypeFromSummaryPart(part);
+    const targets = type && Array.isArray(update.changes?.[type]) ? update.changes[type] : [];
+
+    if (!type || targets.length === 0) return escapeHTML(part);
+
+    const isActive = activeChangeFilter?.date === update.date && activeChangeFilter?.type === type;
+    const label = type === 'added' ? '追加' : '更新';
+
+    return `<button class="update-log-filter${isActive ? ' is-active' : ''}" type="button" data-update-date="${escapeHTML(update.date || '')}" data-change-type="${type}" aria-pressed="${isActive}" title="${formatShortDate(update.date || '')}に${label}された${targets.length}件だけ表示">${escapeHTML(part)}</button>`;
+  }).join('');
+}
+
 function renderUpdateLog(updates) {
   if (!elements.updateLog) return;
 
@@ -194,8 +224,7 @@ function renderUpdateLog(updates) {
 
   elements.updateLog.innerHTML = updates.map(update => {
     const date = escapeHTML(update.date || '');
-    const summary = escapeHTML(update.summary || '');
-    return `<p><time datetime="${date}">${formatShortDate(date)}</time><span>${summary}</span></p>`;
+    return `<p><time datetime="${date}">${formatShortDate(date)}</time><span>${renderUpdateSummary(update)}</span></p>`;
   }).join('');
 }
 
@@ -205,7 +234,8 @@ async function loadUpdateLog() {
   try {
     const response = await fetch('./updates.json');
     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-    renderUpdateLog(await response.json());
+    updateLogEntries = await response.json();
+    renderUpdateLog(updateLogEntries);
   } catch (error) {
     console.error(error);
     elements.updateLog.innerHTML = '<p>更新履歴の読み込みに失敗しました</p>';
@@ -288,17 +318,24 @@ function renderTools() {
   const showThumbnails = elements.thumbnails.checked;
   const favoritesOnly = elements.favoritesOnly.checked;
   const favorites = getFavorites();
+  const changeTargets = activeChangeFilter ? new Set(activeChangeFilter.names) : null;
 
   const filtered = allTools.filter(tool =>
     [tool.name, tool.author, tool.description, tool.category, tool.rawStatus]
       .some(value => value.toLowerCase().includes(search)) &&
     (!category || tool.category === category) &&
     (!price || tool.priceCategory === price) &&
-    (!favoritesOnly || favorites.has(toolKey(tool)))
+    (!favoritesOnly || favorites.has(toolKey(tool))) &&
+    (!changeTargets || changeTargets.has(tool.name))
   );
 
+  if (activeChangeFilter) {
+    const order = new Map(activeChangeFilter.names.map((name, index) => [name, index]));
+    filtered.sort((a, b) => (order.get(a.name) ?? Number.MAX_SAFE_INTEGER) - (order.get(b.name) ?? Number.MAX_SAFE_INTEGER));
+  }
+
   elements.count.textContent = `${filtered.length} 件`;
-  elements.reset.hidden = !(search || category || price || favoritesOnly);
+  elements.reset.hidden = !(search || category || price || favoritesOnly || activeChangeFilter);
 
   elements.grid.innerHTML = filtered.length
     ? filtered.map(tool => createCard(tool, showThumbnails, favorites)).join('')
@@ -310,6 +347,19 @@ function resetFilters() {
   elements.category.value = '';
   elements.price.value = '';
   elements.favoritesOnly.checked = false;
+  activeChangeFilter = null;
+  renderUpdateLog(updateLogEntries);
+  renderTools();
+}
+
+function toggleUpdateFilter(date, type) {
+  const update = updateLogEntries.find(entry => entry.date === date);
+  const names = Array.isArray(update?.changes?.[type]) ? update.changes[type] : [];
+  if (names.length === 0) return;
+
+  const sameFilter = activeChangeFilter?.date === date && activeChangeFilter?.type === type;
+  activeChangeFilter = sameFilter ? null : { date, type, names };
+  renderUpdateLog(updateLogEntries);
   renderTools();
 }
 
@@ -330,6 +380,12 @@ function attachListeners() {
   elements.thumbnails.addEventListener('change', event => {
     localStorage.setItem(THUMBNAIL_KEY, event.target.checked ? 'show' : 'hide');
     renderTools();
+  });
+
+  elements.updateLog?.addEventListener('click', event => {
+    const button = event.target.closest('.update-log-filter');
+    if (!button) return;
+    toggleUpdateFilter(button.dataset.updateDate, button.dataset.changeType);
   });
 
   elements.grid.addEventListener('click', event => {

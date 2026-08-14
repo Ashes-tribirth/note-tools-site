@@ -1,20 +1,53 @@
 [
   {
     "date": "2026-08-14",
-    "summary": "追加6件",
+    "summary": "追加6件　機能追加：更新履歴から追加・更新対象を絞り込み",
+    "changes": {
+      "added": [
+        "タイトル13型診断",
+        "SEOスコア",
+        "ハッシュタグランキング",
+        "クリエイター分析",
+        "ハッシュタグ TOP 100",
+        "noteダッシュボードAI分析ツール"
+      ],
+      "updated": []
+    },
     "details": [
       "タイトル13型診断、SEOスコア、ハッシュタグランキング、クリエイター分析、ハッシュタグ TOP 100を追加",
-      "noteダッシュボードAI分析ツールを追加"
+      "noteダッシュボードAI分析ツールを追加",
+      "更新履歴の追加・更新件数から対象ツールだけを絞り込める機能を追加"
     ],
     "source": "ローラー指示スレッド"
   },
   {
     "date": "2026-08-12",
-    "summary": "追加1件　更新3件　機能追加：更新履歴"
+    "summary": "追加1件　更新3件　機能追加：更新履歴",
+    "changes": {
+      "added": [
+        "Note Commander"
+      ],
+      "updated": [
+        "NoteGrow",
+        "ポン出しビルダー＋ v5",
+        "SAMUNE PRESS v13"
+      ]
+    }
   },
   {
     "date": "2026-08-09",
-    "summary": "追加3件　更新2件"
+    "summary": "追加3件　更新2件",
+    "changes": {
+      "added": [
+        "Daily Driver",
+        "note Cube Blocks",
+        "note Creator Summary"
+      ],
+      "updated": [
+        "noteReader",
+        "おはヨミ next"
+      ]
+    }
   },
   {
     "date": "2026-08-07",
