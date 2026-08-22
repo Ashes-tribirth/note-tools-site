@@ -1,5 +1,32 @@
 [
   {
+    "date": "2026-08-22",
+    "summary": "追加2件　更新6件",
+    "changes": {
+      "added": [
+        "note記事 下書きドック",
+        "無名S note 冒険クリエイター名鑑"
+      ],
+      "updated": [
+        "note Creator Summary",
+        "NoteGrow",
+        "note / stats",
+        "note log／おすすめページKIT",
+        "ポン出しビルダー＋ v5",
+        "SAMUNE PRESS v13"
+      ]
+    },
+    "details": [
+      "既掲載クリエイター59名の公開プロフィールと直近記事を巡回",
+      "既存掲載元とnote内の横断検索を再確認し、既掲載製作者の見落とし新作1件を追加",
+      "ユーザー指定により、通常は掲載対象外の再利用プロンプトを「無名S note 冒険クリエイター名鑑」に限り掲載",
+      "note Creator Summaryの600件超取得対応と最新案内記事を反映",
+      "NoteGrowとKITAcore各ツールの作者表記を現在のプロフィール名へ更新",
+      "note専用性が弱い汎用タスク管理・BGM・LINEリッチメニュー系は除外"
+    ],
+    "source": "ローラー指示スレッド"
+  },
+  {
     "date": "2026-08-20",
     "summary": "追加6件",
     "changes": {
