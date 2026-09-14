@@ -170,8 +170,10 @@ function populateFilters() {
 }
 
 function updatePageDate() {
-  const latest = allTools
-    .map(tool => tool.updatedAt)
+  const latest = [
+    ...allTools.map(tool => tool.updatedAt),
+    ...updateLogEntries.map(entry => entry.date)
+  ]
     .filter(Boolean)
     .sort()
     .at(-1) || '—';
@@ -236,6 +238,7 @@ async function loadUpdateLog() {
     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
     updateLogEntries = await response.json();
     renderUpdateLog(updateLogEntries);
+    updatePageDate();
   } catch (error) {
     console.error(error);
     elements.updateLog.innerHTML = '<p>更新履歴の読み込みに失敗しました</p>';
