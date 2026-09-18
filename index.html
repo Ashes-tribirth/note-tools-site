@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://static.cloudflareinsights.com; style-src 'self'; img-src 'self' https://assets.st-note.com; connect-src 'self' https://cloudflareinsights.com; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://static.cloudflareinsights.com https://www.googletagmanager.com; style-src 'self'; img-src 'self' https://assets.st-note.com; connect-src 'self' https://cloudflareinsights.com https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <title>note Tools Compass</title>
 <meta name="description" content="noteクリエイターが作った便利ツールを、検索・絞り込みで探しやすく整理したサイトです。">
@@ -27,7 +27,9 @@
 <link rel="icon" type="image/png" href="./favi_sky_Compass_dark.png" media="(prefers-color-scheme: dark)">
 <link rel="apple-touch-icon" href="./sky-compass.png">
 <link rel="stylesheet" href="./style.css">
-<script src="./app.js?v=20260915" defer></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z4E1HBRD0J"></script>
+<script src="./analytics.js?v=20260918" defer></script>
+<script src="./app.js?v=20260918" defer></script>
 </head>
 <body>
   <header class="header">
