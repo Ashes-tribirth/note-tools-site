@@ -373,12 +373,36 @@ function removeBrokenThumbnail(event) {
   (link || image).remove();
 }
 
+function trackCompassEvent(name, params = {}) {
+  window.compassAnalytics?.event(name, params);
+}
+
 function attachListeners() {
-  elements.search.addEventListener('input', renderTools);
-  elements.category.addEventListener('change', renderTools);
-  elements.price.addEventListener('change', renderTools);
-  elements.favoritesOnly.addEventListener('change', renderTools);
-  elements.reset.addEventListener('click', resetFilters);
+  let searchTimer;
+  elements.search.addEventListener('input', () => {
+    renderTools();
+    clearTimeout(searchTimer);
+    searchTimer = setTimeout(() => {
+      const query = elements.search.value.trim();
+      if (query) trackCompassEvent('compass_search', { search_term: query });
+    }, 700);
+  });
+  elements.category.addEventListener('change', () => {
+    renderTools();
+    if (elements.category.value) trackCompassEvent('compass_filter', { filter_type: 'category', filter_value: elements.category.value });
+  });
+  elements.price.addEventListener('change', () => {
+    renderTools();
+    if (elements.price.value) trackCompassEvent('compass_filter', { filter_type: 'price', filter_value: elements.price.value });
+  });
+  elements.favoritesOnly.addEventListener('change', () => {
+    renderTools();
+    trackCompassEvent('compass_filter', { filter_type: 'favorites', filter_value: elements.favoritesOnly.checked ? 'on' : 'off' });
+  });
+  elements.reset.addEventListener('click', () => {
+    trackCompassEvent('compass_filter_reset');
+    resetFilters();
+  });
 
   elements.thumbnails.addEventListener('change', event => {
     localStorage.setItem(THUMBNAIL_KEY, event.target.checked ? 'show' : 'hide');
@@ -388,15 +412,30 @@ function attachListeners() {
   elements.updateLog?.addEventListener('click', event => {
     const button = event.target.closest('.update-log-filter');
     if (!button) return;
+    trackCompassEvent('compass_update_filter', { update_date: button.dataset.updateDate, change_type: button.dataset.changeType });
     toggleUpdateFilter(button.dataset.updateDate, button.dataset.changeType);
   });
 
   elements.grid.addEventListener('click', event => {
     const button = event.target.closest('.favorite-btn');
-    if (!button) return;
-    event.preventDefault();
-    event.stopPropagation();
-    toggleFavorite(decodeURIComponent(button.dataset.key));
+    if (button) {
+      event.preventDefault();
+      event.stopPropagation();
+      trackCompassEvent('compass_favorite', { tool_key: decodeURIComponent(button.dataset.key) });
+      toggleFavorite(decodeURIComponent(button.dataset.key));
+      return;
+    }
+
+    const link = event.target.closest('a[href^="https://note.com/"]');
+    if (!link) return;
+    const card = link.closest('.card');
+    const toolName = card?.querySelector('.card-title')?.textContent?.trim() || '';
+    const author = card?.querySelector('.card-author')?.textContent?.trim() || '';
+    trackCompassEvent('tool_article_click', {
+      tool_name: toolName,
+      author,
+      link_url: link.href
+    });
   });
 
   elements.grid.addEventListener('error', removeBrokenThumbnail, true);
