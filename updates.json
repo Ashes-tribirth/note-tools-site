@@ -1,5 +1,23 @@
 [
   {
+    "date": "2026-09-24",
+    "summary": "追加4件",
+    "changes": {
+      "added": [
+        "「スキ営業」「フォロー営業」通知フィルター",
+        "note スキ消し防止",
+        "note Card Tatami",
+        "note通知バッチ化"
+      ],
+      "updated": []
+    },
+    "details": [
+      "Ayanonymous - feral scholar | TruResearch™のnote向けブラウザ拡張機能4件を追加",
+      "同一URLの既存登録は、複数ツールを1記事で案内する集約記事かどうかを確認して扱う方針で検証"
+    ],
+    "source": "ローラー指示スレッド"
+  },
+  {
     "date": "2026-09-20",
     "summary": "追加4件",
     "changes": {
