@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-24T09:10:42.331296+00:00",
+  "generatedAt": "2026-09-24T13:32:27.765589+00:00",
   "timezone": "Asia/Tokyo",
   "periods": {
     "7": {
@@ -74,24 +74,24 @@
         }
       ],
       "tools": {
-        "status": "unavailable",
-        "reason": "GA4のカスタム定義が未登録です",
-        "rows": []
+        "status": "ok",
+        "rows": [],
+        "withheld": 3
       },
       "keywords": {
-        "status": "unavailable",
-        "reason": "GA4のカスタム定義が未登録です",
-        "rows": []
+        "status": "ok",
+        "rows": [],
+        "withheld": 0
       },
       "zeroSearches": {
-        "status": "unavailable",
-        "reason": "GA4のカスタム定義が未登録です",
-        "rows": []
+        "status": "ok",
+        "rows": [],
+        "withheld": 0
       },
       "filters": {
-        "status": "unavailable",
-        "reason": "GA4のカスタム定義が未登録です",
-        "rows": []
+        "status": "ok",
+        "rows": [],
+        "withheld": 0
       },
       "sources": [
         {
@@ -348,24 +348,24 @@
         }
       ],
       "tools": {
-        "status": "unavailable",
-        "reason": "GA4のカスタム定義が未登録です",
-        "rows": []
+        "status": "ok",
+        "rows": [],
+        "withheld": 3
       },
       "keywords": {
-        "status": "unavailable",
-        "reason": "GA4のカスタム定義が未登録です",
-        "rows": []
+        "status": "ok",
+        "rows": [],
+        "withheld": 0
       },
       "zeroSearches": {
-        "status": "unavailable",
-        "reason": "GA4のカスタム定義が未登録です",
-        "rows": []
+        "status": "ok",
+        "rows": [],
+        "withheld": 0
       },
       "filters": {
-        "status": "unavailable",
-        "reason": "GA4のカスタム定義が未登録です",
-        "rows": []
+        "status": "ok",
+        "rows": [],
+        "withheld": 0
       },
       "sources": [
         {
@@ -419,24 +419,24 @@
         }
       ],
       "tools": {
-        "status": "unavailable",
-        "reason": "GA4のカスタム定義が未登録です",
-        "rows": []
+        "status": "ok",
+        "rows": [],
+        "withheld": 0
       },
       "keywords": {
-        "status": "unavailable",
-        "reason": "GA4のカスタム定義が未登録です",
-        "rows": []
+        "status": "ok",
+        "rows": [],
+        "withheld": 0
       },
       "zeroSearches": {
-        "status": "unavailable",
-        "reason": "GA4のカスタム定義が未登録です",
-        "rows": []
+        "status": "ok",
+        "rows": [],
+        "withheld": 0
       },
       "filters": {
-        "status": "unavailable",
-        "reason": "GA4のカスタム定義が未登録です",
-        "rows": []
+        "status": "ok",
+        "rows": [],
+        "withheld": 0
       },
       "sources": [
         {
@@ -460,7 +460,7 @@
         "new": 0,
         "returning": 0
       },
-      "throughHour": 18
+      "throughHour": 22
     }
   },
   "warnings": []
