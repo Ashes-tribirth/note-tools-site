@@ -1,4 +1,9 @@
 import unittest
+from unittest.mock import patch
+import tempfile
+from pathlib import Path
+import json
+from scripts import collect_analytics
 from datetime import date
 from scripts.collect_analytics import period_ranges, total_values, rankings, public_channel, build_period
 
@@ -17,6 +22,15 @@ class AggregationTests(unittest.TestCase):
     def test_unavailable_is_not_empty_success(self):
         raw={'status':'unavailable','rows':[],'reason':'missing'}
         self.assertEqual(rankings(raw,lambda r:r),raw)
+    def test_failed_fetch_preserves_last_snapshot(self):
+        with tempfile.TemporaryDirectory() as directory:
+            data = Path(directory) / 'data.json'
+            status = Path(directory) / 'status.json'
+            data.write_text('{"previous":"snapshot"}')
+            with patch.object(collect_analytics, 'OUTPUT', data), patch.object(collect_analytics, 'STATUS', status), patch.object(collect_analytics, 'collect', side_effect=RuntimeError('not logged')), patch('sys.stderr'):
+                self.assertEqual(collect_analytics.main(), 1)
+            self.assertEqual(data.read_text(), '{"previous":"snapshot"}')
+            self.assertEqual(json.loads(status.read_text())['state'], 'error')
     def test_channels(self):
         self.assertEqual(public_channel('note.com','referral','Referral'),'note')
         self.assertEqual(public_channel('note.com.evil.com','referral','Referral'),'その他')
