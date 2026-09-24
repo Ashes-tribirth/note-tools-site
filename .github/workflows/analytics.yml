@@ -28,7 +28,7 @@ jobs:
         id: collect
         continue-on-error: true
         env:
-          GA4_PROPERTY_ID: ${{ vars.GA4_PROPERTY_ID }}
+          GA4_PROPERTY_ID: ${{ vars.GA4_PROPERTY_ID || '554876371' }}
           GA4_SERVICE_ACCOUNT_JSON: ${{ secrets.GA4_SERVICE_ACCOUNT_JSON }}
         run: python scripts/collect_analytics.py
       - name: Save public snapshot and status
