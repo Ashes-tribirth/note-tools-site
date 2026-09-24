@@ -31,7 +31,7 @@ const assert=require('node:assert/strict');
  await page.locator('#searchInput').fill('private@example.com');await page.waitForTimeout(850);tracked=await page.evaluate(()=>captured);assert(tracked.some(e=>e.params.search_term==='[非収集]'));
  await page.locator('#resetBtn').click();assert.equal(await page.locator('.card').count(),count);
  await page.locator('#categoryFilter').selectOption({index:1});await page.locator('#searchInput').fill('zzzz-no-match');await page.waitForTimeout(850);tracked=await page.evaluate(()=>captured);assert(tracked.some(e=>e.name==='compass_search_zero'&&e.params.search_scope==='filtered'));
- await page.locator('#resetBtn').click();await page.locator('.favorite-btn').first().click();await page.locator('#favoriteFilter').check();assert.equal(await page.locator('.card').count(),1);await page.locator('#resetBtn').click();
+ await page.locator('#resetBtn').click();await page.locator('.favorite-btn').first().click();await page.locator('.toggle-favorite').click();assert.equal(await page.locator('.card').count(),1);await page.locator('#resetBtn').click();
  assert.deepEqual(errors,[]);console.log(JSON.stringify({result:'passed',existingCards:count,widths:[320,390,768,1440],checks:['periods','charts','rankings','missing','stale','zero results','masked search','filters','favorites','no JS errors']}));
  await browser.close();
 })();
