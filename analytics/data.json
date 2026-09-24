@@ -1,0 +1,467 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-24T09:10:42.331296+00:00",
+  "timezone": "Asia/Tokyo",
+  "periods": {
+    "7": {
+      "start": "2026-09-17",
+      "end": "2026-09-23",
+      "previousStart": "2026-09-10",
+      "previousEnd": "2026-09-16",
+      "current": {
+        "users": 4,
+        "sessions": 8,
+        "views": 9,
+        "searches": 0,
+        "clicks": 3
+      },
+      "previous": {
+        "users": 0,
+        "sessions": 0,
+        "views": 0,
+        "searches": 0,
+        "clicks": 0
+      },
+      "daily": [
+        {
+          "date": "2026-09-17",
+          "users": 0,
+          "views": 0,
+          "searches": 0,
+          "clicks": 0
+        },
+        {
+          "date": "2026-09-18",
+          "users": 2,
+          "views": 2,
+          "searches": 0,
+          "clicks": 1
+        },
+        {
+          "date": "2026-09-19",
+          "users": 1,
+          "views": 2,
+          "searches": 0,
+          "clicks": 0
+        },
+        {
+          "date": "2026-09-20",
+          "users": 1,
+          "views": 1,
+          "searches": 0,
+          "clicks": 0
+        },
+        {
+          "date": "2026-09-21",
+          "users": 0,
+          "views": 0,
+          "searches": 0,
+          "clicks": 0
+        },
+        {
+          "date": "2026-09-22",
+          "users": 2,
+          "views": 3,
+          "searches": 0,
+          "clicks": 2
+        },
+        {
+          "date": "2026-09-23",
+          "users": 1,
+          "views": 1,
+          "searches": 0,
+          "clicks": 0
+        }
+      ],
+      "tools": {
+        "status": "unavailable",
+        "reason": "GA4のカスタム定義が未登録です",
+        "rows": []
+      },
+      "keywords": {
+        "status": "unavailable",
+        "reason": "GA4のカスタム定義が未登録です",
+        "rows": []
+      },
+      "zeroSearches": {
+        "status": "unavailable",
+        "reason": "GA4のカスタム定義が未登録です",
+        "rows": []
+      },
+      "filters": {
+        "status": "unavailable",
+        "reason": "GA4のカスタム定義が未登録です",
+        "rows": []
+      },
+      "sources": [
+        {
+          "name": "note",
+          "count": 0
+        },
+        {
+          "name": "検索エンジン",
+          "count": 0
+        },
+        {
+          "name": "直接アクセス",
+          "count": 7
+        },
+        {
+          "name": "その他",
+          "count": 1
+        }
+      ],
+      "audience": {
+        "new": 4,
+        "returning": 2
+      }
+    },
+    "30": {
+      "start": "2026-08-25",
+      "end": "2026-09-23",
+      "previousStart": "2026-07-26",
+      "previousEnd": "2026-08-24",
+      "current": {
+        "users": 4,
+        "sessions": 8,
+        "views": 9,
+        "searches": 0,
+        "clicks": 3
+      },
+      "previous": {
+        "users": 0,
+        "sessions": 0,
+        "views": 0,
+        "searches": 0,
+        "clicks": 0
+      },
+      "daily": [
+        {
+          "date": "2026-08-25",
+          "users": 0,
+          "views": 0,
+          "searches": 0,
+          "clicks": 0
+        },
+        {
+          "date": "2026-08-26",
+          "users": 0,
+          "views": 0,
+          "searches": 0,
+          "clicks": 0
+        },
+        {
+          "date": "2026-08-27",
+          "users": 0,
+          "views": 0,
+          "searches": 0,
+          "clicks": 0
+        },
+        {
+          "date": "2026-08-28",
+          "users": 0,
+          "views": 0,
+          "searches": 0,
+          "clicks": 0
+        },
+        {
+          "date": "2026-08-29",
+          "users": 0,
+          "views": 0,
+          "searches": 0,
+          "clicks": 0
+        },
+        {
+          "date": "2026-08-30",
+          "users": 0,
+          "views": 0,
+          "searches": 0,
+          "clicks": 0
+        },
+        {
+          "date": "2026-08-31",
+          "users": 0,
+          "views": 0,
+          "searches": 0,
+          "clicks": 0
+        },
+        {
+          "date": "2026-09-01",
+          "users": 0,
+          "views": 0,
+          "searches": 0,
+          "clicks": 0
+        },
+        {
+          "date": "2026-09-02",
+          "users": 0,
+          "views": 0,
+          "searches": 0,
+          "clicks": 0
+        },
+        {
+          "date": "2026-09-03",
+          "users": 0,
+          "views": 0,
+          "searches": 0,
+          "clicks": 0
+        },
+        {
+          "date": "2026-09-04",
+          "users": 0,
+          "views": 0,
+          "searches": 0,
+          "clicks": 0
+        },
+        {
+          "date": "2026-09-05",
+          "users": 0,
+          "views": 0,
+          "searches": 0,
+          "clicks": 0
+        },
+        {
+          "date": "2026-09-06",
+          "users": 0,
+          "views": 0,
+          "searches": 0,
+          "clicks": 0
+        },
+        {
+          "date": "2026-09-07",
+          "users": 0,
+          "views": 0,
+          "searches": 0,
+          "clicks": 0
+        },
+        {
+          "date": "2026-09-08",
+          "users": 0,
+          "views": 0,
+          "searches": 0,
+          "clicks": 0
+        },
+        {
+          "date": "2026-09-09",
+          "users": 0,
+          "views": 0,
+          "searches": 0,
+          "clicks": 0
+        },
+        {
+          "date": "2026-09-10",
+          "users": 0,
+          "views": 0,
+          "searches": 0,
+          "clicks": 0
+        },
+        {
+          "date": "2026-09-11",
+          "users": 0,
+          "views": 0,
+          "searches": 0,
+          "clicks": 0
+        },
+        {
+          "date": "2026-09-12",
+          "users": 0,
+          "views": 0,
+          "searches": 0,
+          "clicks": 0
+        },
+        {
+          "date": "2026-09-13",
+          "users": 0,
+          "views": 0,
+          "searches": 0,
+          "clicks": 0
+        },
+        {
+          "date": "2026-09-14",
+          "users": 0,
+          "views": 0,
+          "searches": 0,
+          "clicks": 0
+        },
+        {
+          "date": "2026-09-15",
+          "users": 0,
+          "views": 0,
+          "searches": 0,
+          "clicks": 0
+        },
+        {
+          "date": "2026-09-16",
+          "users": 0,
+          "views": 0,
+          "searches": 0,
+          "clicks": 0
+        },
+        {
+          "date": "2026-09-17",
+          "users": 0,
+          "views": 0,
+          "searches": 0,
+          "clicks": 0
+        },
+        {
+          "date": "2026-09-18",
+          "users": 2,
+          "views": 2,
+          "searches": 0,
+          "clicks": 1
+        },
+        {
+          "date": "2026-09-19",
+          "users": 1,
+          "views": 2,
+          "searches": 0,
+          "clicks": 0
+        },
+        {
+          "date": "2026-09-20",
+          "users": 1,
+          "views": 1,
+          "searches": 0,
+          "clicks": 0
+        },
+        {
+          "date": "2026-09-21",
+          "users": 0,
+          "views": 0,
+          "searches": 0,
+          "clicks": 0
+        },
+        {
+          "date": "2026-09-22",
+          "users": 2,
+          "views": 3,
+          "searches": 0,
+          "clicks": 2
+        },
+        {
+          "date": "2026-09-23",
+          "users": 1,
+          "views": 1,
+          "searches": 0,
+          "clicks": 0
+        }
+      ],
+      "tools": {
+        "status": "unavailable",
+        "reason": "GA4のカスタム定義が未登録です",
+        "rows": []
+      },
+      "keywords": {
+        "status": "unavailable",
+        "reason": "GA4のカスタム定義が未登録です",
+        "rows": []
+      },
+      "zeroSearches": {
+        "status": "unavailable",
+        "reason": "GA4のカスタム定義が未登録です",
+        "rows": []
+      },
+      "filters": {
+        "status": "unavailable",
+        "reason": "GA4のカスタム定義が未登録です",
+        "rows": []
+      },
+      "sources": [
+        {
+          "name": "note",
+          "count": 0
+        },
+        {
+          "name": "検索エンジン",
+          "count": 0
+        },
+        {
+          "name": "直接アクセス",
+          "count": 7
+        },
+        {
+          "name": "その他",
+          "count": 1
+        }
+      ],
+      "audience": {
+        "new": 4,
+        "returning": 2
+      }
+    },
+    "today": {
+      "start": "2026-09-24",
+      "end": "2026-09-24",
+      "previousStart": "2026-09-23",
+      "previousEnd": "2026-09-23",
+      "current": {
+        "users": 0,
+        "sessions": 0,
+        "views": 0,
+        "searches": 0,
+        "clicks": 0
+      },
+      "previous": {
+        "users": 0,
+        "sessions": 0,
+        "views": 0,
+        "searches": 0,
+        "clicks": 0
+      },
+      "daily": [
+        {
+          "date": "2026-09-24",
+          "users": 0,
+          "views": 0,
+          "searches": 0,
+          "clicks": 0
+        }
+      ],
+      "tools": {
+        "status": "unavailable",
+        "reason": "GA4のカスタム定義が未登録です",
+        "rows": []
+      },
+      "keywords": {
+        "status": "unavailable",
+        "reason": "GA4のカスタム定義が未登録です",
+        "rows": []
+      },
+      "zeroSearches": {
+        "status": "unavailable",
+        "reason": "GA4のカスタム定義が未登録です",
+        "rows": []
+      },
+      "filters": {
+        "status": "unavailable",
+        "reason": "GA4のカスタム定義が未登録です",
+        "rows": []
+      },
+      "sources": [
+        {
+          "name": "note",
+          "count": 0
+        },
+        {
+          "name": "検索エンジン",
+          "count": 0
+        },
+        {
+          "name": "直接アクセス",
+          "count": 0
+        },
+        {
+          "name": "その他",
+          "count": 0
+        }
+      ],
+      "audience": {
+        "new": 0,
+        "returning": 0
+      },
+      "throughHour": 18
+    }
+  },
+  "warnings": []
+}
