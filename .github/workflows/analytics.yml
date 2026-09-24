@@ -1,0 +1,50 @@
+name: Compass analytics
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 */4 * * *'
+permissions:
+  contents: write
+  pages: write
+concurrency:
+  group: compass-analytics
+  cancel-in-progress: false
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install read-only API client
+        run: pip install 'google-auth[requests]==2.40.3'
+      - name: Verify aggregation
+        run: python -m unittest discover -s tests -p 'test_*.py'
+      - name: Fetch GA4 aggregate data
+        id: collect
+        continue-on-error: true
+        env:
+          GA4_PROPERTY_ID: ${{ vars.GA4_PROPERTY_ID }}
+          GA4_SERVICE_ACCOUNT_JSON: ${{ secrets.GA4_SERVICE_ACCOUNT_JSON }}
+        run: python scripts/collect_analytics.py
+      - name: Save public snapshot and status
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add analytics/data.json analytics/status.json 2>/dev/null || git add analytics/status.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Update Compass aggregate analytics'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+      - name: Rebuild existing branch-based GitHub Pages
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api --method POST repos/${{ github.repository }}/pages/builds
+      - name: Report collection error
+        if: steps.collect.outcome == 'failure'
+        run: exit 1

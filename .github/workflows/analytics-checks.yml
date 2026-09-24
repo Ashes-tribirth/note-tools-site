@@ -1,0 +1,46 @@
+name: Analytics checks
+on:
+  push:
+    paths:
+      - 'analytics/**'
+      - 'scripts/**'
+      - 'tests/**'
+      - 'app.js'
+      - 'index.html'
+      - '.github/workflows/analytics*.yml'
+  pull_request:
+    paths:
+      - 'analytics/**'
+      - 'scripts/**'
+      - 'tests/**'
+      - 'app.js'
+      - 'index.html'
+      - '.github/workflows/analytics*.yml'
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest discover -s tests -p 'test_*.py'
+      - run: node --check analytics/dashboard.js && node --check app.js
+      - run: npm install --no-save --package-lock=false playwright@1.51.1
+      - run: npx playwright install --with-deps chromium
+      - name: Check mobile, desktop and existing Compass
+        run: |
+          python -m http.server 8765 --bind 127.0.0.1 &
+          node tests/browser.cjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: analytics-mobile-check
+          path: mobile-check.png
+          retention-days: 7

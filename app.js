@@ -55,6 +55,7 @@ const elements = {
 let allTools = [];
 let updateLogEntries = [];
 let activeChangeFilter = null;
+let currentResultCount = 0;
 
 function normalizeCategory(tool) {
   return CATEGORY_ORDER.includes(tool.category) ? tool.category : '保存・管理する';
@@ -337,6 +338,7 @@ function renderTools() {
     filtered.sort((a, b) => (order.get(a.name) ?? Number.MAX_SAFE_INTEGER) - (order.get(b.name) ?? Number.MAX_SAFE_INTEGER));
   }
 
+  currentResultCount = filtered.length;
   elements.count.textContent = `${filtered.length} 件`;
   elements.reset.hidden = !(search || category || price || favoritesOnly || activeChangeFilter);
 
@@ -384,7 +386,17 @@ function attachListeners() {
     clearTimeout(searchTimer);
     searchTimer = setTimeout(() => {
       const query = elements.search.value.trim();
-      if (query) trackCompassEvent('compass_search', { search_term: query });
+      if (query) {
+        // Free text can contain contact details; never send obvious identifiers.
+        const safeQuery = /[@＠]|https?:|www\.|\d{5,}/i.test(query) ? '[非収集]' : query.slice(0, 100);
+        const params = {
+          search_term: safeQuery,
+          result_count: currentResultCount,
+          search_scope: elements.category.value || elements.price.value || elements.favoritesOnly.checked || activeChangeFilter ? 'filtered' : 'all'
+        };
+        trackCompassEvent('compass_search', params);
+        if (currentResultCount === 0) trackCompassEvent('compass_search_zero', params);
+      }
     }, 700);
   });
   elements.category.addEventListener('change', () => {

@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.env
+.env.*
+*credentials*.json
+*service-account*.json
+node_modules/
+mobile-check.png
