@@ -1,5 +1,8 @@
 name: Analytics live checks
 on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/analytics-live.yml']
   workflow_run:
     workflows: ['pages build and deployment']
     types: [completed]
@@ -9,7 +12,7 @@ permissions:
   contents: read
 jobs:
   live:
-    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
