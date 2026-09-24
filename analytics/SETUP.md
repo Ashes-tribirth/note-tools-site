@@ -6,7 +6,7 @@
 
 ## 初回に必要な設定
 
-1. GA4の「管理 → プロパティの詳細」で、数字のみのプロパティIDを確認する。Measurement ID `G-Z4E1HBRD0J` とは別。
+1. プロパティID `554876371` を確認済み。Measurement ID `G-Z4E1HBRD0J` とは別。Actions Variablesに `GA4_PROPERTY_ID` を設定しない場合も、このIDで取得します。
 2. Google CloudでGoogle Analytics Data APIを有効化し、専用サービスアカウントを作る。GA4の「プロパティのアクセス管理」にそのメールアドレスを**閲覧者**として追加する。Google Cloudプロジェクトの編集者権限は不要。
 3. 専用サービスアカウントのJSON鍵をGitHubリポジトリの **Settings → Secrets and variables → Actions → Secrets** に `GA4_SERVICE_ACCOUNT_JSON` として保存する。鍵はチャット・コード・CSVに貼らない。Variablesに `GA4_PROPERTY_ID` を保存する。
 4. GA4「カスタム定義」で下表のイベントスコープのディメンションを登録する。表示名は任意、イベントパラメータ名は完全一致。作成後は反映待ちが発生する。過去に送信した値の遡及取得を前提にしない。
