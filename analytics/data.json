@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-25T04:54:04.579557+00:00",
+  "generatedAt": "2026-09-25T13:44:19.637161+00:00",
   "timezone": "Asia/Tokyo",
   "periods": {
     "7": {
@@ -91,7 +91,7 @@
       "filters": {
         "status": "ok",
         "rows": [],
-        "withheld": 0
+        "withheld": 1
       },
       "sources": [
         {
@@ -108,7 +108,7 @@
         },
         {
           "name": "その他",
-          "count": 2
+          "count": 1
         }
       ],
       "audience": {
@@ -365,7 +365,7 @@
       "filters": {
         "status": "ok",
         "rows": [],
-        "withheld": 0
+        "withheld": 1
       },
       "sources": [
         {
@@ -382,7 +382,7 @@
         },
         {
           "name": "その他",
-          "count": 2
+          "count": 1
         }
       ],
       "audience": {
@@ -403,10 +403,10 @@
         "clicks": 0
       },
       "previous": {
-        "users": 0,
-        "sessions": 0,
-        "views": 0,
-        "searches": 0,
+        "users": 1,
+        "sessions": 1,
+        "views": 1,
+        "searches": 1,
         "clicks": 0
       },
       "daily": [
@@ -460,7 +460,7 @@
         "new": 0,
         "returning": 0
       },
-      "throughHour": 13
+      "throughHour": 22
     }
   },
   "warnings": []
