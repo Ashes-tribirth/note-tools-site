@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-28T05:19:39.944207+00:00",
+  "generatedAt": "2026-09-28T16:44:13.605490+00:00",
   "timezone": "Asia/Tokyo",
   "periods": {
     "7": {
-      "start": "2026-09-21",
-      "end": "2026-09-27",
-      "previousStart": "2026-09-14",
-      "previousEnd": "2026-09-20",
+      "start": "2026-09-22",
+      "end": "2026-09-28",
+      "previousStart": "2026-09-15",
+      "previousEnd": "2026-09-21",
       "current": {
-        "users": 4,
-        "sessions": 8,
-        "views": 11,
+        "users": 6,
+        "sessions": 14,
+        "views": 17,
         "searches": 1,
-        "clicks": 6
+        "clicks": 10
       },
       "previous": {
         "users": 2,
@@ -23,13 +23,6 @@
         "clicks": 1
       },
       "daily": [
-        {
-          "date": "2026-09-21",
-          "users": 0,
-          "views": 0,
-          "searches": 0,
-          "clicks": 0
-        },
         {
           "date": "2026-09-22",
           "users": 2,
@@ -71,11 +64,33 @@
           "views": 0,
           "searches": 0,
           "clicks": 0
+        },
+        {
+          "date": "2026-09-28",
+          "users": 3,
+          "views": 6,
+          "searches": 0,
+          "clicks": 4
         }
       ],
       "tools": {
         "status": "ok",
-        "rows": [],
+        "rows": [
+          {
+            "name": "note Cube Blocks",
+            "author": "ひゅー｜挑戦と思考整理を楽しむ。note",
+            "category": "活動を分析・記録する",
+            "count": 2,
+            "previous": 0
+          },
+          {
+            "name": "おへんじ帖",
+            "author": "はしゃも｜感情構造エンジニア",
+            "category": "交流・通知を管理する",
+            "count": 2,
+            "previous": 0
+          }
+        ],
         "withheld": 6
       },
       "keywords": {
@@ -104,29 +119,29 @@
         },
         {
           "name": "直接アクセス",
-          "count": 7
+          "count": 12
         },
         {
           "name": "その他",
-          "count": 1
+          "count": 4
         }
       ],
       "audience": {
-        "new": 3,
+        "new": 4,
         "returning": 2
       }
     },
     "30": {
-      "start": "2026-08-29",
-      "end": "2026-09-27",
-      "previousStart": "2026-07-30",
-      "previousEnd": "2026-08-28",
+      "start": "2026-08-30",
+      "end": "2026-09-28",
+      "previousStart": "2026-07-31",
+      "previousEnd": "2026-08-29",
       "current": {
-        "users": 5,
-        "sessions": 12,
-        "views": 16,
+        "users": 7,
+        "sessions": 18,
+        "views": 22,
         "searches": 1,
-        "clicks": 7
+        "clicks": 11
       },
       "previous": {
         "users": 0,
@@ -136,13 +151,6 @@
         "clicks": 0
       },
       "daily": [
-        {
-          "date": "2026-08-29",
-          "users": 0,
-          "views": 0,
-          "searches": 0,
-          "clicks": 0
-        },
         {
           "date": "2026-08-30",
           "users": 0,
@@ -345,11 +353,33 @@
           "views": 0,
           "searches": 0,
           "clicks": 0
+        },
+        {
+          "date": "2026-09-28",
+          "users": 3,
+          "views": 6,
+          "searches": 0,
+          "clicks": 4
         }
       ],
       "tools": {
         "status": "ok",
-        "rows": [],
+        "rows": [
+          {
+            "name": "note Cube Blocks",
+            "author": "ひゅー｜挑戦と思考整理を楽しむ。note",
+            "category": "活動を分析・記録する",
+            "count": 2,
+            "previous": 0
+          },
+          {
+            "name": "おへんじ帖",
+            "author": "はしゃも｜感情構造エンジニア",
+            "category": "交流・通知を管理する",
+            "count": 2,
+            "previous": 0
+          }
+        ],
         "withheld": 7
       },
       "keywords": {
@@ -378,23 +408,23 @@
         },
         {
           "name": "直接アクセス",
-          "count": 11
+          "count": 16
         },
         {
           "name": "その他",
-          "count": 1
+          "count": 4
         }
       ],
       "audience": {
-        "new": 5,
+        "new": 6,
         "returning": 2
       }
     },
     "today": {
-      "start": "2026-09-28",
-      "end": "2026-09-28",
-      "previousStart": "2026-09-27",
-      "previousEnd": "2026-09-27",
+      "start": "2026-09-29",
+      "end": "2026-09-29",
+      "previousStart": "2026-09-28",
+      "previousEnd": "2026-09-28",
       "current": {
         "users": 0,
         "sessions": 0,
@@ -411,7 +441,7 @@
       },
       "daily": [
         {
-          "date": "2026-09-28",
+          "date": "2026-09-29",
           "users": 0,
           "views": 0,
           "searches": 0,
@@ -460,7 +490,7 @@
         "new": 0,
         "returning": 0
       },
-      "throughHour": 14
+      "throughHour": 1
     }
   },
   "warnings": []
