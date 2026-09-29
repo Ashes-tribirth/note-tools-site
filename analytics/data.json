@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-29T00:21:28.646649+00:00",
+  "generatedAt": "2026-09-29T10:39:38.683921+00:00",
   "timezone": "Asia/Tokyo",
   "periods": {
     "7": {
@@ -10,8 +10,8 @@
       "previousEnd": "2026-09-21",
       "current": {
         "users": 6,
-        "sessions": 14,
-        "views": 17,
+        "sessions": 15,
+        "views": 18,
         "searches": 1,
         "clicks": 10
       },
@@ -68,7 +68,7 @@
         {
           "date": "2026-09-28",
           "users": 3,
-          "views": 6,
+          "views": 7,
           "searches": 0,
           "clicks": 4
         }
@@ -111,7 +111,7 @@
       "sources": [
         {
           "name": "note",
-          "count": 0
+          "count": 1
         },
         {
           "name": "検索エンジン",
@@ -119,16 +119,16 @@
         },
         {
           "name": "直接アクセス",
-          "count": 12
+          "count": 13
         },
         {
           "name": "その他",
-          "count": 4
+          "count": 1
         }
       ],
       "audience": {
-        "new": 4,
-        "returning": 2
+        "new": 5,
+        "returning": 3
       }
     },
     "30": {
@@ -138,8 +138,8 @@
       "previousEnd": "2026-08-29",
       "current": {
         "users": 7,
-        "sessions": 18,
-        "views": 22,
+        "sessions": 19,
+        "views": 23,
         "searches": 1,
         "clicks": 11
       },
@@ -357,7 +357,7 @@
         {
           "date": "2026-09-28",
           "users": 3,
-          "views": 6,
+          "views": 7,
           "searches": 0,
           "clicks": 4
         }
@@ -400,7 +400,7 @@
       "sources": [
         {
           "name": "note",
-          "count": 0
+          "count": 1
         },
         {
           "name": "検索エンジン",
@@ -408,16 +408,16 @@
         },
         {
           "name": "直接アクセス",
-          "count": 16
+          "count": 17
         },
         {
           "name": "その他",
-          "count": 4
+          "count": 1
         }
       ],
       "audience": {
-        "new": 6,
-        "returning": 2
+        "new": 7,
+        "returning": 3
       }
     },
     "today": {
@@ -433,9 +433,9 @@
         "clicks": 0
       },
       "previous": {
-        "users": 0,
-        "sessions": 0,
-        "views": 0,
+        "users": 1,
+        "sessions": 2,
+        "views": 2,
         "searches": 0,
         "clicks": 0
       },
@@ -490,7 +490,7 @@
         "new": 0,
         "returning": 0
       },
-      "throughHour": 9
+      "throughHour": 19
     }
   },
   "warnings": []
