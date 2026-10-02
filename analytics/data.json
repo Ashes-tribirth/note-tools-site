@@ -1,35 +1,28 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-02T14:43:25.386130+00:00",
+  "generatedAt": "2026-10-02T20:42:40.519454+00:00",
   "timezone": "Asia/Tokyo",
   "periods": {
     "7": {
-      "start": "2026-09-25",
-      "end": "2026-10-01",
-      "previousStart": "2026-09-18",
-      "previousEnd": "2026-09-24",
+      "start": "2026-09-26",
+      "end": "2026-10-02",
+      "previousStart": "2026-09-19",
+      "previousEnd": "2026-09-25",
       "current": {
-        "users": 3,
+        "users": 4,
         "sessions": 10,
         "views": 10,
         "searches": 0,
-        "clicks": 4
+        "clicks": 6
       },
       "previous": {
-        "users": 5,
-        "sessions": 10,
-        "views": 14,
+        "users": 4,
+        "sessions": 9,
+        "views": 13,
         "searches": 1,
-        "clicks": 7
+        "clicks": 6
       },
       "daily": [
-        {
-          "date": "2026-09-25",
-          "users": 1,
-          "views": 1,
-          "searches": 0,
-          "clicks": 0
-        },
         {
           "date": "2026-09-26",
           "users": 1,
@@ -71,11 +64,25 @@
           "views": 0,
           "searches": 0,
           "clicks": 0
+        },
+        {
+          "date": "2026-10-02",
+          "users": 1,
+          "views": 1,
+          "searches": 0,
+          "clicks": 2
         }
       ],
       "tools": {
         "status": "ok",
         "rows": [
+          {
+            "name": "おへんじ帖",
+            "author": "はしゃも｜感情構造エンジニア",
+            "category": "交流・通知を管理する",
+            "count": 3,
+            "previous": 0
+          },
           {
             "name": "note Cube Blocks",
             "author": "ひゅー｜挑戦と思考整理を楽しむ。note",
@@ -84,10 +91,10 @@
             "previous": 0
           },
           {
-            "name": "おへんじ帖",
-            "author": "はしゃも｜感情構造エンジニア",
-            "category": "交流・通知を管理する",
-            "count": 2,
+            "name": "MP4 to GIF Converter（k3）",
+            "author": "k3さん",
+            "category": "画像・デザインを作る",
+            "count": 1,
             "previous": 0
           }
         ],
@@ -105,13 +112,26 @@
       },
       "filters": {
         "status": "ok",
-        "rows": [],
+        "rows": [
+          {
+            "name": "無料",
+            "kind": "料金",
+            "count": 1,
+            "previous": 0
+          },
+          {
+            "name": "画像・デザインを作る",
+            "kind": "カテゴリ",
+            "count": 1,
+            "previous": 0
+          }
+        ],
         "withheld": 0
       },
       "sources": [
         {
           "name": "note",
-          "count": 1
+          "count": 2
         },
         {
           "name": "検索エンジン",
@@ -119,29 +139,29 @@
         },
         {
           "name": "直接アクセス",
-          "count": 9
+          "count": 8
         },
         {
           "name": "その他",
-          "count": 0
+          "count": 1
         }
       ],
       "audience": {
-        "new": 2,
+        "new": 3,
         "returning": 2
       }
     },
     "30": {
-      "start": "2026-09-02",
-      "end": "2026-10-01",
-      "previousStart": "2026-08-03",
-      "previousEnd": "2026-09-01",
+      "start": "2026-09-03",
+      "end": "2026-10-02",
+      "previousStart": "2026-08-04",
+      "previousEnd": "2026-09-02",
       "current": {
-        "users": 7,
-        "sessions": 20,
-        "views": 24,
+        "users": 8,
+        "sessions": 21,
+        "views": 25,
         "searches": 1,
-        "clicks": 11
+        "clicks": 13
       },
       "previous": {
         "users": 0,
@@ -151,13 +171,6 @@
         "clicks": 0
       },
       "daily": [
-        {
-          "date": "2026-09-02",
-          "users": 0,
-          "views": 0,
-          "searches": 0,
-          "clicks": 0
-        },
         {
           "date": "2026-09-03",
           "users": 0,
@@ -360,11 +373,25 @@
           "views": 0,
           "searches": 0,
           "clicks": 0
+        },
+        {
+          "date": "2026-10-02",
+          "users": 1,
+          "views": 1,
+          "searches": 0,
+          "clicks": 2
         }
       ],
       "tools": {
         "status": "ok",
         "rows": [
+          {
+            "name": "おへんじ帖",
+            "author": "はしゃも｜感情構造エンジニア",
+            "category": "交流・通知を管理する",
+            "count": 3,
+            "previous": 0
+          },
           {
             "name": "note Cube Blocks",
             "author": "ひゅー｜挑戦と思考整理を楽しむ。note",
@@ -373,10 +400,10 @@
             "previous": 0
           },
           {
-            "name": "おへんじ帖",
-            "author": "はしゃも｜感情構造エンジニア",
-            "category": "交流・通知を管理する",
-            "count": 2,
+            "name": "MP4 to GIF Converter（k3）",
+            "author": "k3さん",
+            "category": "画像・デザインを作る",
+            "count": 1,
             "previous": 0
           }
         ],
@@ -394,13 +421,26 @@
       },
       "filters": {
         "status": "ok",
-        "rows": [],
+        "rows": [
+          {
+            "name": "無料",
+            "kind": "料金",
+            "count": 1,
+            "previous": 0
+          },
+          {
+            "name": "画像・デザインを作る",
+            "kind": "カテゴリ",
+            "count": 1,
+            "previous": 0
+          }
+        ],
         "withheld": 1
       },
       "sources": [
         {
           "name": "note",
-          "count": 1
+          "count": 2
         },
         {
           "name": "検索エンジン",
@@ -412,19 +452,19 @@
         },
         {
           "name": "その他",
-          "count": 1
+          "count": 2
         }
       ],
       "audience": {
-        "new": 7,
+        "new": 8,
         "returning": 3
       }
     },
     "today": {
-      "start": "2026-10-02",
-      "end": "2026-10-02",
-      "previousStart": "2026-10-01",
-      "previousEnd": "2026-10-01",
+      "start": "2026-10-03",
+      "end": "2026-10-03",
+      "previousStart": "2026-10-02",
+      "previousEnd": "2026-10-02",
       "current": {
         "users": 0,
         "sessions": 0,
@@ -441,7 +481,7 @@
       },
       "daily": [
         {
-          "date": "2026-10-02",
+          "date": "2026-10-03",
           "users": 0,
           "views": 0,
           "searches": 0,
@@ -490,7 +530,7 @@
         "new": 0,
         "returning": 0
       },
-      "throughHour": 23
+      "throughHour": 5
     }
   },
   "warnings": []
