@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-02T20:42:40.519454+00:00",
+  "generatedAt": "2026-10-03T05:14:47.386393+00:00",
   "timezone": "Asia/Tokyo",
   "periods": {
     "7": {
@@ -114,6 +114,12 @@
         "status": "ok",
         "rows": [
           {
+            "name": "交流・通知を管理する",
+            "kind": "カテゴリ",
+            "count": 1,
+            "previous": 0
+          },
+          {
             "name": "無料",
             "kind": "料金",
             "count": 1,
@@ -143,7 +149,7 @@
         },
         {
           "name": "その他",
-          "count": 1
+          "count": 0
         }
       ],
       "audience": {
@@ -423,6 +429,12 @@
         "status": "ok",
         "rows": [
           {
+            "name": "交流・通知を管理する",
+            "kind": "カテゴリ",
+            "count": 1,
+            "previous": 0
+          },
+          {
             "name": "無料",
             "kind": "料金",
             "count": 1,
@@ -452,7 +464,7 @@
         },
         {
           "name": "その他",
-          "count": 2
+          "count": 1
         }
       ],
       "audience": {
@@ -466,11 +478,11 @@
       "previousStart": "2026-10-02",
       "previousEnd": "2026-10-02",
       "current": {
-        "users": 0,
-        "sessions": 0,
+        "users": 1,
+        "sessions": 1,
         "views": 0,
         "searches": 0,
-        "clicks": 0
+        "clicks": 1
       },
       "previous": {
         "users": 0,
@@ -482,15 +494,23 @@
       "daily": [
         {
           "date": "2026-10-03",
-          "users": 0,
+          "users": 1,
           "views": 0,
           "searches": 0,
-          "clicks": 0
+          "clicks": 1
         }
       ],
       "tools": {
         "status": "ok",
-        "rows": [],
+        "rows": [
+          {
+            "name": "note人気キーワード発見ツール",
+            "author": "S46ラボ｜50代会社員管理職のAI副業",
+            "category": "記事を書く・編集する",
+            "count": 1,
+            "previous": 0
+          }
+        ],
         "withheld": 0
       },
       "keywords": {
@@ -505,7 +525,14 @@
       },
       "filters": {
         "status": "ok",
-        "rows": [],
+        "rows": [
+          {
+            "name": "無料",
+            "kind": "料金",
+            "count": 1,
+            "previous": 0
+          }
+        ],
         "withheld": 0
       },
       "sources": [
@@ -523,14 +550,14 @@
         },
         {
           "name": "その他",
-          "count": 0
+          "count": 2
         }
       ],
       "audience": {
-        "new": 0,
+        "new": 1,
         "returning": 0
       },
-      "throughHour": 5
+      "throughHour": 14
     }
   },
   "warnings": []
