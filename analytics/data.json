@@ -1,35 +1,28 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-03T13:21:39.592002+00:00",
+  "generatedAt": "2026-10-03T19:12:21.730788+00:00",
   "timezone": "Asia/Tokyo",
   "periods": {
     "7": {
-      "start": "2026-09-26",
-      "end": "2026-10-02",
-      "previousStart": "2026-09-19",
-      "previousEnd": "2026-09-25",
+      "start": "2026-09-27",
+      "end": "2026-10-03",
+      "previousStart": "2026-09-20",
+      "previousEnd": "2026-09-26",
       "current": {
-        "users": 4,
-        "sessions": 10,
-        "views": 10,
-        "searches": 0,
-        "clicks": 6
+        "users": 7,
+        "sessions": 13,
+        "views": 13,
+        "searches": 1,
+        "clicks": 8
       },
       "previous": {
         "users": 4,
         "sessions": 9,
-        "views": 13,
+        "views": 12,
         "searches": 1,
         "clicks": 6
       },
       "daily": [
-        {
-          "date": "2026-09-26",
-          "users": 1,
-          "views": 1,
-          "searches": 0,
-          "clicks": 0
-        },
         {
           "date": "2026-09-27",
           "users": 0,
@@ -71,6 +64,13 @@
           "views": 1,
           "searches": 0,
           "clicks": 2
+        },
+        {
+          "date": "2026-10-03",
+          "users": 3,
+          "views": 4,
+          "searches": 1,
+          "clicks": 2
         }
       ],
       "tools": {
@@ -98,12 +98,12 @@
             "previous": 0
           }
         ],
-        "withheld": 0
+        "withheld": 2
       },
       "keywords": {
         "status": "ok",
         "rows": [],
-        "withheld": 0
+        "withheld": 1
       },
       "zeroSearches": {
         "status": "ok",
@@ -114,14 +114,20 @@
         "status": "ok",
         "rows": [
           {
+            "name": "無料",
+            "kind": "料金",
+            "count": 3,
+            "previous": 0
+          },
+          {
             "name": "交流・通知を管理する",
             "kind": "カテゴリ",
             "count": 1,
             "previous": 0
           },
           {
-            "name": "無料",
-            "kind": "料金",
+            "name": "活動を分析・記録する",
+            "kind": "カテゴリ",
             "count": 1,
             "previous": 0
           },
@@ -137,7 +143,7 @@
       "sources": [
         {
           "name": "note",
-          "count": 2
+          "count": 3
         },
         {
           "name": "検索エンジン",
@@ -145,29 +151,29 @@
         },
         {
           "name": "直接アクセス",
-          "count": 8
+          "count": 9
         },
         {
           "name": "その他",
-          "count": 0
+          "count": 3
         }
       ],
       "audience": {
-        "new": 3,
+        "new": 6,
         "returning": 2
       }
     },
     "30": {
-      "start": "2026-09-03",
-      "end": "2026-10-02",
-      "previousStart": "2026-08-04",
-      "previousEnd": "2026-09-02",
+      "start": "2026-09-04",
+      "end": "2026-10-03",
+      "previousStart": "2026-08-05",
+      "previousEnd": "2026-09-03",
       "current": {
-        "users": 8,
-        "sessions": 21,
-        "views": 25,
-        "searches": 1,
-        "clicks": 13
+        "users": 11,
+        "sessions": 25,
+        "views": 29,
+        "searches": 2,
+        "clicks": 15
       },
       "previous": {
         "users": 0,
@@ -177,13 +183,6 @@
         "clicks": 0
       },
       "daily": [
-        {
-          "date": "2026-09-03",
-          "users": 0,
-          "views": 0,
-          "searches": 0,
-          "clicks": 0
-        },
         {
           "date": "2026-09-04",
           "users": 0,
@@ -386,6 +385,13 @@
           "views": 1,
           "searches": 0,
           "clicks": 2
+        },
+        {
+          "date": "2026-10-03",
+          "users": 3,
+          "views": 4,
+          "searches": 1,
+          "clicks": 2
         }
       ],
       "tools": {
@@ -413,12 +419,12 @@
             "previous": 0
           }
         ],
-        "withheld": 7
+        "withheld": 9
       },
       "keywords": {
         "status": "ok",
         "rows": [],
-        "withheld": 1
+        "withheld": 2
       },
       "zeroSearches": {
         "status": "ok",
@@ -429,14 +435,20 @@
         "status": "ok",
         "rows": [
           {
+            "name": "無料",
+            "kind": "料金",
+            "count": 3,
+            "previous": 0
+          },
+          {
             "name": "交流・通知を管理する",
             "kind": "カテゴリ",
             "count": 1,
             "previous": 0
           },
           {
-            "name": "無料",
-            "kind": "料金",
+            "name": "活動を分析・記録する",
+            "kind": "カテゴリ",
             "count": 1,
             "previous": 0
           },
@@ -452,7 +464,7 @@
       "sources": [
         {
           "name": "note",
-          "count": 2
+          "count": 3
         },
         {
           "name": "検索エンジン",
@@ -460,29 +472,29 @@
         },
         {
           "name": "直接アクセス",
-          "count": 18
+          "count": 20
         },
         {
           "name": "その他",
-          "count": 1
+          "count": 4
         }
       ],
       "audience": {
-        "new": 8,
+        "new": 11,
         "returning": 3
       }
     },
     "today": {
-      "start": "2026-10-03",
-      "end": "2026-10-03",
-      "previousStart": "2026-10-02",
-      "previousEnd": "2026-10-02",
+      "start": "2026-10-04",
+      "end": "2026-10-04",
+      "previousStart": "2026-10-03",
+      "previousEnd": "2026-10-03",
       "current": {
-        "users": 3,
-        "sessions": 4,
-        "views": 4,
-        "searches": 1,
-        "clicks": 2
+        "users": 0,
+        "sessions": 0,
+        "views": 0,
+        "searches": 0,
+        "clicks": 0
       },
       "previous": {
         "users": 0,
@@ -493,22 +505,22 @@
       },
       "daily": [
         {
-          "date": "2026-10-03",
-          "users": 3,
-          "views": 4,
-          "searches": 1,
-          "clicks": 2
+          "date": "2026-10-04",
+          "users": 0,
+          "views": 0,
+          "searches": 0,
+          "clicks": 0
         }
       ],
       "tools": {
         "status": "ok",
         "rows": [],
-        "withheld": 2
+        "withheld": 0
       },
       "keywords": {
         "status": "ok",
         "rows": [],
-        "withheld": 1
+        "withheld": 0
       },
       "zeroSearches": {
         "status": "ok",
@@ -517,26 +529,13 @@
       },
       "filters": {
         "status": "ok",
-        "rows": [
-          {
-            "name": "無料",
-            "kind": "料金",
-            "count": 2,
-            "previous": 0
-          },
-          {
-            "name": "活動を分析・記録する",
-            "kind": "カテゴリ",
-            "count": 1,
-            "previous": 0
-          }
-        ],
+        "rows": [],
         "withheld": 0
       },
       "sources": [
         {
           "name": "note",
-          "count": 1
+          "count": 0
         },
         {
           "name": "検索エンジン",
@@ -544,18 +543,18 @@
         },
         {
           "name": "直接アクセス",
-          "count": 2
+          "count": 0
         },
         {
           "name": "その他",
-          "count": 3
+          "count": 0
         }
       ],
       "audience": {
-        "new": 3,
+        "new": 0,
         "returning": 0
       },
-      "throughHour": 22
+      "throughHour": 4
     }
   },
   "warnings": []
