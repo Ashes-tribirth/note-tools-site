@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-03T05:14:47.386393+00:00",
+  "generatedAt": "2026-10-03T13:21:39.592002+00:00",
   "timezone": "Asia/Tokyo",
   "periods": {
     "7": {
@@ -478,11 +478,11 @@
       "previousStart": "2026-10-02",
       "previousEnd": "2026-10-02",
       "current": {
-        "users": 1,
-        "sessions": 1,
-        "views": 0,
-        "searches": 0,
-        "clicks": 1
+        "users": 3,
+        "sessions": 4,
+        "views": 4,
+        "searches": 1,
+        "clicks": 2
       },
       "previous": {
         "users": 0,
@@ -494,29 +494,21 @@
       "daily": [
         {
           "date": "2026-10-03",
-          "users": 1,
-          "views": 0,
-          "searches": 0,
-          "clicks": 1
+          "users": 3,
+          "views": 4,
+          "searches": 1,
+          "clicks": 2
         }
       ],
       "tools": {
         "status": "ok",
-        "rows": [
-          {
-            "name": "note人気キーワード発見ツール",
-            "author": "S46ラボ｜50代会社員管理職のAI副業",
-            "category": "記事を書く・編集する",
-            "count": 1,
-            "previous": 0
-          }
-        ],
-        "withheld": 0
+        "rows": [],
+        "withheld": 2
       },
       "keywords": {
         "status": "ok",
         "rows": [],
-        "withheld": 0
+        "withheld": 1
       },
       "zeroSearches": {
         "status": "ok",
@@ -529,6 +521,12 @@
           {
             "name": "無料",
             "kind": "料金",
+            "count": 2,
+            "previous": 0
+          },
+          {
+            "name": "活動を分析・記録する",
+            "kind": "カテゴリ",
             "count": 1,
             "previous": 0
           }
@@ -538,7 +536,7 @@
       "sources": [
         {
           "name": "note",
-          "count": 0
+          "count": 1
         },
         {
           "name": "検索エンジン",
@@ -546,18 +544,18 @@
         },
         {
           "name": "直接アクセス",
-          "count": 0
+          "count": 2
         },
         {
           "name": "その他",
-          "count": 2
+          "count": 3
         }
       ],
       "audience": {
-        "new": 1,
+        "new": 3,
         "returning": 0
       },
-      "throughHour": 14
+      "throughHour": 22
     }
   },
   "warnings": []
