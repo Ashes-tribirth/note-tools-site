@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-03T23:01:30.734878+00:00",
+  "generatedAt": "2026-10-04T05:49:15.809894+00:00",
   "timezone": "Asia/Tokyo",
   "periods": {
     "7": {
@@ -13,7 +13,7 @@
         "sessions": 13,
         "views": 13,
         "searches": 1,
-        "clicks": 8
+        "clicks": 11
       },
       "previous": {
         "users": 4,
@@ -70,7 +70,7 @@
           "users": 3,
           "views": 4,
           "searches": 1,
-          "clicks": 2
+          "clicks": 5
         }
       ],
       "tools": {
@@ -94,6 +94,27 @@
             "name": "MP4 to GIF Converter（k3）",
             "author": "k3さん",
             "category": "画像・デザインを作る",
+            "count": 1,
+            "previous": 0
+          },
+          {
+            "name": "noteフォーマットヘルパー",
+            "author": "ふーさん",
+            "category": "記事を書く・編集する",
+            "count": 1,
+            "previous": 0
+          },
+          {
+            "name": "サムネ盛丸（モリマル）",
+            "author": "M橋D輔さん",
+            "category": "画像・デザインを作る",
+            "count": 1,
+            "previous": 0
+          },
+          {
+            "name": "売れ筋探偵 for note",
+            "author": "ナマケモノ",
+            "category": "記事を書く・編集する",
             "count": 1,
             "previous": 0
           }
@@ -143,7 +164,7 @@
       "sources": [
         {
           "name": "note",
-          "count": 3
+          "count": 4
         },
         {
           "name": "検索エンジン",
@@ -155,12 +176,12 @@
         },
         {
           "name": "その他",
-          "count": 3
+          "count": 0
         }
       ],
       "audience": {
         "new": 6,
-        "returning": 2
+        "returning": 3
       }
     },
     "30": {
@@ -173,7 +194,7 @@
         "sessions": 25,
         "views": 29,
         "searches": 2,
-        "clicks": 15
+        "clicks": 18
       },
       "previous": {
         "users": 0,
@@ -391,7 +412,7 @@
           "users": 3,
           "views": 4,
           "searches": 1,
-          "clicks": 2
+          "clicks": 5
         }
       ],
       "tools": {
@@ -415,6 +436,27 @@
             "name": "MP4 to GIF Converter（k3）",
             "author": "k3さん",
             "category": "画像・デザインを作る",
+            "count": 1,
+            "previous": 0
+          },
+          {
+            "name": "noteフォーマットヘルパー",
+            "author": "ふーさん",
+            "category": "記事を書く・編集する",
+            "count": 1,
+            "previous": 0
+          },
+          {
+            "name": "サムネ盛丸（モリマル）",
+            "author": "M橋D輔さん",
+            "category": "画像・デザインを作る",
+            "count": 1,
+            "previous": 0
+          },
+          {
+            "name": "売れ筋探偵 for note",
+            "author": "ナマケモノ",
+            "category": "記事を書く・編集する",
             "count": 1,
             "previous": 0
           }
@@ -464,7 +506,7 @@
       "sources": [
         {
           "name": "note",
-          "count": 3
+          "count": 4
         },
         {
           "name": "検索エンジン",
@@ -476,12 +518,12 @@
         },
         {
           "name": "その他",
-          "count": 4
+          "count": 1
         }
       ],
       "audience": {
         "new": 11,
-        "returning": 3
+        "returning": 4
       }
     },
     "today": {
@@ -497,11 +539,11 @@
         "clicks": 0
       },
       "previous": {
-        "users": 0,
-        "sessions": 0,
-        "views": 0,
+        "users": 1,
+        "sessions": 1,
+        "views": 1,
         "searches": 0,
-        "clicks": 0
+        "clicks": 5
       },
       "daily": [
         {
@@ -554,7 +596,7 @@
         "new": 0,
         "returning": 0
       },
-      "throughHour": 8
+      "throughHour": 14
     }
   },
   "warnings": []
