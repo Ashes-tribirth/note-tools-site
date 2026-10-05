@@ -1,35 +1,28 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-05T05:34:41.407941+00:00",
+  "generatedAt": "2026-10-05T17:07:25.564979+00:00",
   "timezone": "Asia/Tokyo",
   "periods": {
     "7": {
-      "start": "2026-09-28",
-      "end": "2026-10-04",
-      "previousStart": "2026-09-21",
-      "previousEnd": "2026-09-27",
+      "start": "2026-09-29",
+      "end": "2026-10-05",
+      "previousStart": "2026-09-22",
+      "previousEnd": "2026-09-28",
       "current": {
-        "users": 7,
-        "sessions": 13,
-        "views": 13,
+        "users": 5,
+        "sessions": 7,
+        "views": 7,
         "searches": 1,
-        "clicks": 11
+        "clicks": 7
       },
       "previous": {
-        "users": 4,
-        "sessions": 8,
-        "views": 11,
+        "users": 6,
+        "sessions": 15,
+        "views": 18,
         "searches": 1,
-        "clicks": 6
+        "clicks": 10
       },
       "daily": [
-        {
-          "date": "2026-09-28",
-          "users": 3,
-          "views": 7,
-          "searches": 0,
-          "clicks": 4
-        },
         {
           "date": "2026-09-29",
           "users": 0,
@@ -71,25 +64,18 @@
           "views": 0,
           "searches": 0,
           "clicks": 0
+        },
+        {
+          "date": "2026-10-05",
+          "users": 1,
+          "views": 1,
+          "searches": 0,
+          "clicks": 0
         }
       ],
       "tools": {
         "status": "ok",
         "rows": [
-          {
-            "name": "おへんじ帖",
-            "author": "はしゃも｜感情構造エンジニア",
-            "category": "交流・通知を管理する",
-            "count": 3,
-            "previous": 0
-          },
-          {
-            "name": "note Cube Blocks",
-            "author": "ひゅー｜挑戦と思考整理を楽しむ。note",
-            "category": "活動を分析・記録する",
-            "count": 2,
-            "previous": 0
-          },
           {
             "name": "MP4 to GIF Converter（k3）",
             "author": "k3さん",
@@ -103,6 +89,13 @@
             "category": "記事を書く・編集する",
             "count": 1,
             "previous": 0
+          },
+          {
+            "name": "おへんじ帖",
+            "author": "はしゃも｜感情構造エンジニア",
+            "category": "交流・通知を管理する",
+            "count": 1,
+            "previous": 2
           },
           {
             "name": "サムネ盛丸（モリマル）",
@@ -164,7 +157,7 @@
       "sources": [
         {
           "name": "note",
-          "count": 4
+          "count": 3
         },
         {
           "name": "検索エンジン",
@@ -172,7 +165,7 @@
         },
         {
           "name": "直接アクセス",
-          "count": 9
+          "count": 4
         },
         {
           "name": "その他",
@@ -180,19 +173,19 @@
         }
       ],
       "audience": {
-        "new": 6,
-        "returning": 3
+        "new": 4,
+        "returning": 2
       }
     },
     "30": {
-      "start": "2026-09-05",
-      "end": "2026-10-04",
-      "previousStart": "2026-08-06",
-      "previousEnd": "2026-09-04",
+      "start": "2026-09-06",
+      "end": "2026-10-05",
+      "previousStart": "2026-08-07",
+      "previousEnd": "2026-09-05",
       "current": {
         "users": 11,
-        "sessions": 25,
-        "views": 29,
+        "sessions": 26,
+        "views": 30,
         "searches": 2,
         "clicks": 18
       },
@@ -204,13 +197,6 @@
         "clicks": 0
       },
       "daily": [
-        {
-          "date": "2026-09-05",
-          "users": 0,
-          "views": 0,
-          "searches": 0,
-          "clicks": 0
-        },
         {
           "date": "2026-09-06",
           "users": 0,
@@ -413,6 +399,13 @@
           "views": 0,
           "searches": 0,
           "clicks": 0
+        },
+        {
+          "date": "2026-10-05",
+          "users": 1,
+          "views": 1,
+          "searches": 0,
+          "clicks": 0
         }
       ],
       "tools": {
@@ -514,7 +507,7 @@
         },
         {
           "name": "直接アクセス",
-          "count": 20
+          "count": 21
         },
         {
           "name": "その他",
@@ -527,10 +520,10 @@
       }
     },
     "today": {
-      "start": "2026-10-05",
-      "end": "2026-10-05",
-      "previousStart": "2026-10-04",
-      "previousEnd": "2026-10-04",
+      "start": "2026-10-06",
+      "end": "2026-10-06",
+      "previousStart": "2026-10-05",
+      "previousEnd": "2026-10-05",
       "current": {
         "users": 0,
         "sessions": 0,
@@ -547,7 +540,7 @@
       },
       "daily": [
         {
-          "date": "2026-10-05",
+          "date": "2026-10-06",
           "users": 0,
           "views": 0,
           "searches": 0,
@@ -596,7 +589,7 @@
         "new": 0,
         "returning": 0
       },
-      "throughHour": 14
+      "throughHour": 2
     }
   },
   "warnings": []
