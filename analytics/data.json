@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-07T15:32:25.785023+00:00",
+  "generatedAt": "2026-10-07T21:17:36.504649+00:00",
   "timezone": "Asia/Tokyo",
   "periods": {
     "7": {
@@ -506,8 +506,76 @@
       }
     },
     "today": {
-      "status": "pending",
-      "reason": "今日の最初の1時間が終わると集計します"
+      "start": "2026-10-08",
+      "end": "2026-10-08",
+      "previousStart": "2026-10-07",
+      "previousEnd": "2026-10-07",
+      "current": {
+        "users": 0,
+        "sessions": 0,
+        "views": 0,
+        "searches": 0,
+        "clicks": 0
+      },
+      "previous": {
+        "users": 0,
+        "sessions": 0,
+        "views": 0,
+        "searches": 0,
+        "clicks": 0
+      },
+      "daily": [
+        {
+          "date": "2026-10-08",
+          "users": 0,
+          "views": 0,
+          "searches": 0,
+          "clicks": 0
+        }
+      ],
+      "tools": {
+        "status": "ok",
+        "rows": [],
+        "withheld": 0
+      },
+      "keywords": {
+        "status": "ok",
+        "rows": [],
+        "withheld": 0
+      },
+      "zeroSearches": {
+        "status": "ok",
+        "rows": [],
+        "withheld": 0
+      },
+      "filters": {
+        "status": "ok",
+        "rows": [],
+        "withheld": 0
+      },
+      "sources": [
+        {
+          "name": "note",
+          "count": 0
+        },
+        {
+          "name": "検索エンジン",
+          "count": 0
+        },
+        {
+          "name": "直接アクセス",
+          "count": 0
+        },
+        {
+          "name": "その他",
+          "count": 0
+        }
+      ],
+      "audience": {
+        "new": 0,
+        "returning": 0
+      },
+      "throughHour": 6
     }
   },
   "warnings": []
