@@ -76,12 +76,15 @@ function deriveStatus(rawStatus = '') {
     priceCategory = '月額・メンバーシップ';
   } else if (
     rawStatus.includes('基本無料') ||
+    rawStatus.includes('無料版') ||
+    rawStatus.includes('無料利用可') ||
+    rawStatus.includes('一部無料') ||
     rawStatus.includes('無料体験') ||
     rawStatus.includes('リポストで無料') ||
     rawStatus.includes('API利用料別')
   ) {
     priceCategory = '条件付き無料';
-  } else if (rawStatus === '無料' || rawStatus.startsWith('無料（HTML公開')) {
+  } else if (rawStatus.startsWith('無料')) {
     priceCategory = '無料';
   } else {
     const match = rawStatus.replace(/,/g, '').match(/(\d{1,6})\s*円/);
@@ -235,7 +238,7 @@ async function loadUpdateLog() {
   if (!elements.updateLog) return;
 
   try {
-    const response = await fetch('./updates.json?v=20261014-roller');
+    const response = await fetch('./updates.json?v=20261014-roller2');
     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
     updateLogEntries = await response.json();
     renderUpdateLog(updateLogEntries);
@@ -462,7 +465,7 @@ function restoreDisplaySettings() {
 
 async function loadTools() {
   try {
-    const response = await fetch('./note%20tools.csv?v=20261014-roller');
+    const response = await fetch('./note%20tools.csv?v=20261014-roller2');
     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
 
     const rows = parseCSV(await response.text())
