@@ -1,35 +1,28 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-14T13:41:01.507560+00:00",
+  "generatedAt": "2026-10-14T20:11:23.570673+00:00",
   "timezone": "Asia/Tokyo",
   "periods": {
     "7": {
-      "start": "2026-10-07",
-      "end": "2026-10-13",
-      "previousStart": "2026-09-30",
-      "previousEnd": "2026-10-06",
+      "start": "2026-10-08",
+      "end": "2026-10-14",
+      "previousStart": "2026-10-01",
+      "previousEnd": "2026-10-07",
       "current": {
-        "users": 2,
-        "sessions": 3,
-        "views": 4,
+        "users": 3,
+        "sessions": 7,
+        "views": 8,
         "searches": 0,
-        "clicks": 0
+        "clicks": 1
       },
       "previous": {
-        "users": 5,
-        "sessions": 7,
-        "views": 7,
+        "users": 6,
+        "sessions": 8,
+        "views": 9,
         "searches": 1,
         "clicks": 7
       },
       "daily": [
-        {
-          "date": "2026-10-07",
-          "users": 2,
-          "views": 3,
-          "searches": 0,
-          "clicks": 0
-        },
         {
           "date": "2026-10-08",
           "users": 0,
@@ -71,11 +64,26 @@
           "views": 1,
           "searches": 0,
           "clicks": 0
+        },
+        {
+          "date": "2026-10-14",
+          "users": 3,
+          "views": 7,
+          "searches": 0,
+          "clicks": 1
         }
       ],
       "tools": {
         "status": "ok",
-        "rows": [],
+        "rows": [
+          {
+            "name": "note Creator Summary",
+            "author": "ひゅー｜挑戦と思考整理を楽しむ。note",
+            "category": "活動を分析・記録する",
+            "count": 1,
+            "previous": 0
+          }
+        ],
         "withheld": 0
       },
       "keywords": {
@@ -90,13 +98,38 @@
       },
       "filters": {
         "status": "ok",
-        "rows": [],
+        "rows": [
+          {
+            "name": "お気に入りのみ：off",
+            "kind": "表示条件",
+            "count": 1,
+            "previous": 0
+          },
+          {
+            "name": "お気に入りのみ：on",
+            "kind": "表示条件",
+            "count": 1,
+            "previous": 0
+          },
+          {
+            "name": "活動を分析・記録する",
+            "kind": "カテゴリ",
+            "count": 1,
+            "previous": 1
+          },
+          {
+            "name": "無料",
+            "kind": "料金",
+            "count": 1,
+            "previous": 3
+          }
+        ],
         "withheld": 0
       },
       "sources": [
         {
           "name": "note",
-          "count": 0
+          "count": 4
         },
         {
           "name": "検索エンジン",
@@ -112,21 +145,21 @@
         }
       ],
       "audience": {
-        "new": 1,
-        "returning": 1
+        "new": 2,
+        "returning": 2
       }
     },
     "30": {
-      "start": "2026-09-14",
-      "end": "2026-10-13",
-      "previousStart": "2026-08-15",
-      "previousEnd": "2026-09-13",
+      "start": "2026-09-15",
+      "end": "2026-10-14",
+      "previousStart": "2026-08-16",
+      "previousEnd": "2026-09-14",
       "current": {
-        "users": 12,
-        "sessions": 29,
-        "views": 34,
+        "users": 14,
+        "sessions": 35,
+        "views": 41,
         "searches": 2,
-        "clicks": 18
+        "clicks": 19
       },
       "previous": {
         "users": 0,
@@ -136,13 +169,6 @@
         "clicks": 0
       },
       "daily": [
-        {
-          "date": "2026-09-14",
-          "users": 0,
-          "views": 0,
-          "searches": 0,
-          "clicks": 0
-        },
         {
           "date": "2026-09-15",
           "users": 0,
@@ -345,6 +371,13 @@
           "views": 1,
           "searches": 0,
           "clicks": 0
+        },
+        {
+          "date": "2026-10-14",
+          "users": 3,
+          "views": 7,
+          "searches": 0,
+          "clicks": 1
         }
       ],
       "tools": {
@@ -368,6 +401,13 @@
             "name": "MP4 to GIF Converter（k3）",
             "author": "k3さん",
             "category": "画像・デザインを作る",
+            "count": 1,
+            "previous": 0
+          },
+          {
+            "name": "note Creator Summary",
+            "author": "ひゅー｜挑戦と思考整理を楽しむ。note",
+            "category": "活動を分析・記録する",
             "count": 1,
             "previous": 0
           },
@@ -404,17 +444,29 @@
           {
             "name": "無料",
             "kind": "料金",
-            "count": 3,
-            "previous": 0
-          },
-          {
-            "name": "交流・通知を管理する",
-            "kind": "カテゴリ",
-            "count": 1,
+            "count": 4,
             "previous": 0
           },
           {
             "name": "活動を分析・記録する",
+            "kind": "カテゴリ",
+            "count": 2,
+            "previous": 0
+          },
+          {
+            "name": "お気に入りのみ：off",
+            "kind": "表示条件",
+            "count": 1,
+            "previous": 0
+          },
+          {
+            "name": "お気に入りのみ：on",
+            "kind": "表示条件",
+            "count": 1,
+            "previous": 0
+          },
+          {
+            "name": "交流・通知を管理する",
             "kind": "カテゴリ",
             "count": 1,
             "previous": 0
@@ -431,7 +483,7 @@
       "sources": [
         {
           "name": "note",
-          "count": 4
+          "count": 8
         },
         {
           "name": "検索エンジン",
@@ -439,7 +491,7 @@
         },
         {
           "name": "直接アクセス",
-          "count": 24
+          "count": 26
         },
         {
           "name": "その他",
@@ -447,19 +499,19 @@
         }
       ],
       "audience": {
-        "new": 12,
-        "returning": 4
+        "new": 14,
+        "returning": 5
       }
     },
     "today": {
-      "start": "2026-10-14",
-      "end": "2026-10-14",
-      "previousStart": "2026-10-13",
-      "previousEnd": "2026-10-13",
+      "start": "2026-10-15",
+      "end": "2026-10-15",
+      "previousStart": "2026-10-14",
+      "previousEnd": "2026-10-14",
       "current": {
-        "users": 1,
-        "sessions": 2,
-        "views": 1,
+        "users": 0,
+        "sessions": 0,
+        "views": 0,
         "searches": 0,
         "clicks": 0
       },
@@ -472,9 +524,9 @@
       },
       "daily": [
         {
-          "date": "2026-10-14",
-          "users": 1,
-          "views": 1,
+          "date": "2026-10-15",
+          "users": 0,
+          "views": 0,
           "searches": 0,
           "clicks": 0
         }
@@ -502,7 +554,7 @@
       "sources": [
         {
           "name": "note",
-          "count": 2
+          "count": 0
         },
         {
           "name": "検索エンジン",
@@ -519,9 +571,9 @@
       ],
       "audience": {
         "new": 0,
-        "returning": 1
+        "returning": 0
       },
-      "throughHour": 22
+      "throughHour": 5
     }
   },
   "warnings": []
