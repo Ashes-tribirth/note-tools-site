@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-14T04:49:14.029198+00:00",
+  "generatedAt": "2026-10-14T13:41:01.507560+00:00",
   "timezone": "Asia/Tokyo",
   "periods": {
     "7": {
@@ -457,9 +457,9 @@
       "previousStart": "2026-10-13",
       "previousEnd": "2026-10-13",
       "current": {
-        "users": 0,
-        "sessions": 0,
-        "views": 0,
+        "users": 1,
+        "sessions": 2,
+        "views": 1,
         "searches": 0,
         "clicks": 0
       },
@@ -473,8 +473,8 @@
       "daily": [
         {
           "date": "2026-10-14",
-          "users": 0,
-          "views": 0,
+          "users": 1,
+          "views": 1,
           "searches": 0,
           "clicks": 0
         }
@@ -502,7 +502,7 @@
       "sources": [
         {
           "name": "note",
-          "count": 0
+          "count": 2
         },
         {
           "name": "検索エンジン",
@@ -519,9 +519,9 @@
       ],
       "audience": {
         "new": 0,
-        "returning": 0
+        "returning": 1
       },
-      "throughHour": 13
+      "throughHour": 22
     }
   },
   "warnings": []
