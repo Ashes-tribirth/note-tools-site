@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-17T04:21:15.455767+00:00",
+  "generatedAt": "2026-10-17T12:10:26.002750+00:00",
   "timezone": "Asia/Tokyo",
   "periods": {
     "7": {
@@ -509,11 +509,11 @@
       "previousStart": "2026-10-16",
       "previousEnd": "2026-10-16",
       "current": {
-        "users": 0,
-        "sessions": 0,
-        "views": 0,
+        "users": 1,
+        "sessions": 1,
+        "views": 1,
         "searches": 0,
-        "clicks": 0
+        "clicks": 1
       },
       "previous": {
         "users": 0,
@@ -525,15 +525,23 @@
       "daily": [
         {
           "date": "2026-10-17",
-          "users": 0,
-          "views": 0,
+          "users": 1,
+          "views": 1,
           "searches": 0,
-          "clicks": 0
+          "clicks": 1
         }
       ],
       "tools": {
         "status": "ok",
-        "rows": [],
+        "rows": [
+          {
+            "name": "noteしおり",
+            "author": "AIを使える形に整える@オトーワン",
+            "category": "保存・管理する",
+            "count": 1,
+            "previous": 0
+          }
+        ],
         "withheld": 0
       },
       "keywords": {
@@ -554,7 +562,7 @@
       "sources": [
         {
           "name": "note",
-          "count": 0
+          "count": 1
         },
         {
           "name": "検索エンジン",
@@ -570,10 +578,10 @@
         }
       ],
       "audience": {
-        "new": 0,
+        "new": 1,
         "returning": 0
       },
-      "throughHour": 13
+      "throughHour": 21
     }
   },
   "warnings": []
