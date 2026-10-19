@@ -72,7 +72,7 @@ function deriveStatus(rawStatus = '') {
 
   let priceCategory = '価格不明';
 
-  if (rawStatus.includes('メンバーシップ')) {
+  if (rawStatus.includes('メンバーシップ') || rawStatus.startsWith('月額')) {
     priceCategory = '月額・メンバーシップ';
   } else if (
     rawStatus.includes('基本無料') ||
@@ -238,7 +238,7 @@ async function loadUpdateLog() {
   if (!elements.updateLog) return;
 
   try {
-    const response = await fetch('./updates.json?v=20261014-roller2');
+    const response = await fetch('./updates.json?v=20261020-roller');
     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
     updateLogEntries = await response.json();
     renderUpdateLog(updateLogEntries);
@@ -465,7 +465,7 @@ function restoreDisplaySettings() {
 
 async function loadTools() {
   try {
-    const response = await fetch('./note%20tools.csv?v=20261014-roller2');
+    const response = await fetch('./note%20tools.csv?v=20261020-roller');
     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
 
     const rows = parseCSV(await response.text())
@@ -485,5 +485,6 @@ async function loadTools() {
 restoreDisplaySettings();
 loadUpdateLog();
 loadTools();
+
 
 
