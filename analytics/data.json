@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-19T04:35:52.512339+00:00",
+  "generatedAt": "2026-10-19T15:34:22.033641+00:00",
   "timezone": "Asia/Tokyo",
   "periods": {
     "7": {
-      "start": "2026-10-12",
-      "end": "2026-10-18",
-      "previousStart": "2026-10-05",
-      "previousEnd": "2026-10-11",
+      "start": "2026-10-13",
+      "end": "2026-10-19",
+      "previousStart": "2026-10-06",
+      "previousEnd": "2026-10-12",
       "current": {
         "users": 6,
         "sessions": 15,
@@ -17,19 +17,12 @@
       },
       "previous": {
         "users": 2,
-        "sessions": 3,
-        "views": 4,
+        "sessions": 2,
+        "views": 3,
         "searches": 0,
         "clicks": 0
       },
       "daily": [
-        {
-          "date": "2026-10-12",
-          "users": 0,
-          "views": 0,
-          "searches": 0,
-          "clicks": 0
-        },
         {
           "date": "2026-10-13",
           "users": 1,
@@ -69,6 +62,13 @@
           "date": "2026-10-18",
           "users": 2,
           "views": 2,
+          "searches": 0,
+          "clicks": 0
+        },
+        {
+          "date": "2026-10-19",
+          "users": 0,
+          "views": 0,
           "searches": 0,
           "clicks": 0
         }
@@ -157,32 +157,25 @@
       }
     },
     "30": {
-      "start": "2026-09-19",
-      "end": "2026-10-18",
-      "previousStart": "2026-08-20",
-      "previousEnd": "2026-09-18",
+      "start": "2026-09-20",
+      "end": "2026-10-19",
+      "previousStart": "2026-08-21",
+      "previousEnd": "2026-09-19",
       "current": {
         "users": 16,
-        "sessions": 41,
-        "views": 48,
+        "sessions": 40,
+        "views": 46,
         "searches": 2,
         "clicks": 19
       },
       "previous": {
         "users": 2,
-        "sessions": 2,
-        "views": 2,
+        "sessions": 3,
+        "views": 4,
         "searches": 0,
         "clicks": 1
       },
       "daily": [
-        {
-          "date": "2026-09-19",
-          "users": 1,
-          "views": 2,
-          "searches": 0,
-          "clicks": 0
-        },
         {
           "date": "2026-09-20",
           "users": 1,
@@ -385,6 +378,13 @@
           "views": 2,
           "searches": 0,
           "clicks": 0
+        },
+        {
+          "date": "2026-10-19",
+          "users": 0,
+          "views": 0,
+          "searches": 0,
+          "clicks": 0
         }
       ],
       "tools": {
@@ -505,7 +505,7 @@
         },
         {
           "name": "直接アクセス",
-          "count": 30
+          "count": 29
         },
         {
           "name": "その他",
@@ -518,76 +518,8 @@
       }
     },
     "today": {
-      "start": "2026-10-19",
-      "end": "2026-10-19",
-      "previousStart": "2026-10-18",
-      "previousEnd": "2026-10-18",
-      "current": {
-        "users": 0,
-        "sessions": 0,
-        "views": 0,
-        "searches": 0,
-        "clicks": 0
-      },
-      "previous": {
-        "users": 1,
-        "sessions": 1,
-        "views": 1,
-        "searches": 0,
-        "clicks": 0
-      },
-      "daily": [
-        {
-          "date": "2026-10-19",
-          "users": 0,
-          "views": 0,
-          "searches": 0,
-          "clicks": 0
-        }
-      ],
-      "tools": {
-        "status": "ok",
-        "rows": [],
-        "withheld": 0
-      },
-      "keywords": {
-        "status": "ok",
-        "rows": [],
-        "withheld": 0
-      },
-      "zeroSearches": {
-        "status": "ok",
-        "rows": [],
-        "withheld": 0
-      },
-      "filters": {
-        "status": "ok",
-        "rows": [],
-        "withheld": 0
-      },
-      "sources": [
-        {
-          "name": "note",
-          "count": 0
-        },
-        {
-          "name": "検索エンジン",
-          "count": 0
-        },
-        {
-          "name": "直接アクセス",
-          "count": 0
-        },
-        {
-          "name": "その他",
-          "count": 0
-        }
-      ],
-      "audience": {
-        "new": 0,
-        "returning": 0
-      },
-      "throughHour": 13
+      "status": "pending",
+      "reason": "今日の最初の1時間が終わると集計します"
     }
   },
   "warnings": []
