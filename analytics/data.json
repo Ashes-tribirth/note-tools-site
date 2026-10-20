@@ -1,35 +1,28 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-20T13:32:51.975732+00:00",
+  "generatedAt": "2026-10-20T19:59:30.526888+00:00",
   "timezone": "Asia/Tokyo",
   "periods": {
     "7": {
-      "start": "2026-10-13",
-      "end": "2026-10-19",
-      "previousStart": "2026-10-06",
-      "previousEnd": "2026-10-12",
+      "start": "2026-10-14",
+      "end": "2026-10-20",
+      "previousStart": "2026-10-07",
+      "previousEnd": "2026-10-13",
       "current": {
-        "users": 6,
-        "sessions": 15,
-        "views": 17,
+        "users": 8,
+        "sessions": 16,
+        "views": 20,
         "searches": 0,
         "clicks": 2
       },
       "previous": {
         "users": 2,
-        "sessions": 2,
-        "views": 3,
+        "sessions": 3,
+        "views": 4,
         "searches": 0,
         "clicks": 0
       },
       "daily": [
-        {
-          "date": "2026-10-13",
-          "users": 1,
-          "views": 1,
-          "searches": 0,
-          "clicks": 0
-        },
         {
           "date": "2026-10-14",
           "users": 3,
@@ -69,6 +62,13 @@
           "date": "2026-10-19",
           "users": 0,
           "views": 0,
+          "searches": 0,
+          "clicks": 0
+        },
+        {
+          "date": "2026-10-20",
+          "users": 2,
+          "views": 4,
           "searches": 0,
           "clicks": 0
         }
@@ -119,6 +119,12 @@
             "previous": 0
           },
           {
+            "name": "月額・メンバーシップ",
+            "kind": "料金",
+            "count": 1,
+            "previous": 0
+          },
+          {
             "name": "活動を分析・記録する",
             "kind": "カテゴリ",
             "count": 1,
@@ -144,7 +150,7 @@
         },
         {
           "name": "直接アクセス",
-          "count": 9
+          "count": 10
         },
         {
           "name": "その他",
@@ -152,37 +158,30 @@
         }
       ],
       "audience": {
-        "new": 5,
-        "returning": 3
+        "new": 6,
+        "returning": 4
       }
     },
     "30": {
-      "start": "2026-09-20",
-      "end": "2026-10-19",
-      "previousStart": "2026-08-21",
-      "previousEnd": "2026-09-19",
+      "start": "2026-09-21",
+      "end": "2026-10-20",
+      "previousStart": "2026-08-22",
+      "previousEnd": "2026-09-20",
       "current": {
-        "users": 16,
-        "sessions": 40,
-        "views": 46,
+        "users": 17,
+        "sessions": 41,
+        "views": 49,
         "searches": 2,
         "clicks": 19
       },
       "previous": {
         "users": 2,
-        "sessions": 3,
-        "views": 4,
+        "sessions": 4,
+        "views": 5,
         "searches": 0,
         "clicks": 1
       },
       "daily": [
-        {
-          "date": "2026-09-20",
-          "users": 1,
-          "views": 1,
-          "searches": 0,
-          "clicks": 0
-        },
         {
           "date": "2026-09-21",
           "users": 0,
@@ -385,6 +384,13 @@
           "views": 0,
           "searches": 0,
           "clicks": 0
+        },
+        {
+          "date": "2026-10-20",
+          "users": 2,
+          "views": 4,
+          "searches": 0,
+          "clicks": 0
         }
       ],
       "tools": {
@@ -486,6 +492,12 @@
             "previous": 0
           },
           {
+            "name": "月額・メンバーシップ",
+            "kind": "料金",
+            "count": 1,
+            "previous": 0
+          },
+          {
             "name": "画像・デザインを作る",
             "kind": "カテゴリ",
             "count": 1,
@@ -505,7 +517,7 @@
         },
         {
           "name": "直接アクセス",
-          "count": 29
+          "count": 30
         },
         {
           "name": "その他",
@@ -513,15 +525,15 @@
         }
       ],
       "audience": {
-        "new": 15,
-        "returning": 6
+        "new": 16,
+        "returning": 7
       }
     },
     "today": {
-      "start": "2026-10-20",
-      "end": "2026-10-20",
-      "previousStart": "2026-10-19",
-      "previousEnd": "2026-10-19",
+      "start": "2026-10-21",
+      "end": "2026-10-21",
+      "previousStart": "2026-10-20",
+      "previousEnd": "2026-10-20",
       "current": {
         "users": 0,
         "sessions": 0,
@@ -538,7 +550,7 @@
       },
       "daily": [
         {
-          "date": "2026-10-20",
+          "date": "2026-10-21",
           "users": 0,
           "views": 0,
           "searches": 0,
@@ -587,7 +599,7 @@
         "new": 0,
         "returning": 0
       },
-      "throughHour": 22
+      "throughHour": 4
     }
   },
   "warnings": []
