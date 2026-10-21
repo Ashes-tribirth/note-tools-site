@@ -1,35 +1,28 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-21T13:44:46.612932+00:00",
+  "generatedAt": "2026-10-21T20:08:27.466555+00:00",
   "timezone": "Asia/Tokyo",
   "periods": {
     "7": {
-      "start": "2026-10-14",
-      "end": "2026-10-20",
-      "previousStart": "2026-10-07",
-      "previousEnd": "2026-10-13",
+      "start": "2026-10-15",
+      "end": "2026-10-21",
+      "previousStart": "2026-10-08",
+      "previousEnd": "2026-10-14",
       "current": {
         "users": 8,
-        "sessions": 20,
-        "views": 24,
-        "searches": 0,
+        "sessions": 17,
+        "views": 20,
+        "searches": 20,
         "clicks": 2
       },
       "previous": {
-        "users": 2,
-        "sessions": 3,
-        "views": 4,
+        "users": 3,
+        "sessions": 7,
+        "views": 8,
         "searches": 0,
-        "clicks": 0
+        "clicks": 1
       },
       "daily": [
-        {
-          "date": "2026-10-14",
-          "users": 3,
-          "views": 7,
-          "searches": 0,
-          "clicks": 1
-        },
         {
           "date": "2026-10-15",
           "users": 2,
@@ -71,22 +64,29 @@
           "views": 8,
           "searches": 0,
           "clicks": 0
+        },
+        {
+          "date": "2026-10-21",
+          "users": 3,
+          "views": 3,
+          "searches": 20,
+          "clicks": 1
         }
       ],
       "tools": {
         "status": "ok",
         "rows": [
           {
-            "name": "note Creator Summary",
-            "author": "ひゅー｜挑戦と思考整理を楽しむ。note",
-            "category": "活動を分析・記録する",
+            "name": "noteしおり",
+            "author": "AIを使える形に整える@オトーワン",
+            "category": "保存・管理する",
             "count": 1,
             "previous": 0
           },
           {
-            "name": "noteしおり",
-            "author": "AIを使える形に整える@オトーワン",
-            "category": "保存・管理する",
+            "name": "スキマップ",
+            "author": "ふな",
+            "category": "活動を分析・記録する",
             "count": 1,
             "previous": 0
           }
@@ -96,12 +96,12 @@
       "keywords": {
         "status": "ok",
         "rows": [],
-        "withheld": 0
+        "withheld": 20
       },
       "zeroSearches": {
         "status": "ok",
         "rows": [],
-        "withheld": 0
+        "withheld": 19
       },
       "filters": {
         "status": "ok",
@@ -109,14 +109,8 @@
           {
             "name": "お気に入りのみ：on",
             "kind": "表示条件",
-            "count": 2,
-            "previous": 0
-          },
-          {
-            "name": "お気に入りのみ：off",
-            "kind": "表示条件",
             "count": 1,
-            "previous": 0
+            "previous": 1
           },
           {
             "name": "月額・メンバーシップ",
@@ -128,13 +122,7 @@
             "name": "活動を分析・記録する",
             "kind": "カテゴリ",
             "count": 1,
-            "previous": 0
-          },
-          {
-            "name": "無料",
-            "kind": "料金",
-            "count": 1,
-            "previous": 0
+            "previous": 1
           }
         ],
         "withheld": 0
@@ -142,7 +130,7 @@
       "sources": [
         {
           "name": "note",
-          "count": 6
+          "count": 4
         },
         {
           "name": "検索エンジン",
@@ -150,7 +138,7 @@
         },
         {
           "name": "直接アクセス",
-          "count": 14
+          "count": 13
         },
         {
           "name": "その他",
@@ -159,20 +147,20 @@
       ],
       "audience": {
         "new": 6,
-        "returning": 4
+        "returning": 3
       }
     },
     "30": {
-      "start": "2026-09-21",
-      "end": "2026-10-20",
-      "previousStart": "2026-08-22",
-      "previousEnd": "2026-09-20",
+      "start": "2026-09-22",
+      "end": "2026-10-21",
+      "previousStart": "2026-08-23",
+      "previousEnd": "2026-09-21",
       "current": {
-        "users": 17,
-        "sessions": 45,
-        "views": 53,
-        "searches": 2,
-        "clicks": 19
+        "users": 19,
+        "sessions": 48,
+        "views": 56,
+        "searches": 22,
+        "clicks": 20
       },
       "previous": {
         "users": 2,
@@ -182,13 +170,6 @@
         "clicks": 1
       },
       "daily": [
-        {
-          "date": "2026-09-21",
-          "users": 0,
-          "views": 0,
-          "searches": 0,
-          "clicks": 0
-        },
         {
           "date": "2026-09-22",
           "users": 2,
@@ -391,6 +372,13 @@
           "views": 8,
           "searches": 0,
           "clicks": 0
+        },
+        {
+          "date": "2026-10-21",
+          "users": 3,
+          "views": 3,
+          "searches": 20,
+          "clicks": 1
         }
       ],
       "tools": {
@@ -439,6 +427,13 @@
             "previous": 0
           },
           {
+            "name": "スキマップ",
+            "author": "ふな",
+            "category": "活動を分析・記録する",
+            "count": 1,
+            "previous": 0
+          },
+          {
             "name": "売れ筋探偵 for note",
             "author": "ナマケモノ",
             "category": "記事を書く・編集する",
@@ -451,12 +446,12 @@
       "keywords": {
         "status": "ok",
         "rows": [],
-        "withheld": 2
+        "withheld": 22
       },
       "zeroSearches": {
         "status": "ok",
         "rows": [],
-        "withheld": 0
+        "withheld": 19
       },
       "filters": {
         "status": "ok",
@@ -468,14 +463,14 @@
             "previous": 0
           },
           {
-            "name": "お気に入りのみ：on",
-            "kind": "表示条件",
-            "count": 2,
+            "name": "活動を分析・記録する",
+            "kind": "カテゴリ",
+            "count": 3,
             "previous": 0
           },
           {
-            "name": "活動を分析・記録する",
-            "kind": "カテゴリ",
+            "name": "お気に入りのみ：on",
+            "kind": "表示条件",
             "count": 2,
             "previous": 0
           },
@@ -509,7 +504,7 @@
       "sources": [
         {
           "name": "note",
-          "count": 10
+          "count": 12
         },
         {
           "name": "検索エンジン",
@@ -517,7 +512,7 @@
         },
         {
           "name": "直接アクセス",
-          "count": 34
+          "count": 35
         },
         {
           "name": "その他",
@@ -525,15 +520,15 @@
         }
       ],
       "audience": {
-        "new": 16,
+        "new": 18,
         "returning": 7
       }
     },
     "today": {
-      "start": "2026-10-21",
-      "end": "2026-10-21",
-      "previousStart": "2026-10-20",
-      "previousEnd": "2026-10-20",
+      "start": "2026-10-22",
+      "end": "2026-10-22",
+      "previousStart": "2026-10-21",
+      "previousEnd": "2026-10-21",
       "current": {
         "users": 0,
         "sessions": 0,
@@ -550,7 +545,7 @@
       },
       "daily": [
         {
-          "date": "2026-10-21",
+          "date": "2026-10-22",
           "users": 0,
           "views": 0,
           "searches": 0,
@@ -599,7 +594,7 @@
         "new": 0,
         "returning": 0
       },
-      "throughHour": 22
+      "throughHour": 5
     }
   },
   "warnings": []
