@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-20T23:10:15.842328+00:00",
+  "generatedAt": "2026-10-21T04:41:32.708687+00:00",
   "timezone": "Asia/Tokyo",
   "periods": {
     "7": {
@@ -10,8 +10,8 @@
       "previousEnd": "2026-10-13",
       "current": {
         "users": 8,
-        "sessions": 16,
-        "views": 20,
+        "sessions": 20,
+        "views": 24,
         "searches": 0,
         "clicks": 2
       },
@@ -67,8 +67,8 @@
         },
         {
           "date": "2026-10-20",
-          "users": 2,
-          "views": 4,
+          "users": 3,
+          "views": 8,
           "searches": 0,
           "clicks": 0
         }
@@ -107,13 +107,13 @@
         "status": "ok",
         "rows": [
           {
-            "name": "お気に入りのみ：off",
+            "name": "お気に入りのみ：on",
             "kind": "表示条件",
-            "count": 1,
+            "count": 2,
             "previous": 0
           },
           {
-            "name": "お気に入りのみ：on",
+            "name": "お気に入りのみ：off",
             "kind": "表示条件",
             "count": 1,
             "previous": 0
@@ -150,7 +150,7 @@
         },
         {
           "name": "直接アクセス",
-          "count": 10
+          "count": 14
         },
         {
           "name": "その他",
@@ -169,8 +169,8 @@
       "previousEnd": "2026-09-20",
       "current": {
         "users": 17,
-        "sessions": 41,
-        "views": 49,
+        "sessions": 45,
+        "views": 53,
         "searches": 2,
         "clicks": 19
       },
@@ -387,8 +387,8 @@
         },
         {
           "date": "2026-10-20",
-          "users": 2,
-          "views": 4,
+          "users": 3,
+          "views": 8,
           "searches": 0,
           "clicks": 0
         }
@@ -468,6 +468,12 @@
             "previous": 0
           },
           {
+            "name": "お気に入りのみ：on",
+            "kind": "表示条件",
+            "count": 2,
+            "previous": 0
+          },
+          {
             "name": "活動を分析・記録する",
             "kind": "カテゴリ",
             "count": 2,
@@ -475,12 +481,6 @@
           },
           {
             "name": "お気に入りのみ：off",
-            "kind": "表示条件",
-            "count": 1,
-            "previous": 0
-          },
-          {
-            "name": "お気に入りのみ：on",
             "kind": "表示条件",
             "count": 1,
             "previous": 0
@@ -517,7 +517,7 @@
         },
         {
           "name": "直接アクセス",
-          "count": 30
+          "count": 34
         },
         {
           "name": "その他",
@@ -599,7 +599,7 @@
         "new": 0,
         "returning": 0
       },
-      "throughHour": 8
+      "throughHour": 13
     }
   },
   "warnings": []
