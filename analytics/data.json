@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-24T04:32:00.376318+00:00",
+  "generatedAt": "2026-10-24T12:39:24.421060+00:00",
   "timezone": "Asia/Tokyo",
   "periods": {
     "7": {
@@ -530,9 +530,9 @@
       "previousStart": "2026-10-23",
       "previousEnd": "2026-10-23",
       "current": {
-        "users": 0,
-        "sessions": 0,
-        "views": 0,
+        "users": 1,
+        "sessions": 2,
+        "views": 1,
         "searches": 0,
         "clicks": 0
       },
@@ -546,8 +546,8 @@
       "daily": [
         {
           "date": "2026-10-24",
-          "users": 0,
-          "views": 0,
+          "users": 1,
+          "views": 1,
           "searches": 0,
           "clicks": 0
         }
@@ -569,13 +569,20 @@
       },
       "filters": {
         "status": "ok",
-        "rows": [],
+        "rows": [
+          {
+            "name": "データを取得・出力する",
+            "kind": "カテゴリ",
+            "count": 1,
+            "previous": 0
+          }
+        ],
         "withheld": 0
       },
       "sources": [
         {
           "name": "note",
-          "count": 0
+          "count": 2
         },
         {
           "name": "検索エンジン",
@@ -591,10 +598,10 @@
         }
       ],
       "audience": {
-        "new": 0,
+        "new": 1,
         "returning": 0
       },
-      "throughHour": 13
+      "throughHour": 21
     }
   },
   "warnings": []
