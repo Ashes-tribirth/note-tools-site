@@ -1,35 +1,28 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-25T13:10:12.828762+00:00",
+  "generatedAt": "2026-10-25T19:01:32.387109+00:00",
   "timezone": "Asia/Tokyo",
   "periods": {
     "7": {
-      "start": "2026-10-18",
-      "end": "2026-10-24",
-      "previousStart": "2026-10-11",
-      "previousEnd": "2026-10-17",
+      "start": "2026-10-19",
+      "end": "2026-10-25",
+      "previousStart": "2026-10-12",
+      "previousEnd": "2026-10-18",
       "current": {
         "users": 8,
-        "sessions": 15,
-        "views": 16,
+        "sessions": 16,
+        "views": 18,
         "searches": 20,
         "clicks": 1
       },
       "previous": {
-        "users": 5,
-        "sessions": 13,
-        "views": 15,
+        "users": 6,
+        "sessions": 15,
+        "views": 17,
         "searches": 0,
         "clicks": 2
       },
       "daily": [
-        {
-          "date": "2026-10-18",
-          "users": 2,
-          "views": 2,
-          "searches": 0,
-          "clicks": 0
-        },
         {
           "date": "2026-10-19",
           "users": 0,
@@ -69,6 +62,13 @@
           "date": "2026-10-24",
           "users": 1,
           "views": 1,
+          "searches": 0,
+          "clicks": 0
+        },
+        {
+          "date": "2026-10-25",
+          "users": 3,
+          "views": 4,
           "searches": 0,
           "clicks": 0
         }
@@ -137,7 +137,7 @@
         },
         {
           "name": "直接アクセス",
-          "count": 11
+          "count": 12
         },
         {
           "name": "その他",
@@ -150,32 +150,25 @@
       }
     },
     "30": {
-      "start": "2026-09-25",
-      "end": "2026-10-24",
-      "previousStart": "2026-08-26",
-      "previousEnd": "2026-09-24",
+      "start": "2026-09-26",
+      "end": "2026-10-25",
+      "previousStart": "2026-08-27",
+      "previousEnd": "2026-09-25",
       "current": {
-        "users": 18,
-        "sessions": 46,
-        "views": 50,
+        "users": 19,
+        "sessions": 48,
+        "views": 53,
         "searches": 21,
         "clicks": 14
       },
       "previous": {
         "users": 5,
-        "sessions": 10,
-        "views": 14,
+        "sessions": 11,
+        "views": 15,
         "searches": 1,
         "clicks": 7
       },
       "daily": [
-        {
-          "date": "2026-09-25",
-          "users": 1,
-          "views": 1,
-          "searches": 0,
-          "clicks": 0
-        },
         {
           "date": "2026-09-26",
           "users": 1,
@@ -378,6 +371,13 @@
           "views": 1,
           "searches": 0,
           "clicks": 0
+        },
+        {
+          "date": "2026-10-25",
+          "users": 3,
+          "views": 4,
+          "searches": 0,
+          "clicks": 0
         }
       ],
       "tools": {
@@ -510,7 +510,7 @@
         },
         {
           "name": "直接アクセス",
-          "count": 32
+          "count": 34
         },
         {
           "name": "その他",
@@ -518,34 +518,34 @@
         }
       ],
       "audience": {
-        "new": 16,
+        "new": 17,
         "returning": 8
       }
     },
     "today": {
-      "start": "2026-10-25",
-      "end": "2026-10-25",
-      "previousStart": "2026-10-24",
-      "previousEnd": "2026-10-24",
+      "start": "2026-10-26",
+      "end": "2026-10-26",
+      "previousStart": "2026-10-25",
+      "previousEnd": "2026-10-25",
       "current": {
-        "users": 3,
-        "sessions": 3,
-        "views": 4,
+        "users": 0,
+        "sessions": 0,
+        "views": 0,
         "searches": 0,
         "clicks": 0
       },
       "previous": {
-        "users": 1,
-        "sessions": 2,
-        "views": 1,
+        "users": 0,
+        "sessions": 0,
+        "views": 0,
         "searches": 0,
         "clicks": 0
       },
       "daily": [
         {
-          "date": "2026-10-25",
-          "users": 3,
-          "views": 4,
+          "date": "2026-10-26",
+          "users": 0,
+          "views": 0,
           "searches": 0,
           "clicks": 0
         }
@@ -581,7 +581,7 @@
         },
         {
           "name": "直接アクセス",
-          "count": 3
+          "count": 0
         },
         {
           "name": "その他",
@@ -589,10 +589,10 @@
         }
       ],
       "audience": {
-        "new": 1,
-        "returning": 1
+        "new": 0,
+        "returning": 0
       },
-      "throughHour": 22
+      "throughHour": 4
     }
   },
   "warnings": []
