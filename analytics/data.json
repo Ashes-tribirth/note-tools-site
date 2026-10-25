@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-25T04:36:32.927319+00:00",
+  "generatedAt": "2026-10-25T13:10:12.828762+00:00",
   "timezone": "Asia/Tokyo",
   "periods": {
     "7": {
@@ -398,13 +398,6 @@
             "previous": 0
           },
           {
-            "name": "MP4 to GIF Converter（k3）",
-            "author": "k3さん",
-            "category": "画像・デザインを作る",
-            "count": 1,
-            "previous": 0
-          },
-          {
             "name": "note Creator Summary",
             "author": "ひゅー｜挑戦と思考整理を楽しむ。note",
             "category": "活動を分析・記録する",
@@ -440,7 +433,7 @@
             "previous": 0
           }
         ],
-        "withheld": 3
+        "withheld": 4
       },
       "keywords": {
         "status": "ok",
@@ -535,15 +528,15 @@
       "previousStart": "2026-10-24",
       "previousEnd": "2026-10-24",
       "current": {
-        "users": 0,
-        "sessions": 0,
-        "views": 0,
+        "users": 3,
+        "sessions": 3,
+        "views": 4,
         "searches": 0,
         "clicks": 0
       },
       "previous": {
         "users": 1,
-        "sessions": 1,
+        "sessions": 2,
         "views": 1,
         "searches": 0,
         "clicks": 0
@@ -551,8 +544,8 @@
       "daily": [
         {
           "date": "2026-10-25",
-          "users": 0,
-          "views": 0,
+          "users": 3,
+          "views": 4,
           "searches": 0,
           "clicks": 0
         }
@@ -588,7 +581,7 @@
         },
         {
           "name": "直接アクセス",
-          "count": 0
+          "count": 3
         },
         {
           "name": "その他",
@@ -596,10 +589,10 @@
         }
       ],
       "audience": {
-        "new": 0,
-        "returning": 0
+        "new": 1,
+        "returning": 1
       },
-      "throughHour": 13
+      "throughHour": 22
     }
   },
   "warnings": []
