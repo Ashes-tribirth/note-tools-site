@@ -1,35 +1,28 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-27T14:27:40.726582+00:00",
+  "generatedAt": "2026-10-27T20:40:41.925670+00:00",
   "timezone": "Asia/Tokyo",
   "periods": {
     "7": {
-      "start": "2026-10-20",
-      "end": "2026-10-26",
-      "previousStart": "2026-10-13",
-      "previousEnd": "2026-10-19",
+      "start": "2026-10-21",
+      "end": "2026-10-27",
+      "previousStart": "2026-10-14",
+      "previousEnd": "2026-10-20",
       "current": {
-        "users": 8,
-        "sessions": 16,
-        "views": 18,
+        "users": 7,
+        "sessions": 11,
+        "views": 11,
         "searches": 20,
         "clicks": 1
       },
       "previous": {
-        "users": 6,
-        "sessions": 15,
-        "views": 17,
+        "users": 8,
+        "sessions": 20,
+        "views": 24,
         "searches": 0,
         "clicks": 2
       },
       "daily": [
-        {
-          "date": "2026-10-20",
-          "users": 3,
-          "views": 8,
-          "searches": 0,
-          "clicks": 0
-        },
         {
           "date": "2026-10-21",
           "users": 3,
@@ -71,6 +64,13 @@
           "views": 0,
           "searches": 0,
           "clicks": 0
+        },
+        {
+          "date": "2026-10-27",
+          "users": 1,
+          "views": 1,
+          "searches": 0,
+          "clicks": 0
         }
       ],
       "tools": {
@@ -100,20 +100,8 @@
         "status": "ok",
         "rows": [
           {
-            "name": "お気に入りのみ：on",
-            "kind": "表示条件",
-            "count": 1,
-            "previous": 1
-          },
-          {
             "name": "データを取得・出力する",
             "kind": "カテゴリ",
-            "count": 1,
-            "previous": 0
-          },
-          {
-            "name": "月額・メンバーシップ",
-            "kind": "料金",
             "count": 1,
             "previous": 0
           },
@@ -137,7 +125,7 @@
         },
         {
           "name": "直接アクセス",
-          "count": 12
+          "count": 7
         },
         {
           "name": "その他",
@@ -145,19 +133,19 @@
         }
       ],
       "audience": {
-        "new": 5,
+        "new": 4,
         "returning": 4
       }
     },
     "30": {
-      "start": "2026-09-27",
-      "end": "2026-10-26",
-      "previousStart": "2026-08-28",
-      "previousEnd": "2026-09-26",
+      "start": "2026-09-28",
+      "end": "2026-10-27",
+      "previousStart": "2026-08-29",
+      "previousEnd": "2026-09-27",
       "current": {
         "users": 19,
-        "sessions": 47,
-        "views": 52,
+        "sessions": 48,
+        "views": 53,
         "searches": 21,
         "clicks": 14
       },
@@ -169,13 +157,6 @@
         "clicks": 7
       },
       "daily": [
-        {
-          "date": "2026-09-27",
-          "users": 0,
-          "views": 0,
-          "searches": 0,
-          "clicks": 0
-        },
         {
           "date": "2026-09-28",
           "users": 3,
@@ -378,6 +359,13 @@
           "views": 0,
           "searches": 0,
           "clicks": 0
+        },
+        {
+          "date": "2026-10-27",
+          "users": 1,
+          "views": 1,
+          "searches": 0,
+          "clicks": 0
         }
       ],
       "tools": {
@@ -510,7 +498,7 @@
         },
         {
           "name": "直接アクセス",
-          "count": 33
+          "count": 34
         },
         {
           "name": "その他",
@@ -523,14 +511,14 @@
       }
     },
     "today": {
-      "start": "2026-10-27",
-      "end": "2026-10-27",
-      "previousStart": "2026-10-26",
-      "previousEnd": "2026-10-26",
+      "start": "2026-10-28",
+      "end": "2026-10-28",
+      "previousStart": "2026-10-27",
+      "previousEnd": "2026-10-27",
       "current": {
-        "users": 1,
-        "sessions": 1,
-        "views": 1,
+        "users": 0,
+        "sessions": 0,
+        "views": 0,
         "searches": 0,
         "clicks": 0
       },
@@ -543,9 +531,9 @@
       },
       "daily": [
         {
-          "date": "2026-10-27",
-          "users": 1,
-          "views": 1,
+          "date": "2026-10-28",
+          "users": 0,
+          "views": 0,
           "searches": 0,
           "clicks": 0
         }
@@ -581,7 +569,7 @@
         },
         {
           "name": "直接アクセス",
-          "count": 1
+          "count": 0
         },
         {
           "name": "その他",
@@ -592,7 +580,7 @@
         "new": 0,
         "returning": 0
       },
-      "throughHour": 23
+      "throughHour": 5
     }
   },
   "warnings": []
