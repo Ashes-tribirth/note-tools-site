@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-27T20:40:41.925670+00:00",
+  "generatedAt": "2026-10-28T05:36:23.449875+00:00",
   "timezone": "Asia/Tokyo",
   "periods": {
     "7": {
@@ -10,8 +10,8 @@
       "previousEnd": "2026-10-20",
       "current": {
         "users": 7,
-        "sessions": 11,
-        "views": 11,
+        "sessions": 12,
+        "views": 12,
         "searches": 20,
         "clicks": 1
       },
@@ -68,7 +68,7 @@
         {
           "date": "2026-10-27",
           "users": 1,
-          "views": 1,
+          "views": 2,
           "searches": 0,
           "clicks": 0
         }
@@ -125,7 +125,7 @@
         },
         {
           "name": "直接アクセス",
-          "count": 7
+          "count": 8
         },
         {
           "name": "その他",
@@ -144,8 +144,8 @@
       "previousEnd": "2026-09-27",
       "current": {
         "users": 19,
-        "sessions": 48,
-        "views": 53,
+        "sessions": 49,
+        "views": 54,
         "searches": 21,
         "clicks": 14
       },
@@ -363,7 +363,7 @@
         {
           "date": "2026-10-27",
           "users": 1,
-          "views": 1,
+          "views": 2,
           "searches": 0,
           "clicks": 0
         }
@@ -498,7 +498,7 @@
         },
         {
           "name": "直接アクセス",
-          "count": 34
+          "count": 35
         },
         {
           "name": "その他",
@@ -580,7 +580,7 @@
         "new": 0,
         "returning": 0
       },
-      "throughHour": 5
+      "throughHour": 14
     }
   },
   "warnings": []
