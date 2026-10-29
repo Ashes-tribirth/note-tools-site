@@ -1,35 +1,28 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-29T05:43:12.217473+00:00",
+  "generatedAt": "2026-10-29T15:12:22.836700+00:00",
   "timezone": "Asia/Tokyo",
   "periods": {
     "7": {
-      "start": "2026-10-22",
-      "end": "2026-10-28",
-      "previousStart": "2026-10-15",
-      "previousEnd": "2026-10-21",
+      "start": "2026-10-23",
+      "end": "2026-10-29",
+      "previousStart": "2026-10-16",
+      "previousEnd": "2026-10-22",
       "current": {
-        "users": 5,
-        "sessions": 9,
-        "views": 9,
+        "users": 4,
+        "sessions": 7,
+        "views": 7,
         "searches": 0,
         "clicks": 0
       },
       "previous": {
         "users": 8,
-        "sessions": 17,
-        "views": 20,
+        "sessions": 15,
+        "views": 17,
         "searches": 20,
         "clicks": 2
       },
       "daily": [
-        {
-          "date": "2026-10-22",
-          "users": 2,
-          "views": 2,
-          "searches": 0,
-          "clicks": 0
-        },
         {
           "date": "2026-10-23",
           "users": 0,
@@ -67,6 +60,13 @@
         },
         {
           "date": "2026-10-28",
+          "users": 0,
+          "views": 0,
+          "searches": 0,
+          "clicks": 0
+        },
+        {
+          "date": "2026-10-29",
           "users": 0,
           "views": 0,
           "searches": 0,
@@ -111,7 +111,7 @@
         },
         {
           "name": "直接アクセス",
-          "count": 7
+          "count": 5
         },
         {
           "name": "その他",
@@ -120,14 +120,14 @@
       ],
       "audience": {
         "new": 2,
-        "returning": 3
+        "returning": 2
       }
     },
     "30": {
-      "start": "2026-09-29",
-      "end": "2026-10-28",
-      "previousStart": "2026-08-30",
-      "previousEnd": "2026-09-28",
+      "start": "2026-09-30",
+      "end": "2026-10-29",
+      "previousStart": "2026-08-31",
+      "previousEnd": "2026-09-29",
       "current": {
         "users": 17,
         "sessions": 42,
@@ -143,13 +143,6 @@
         "clicks": 11
       },
       "daily": [
-        {
-          "date": "2026-09-29",
-          "users": 0,
-          "views": 0,
-          "searches": 0,
-          "clicks": 0
-        },
         {
           "date": "2026-09-30",
           "users": 1,
@@ -352,6 +345,13 @@
           "views": 0,
           "searches": 0,
           "clicks": 0
+        },
+        {
+          "date": "2026-10-29",
+          "users": 0,
+          "views": 0,
+          "searches": 0,
+          "clicks": 0
         }
       ],
       "tools": {
@@ -490,76 +490,8 @@
       }
     },
     "today": {
-      "start": "2026-10-29",
-      "end": "2026-10-29",
-      "previousStart": "2026-10-28",
-      "previousEnd": "2026-10-28",
-      "current": {
-        "users": 0,
-        "sessions": 0,
-        "views": 0,
-        "searches": 0,
-        "clicks": 0
-      },
-      "previous": {
-        "users": 0,
-        "sessions": 0,
-        "views": 0,
-        "searches": 0,
-        "clicks": 0
-      },
-      "daily": [
-        {
-          "date": "2026-10-29",
-          "users": 0,
-          "views": 0,
-          "searches": 0,
-          "clicks": 0
-        }
-      ],
-      "tools": {
-        "status": "ok",
-        "rows": [],
-        "withheld": 0
-      },
-      "keywords": {
-        "status": "ok",
-        "rows": [],
-        "withheld": 0
-      },
-      "zeroSearches": {
-        "status": "ok",
-        "rows": [],
-        "withheld": 0
-      },
-      "filters": {
-        "status": "ok",
-        "rows": [],
-        "withheld": 0
-      },
-      "sources": [
-        {
-          "name": "note",
-          "count": 0
-        },
-        {
-          "name": "検索エンジン",
-          "count": 0
-        },
-        {
-          "name": "直接アクセス",
-          "count": 0
-        },
-        {
-          "name": "その他",
-          "count": 0
-        }
-      ],
-      "audience": {
-        "new": 0,
-        "returning": 0
-      },
-      "throughHour": 14
+      "status": "pending",
+      "reason": "今日の最初の1時間が終わると集計します"
     }
   },
   "warnings": []
