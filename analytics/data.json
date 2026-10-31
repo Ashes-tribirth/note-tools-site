@@ -1,35 +1,28 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-31T14:30:40.229395+00:00",
+  "generatedAt": "2026-10-31T19:57:27.289936+00:00",
   "timezone": "Asia/Tokyo",
   "periods": {
     "7": {
-      "start": "2026-10-24",
-      "end": "2026-10-30",
-      "previousStart": "2026-10-17",
-      "previousEnd": "2026-10-23",
+      "start": "2026-10-25",
+      "end": "2026-10-31",
+      "previousStart": "2026-10-18",
+      "previousEnd": "2026-10-24",
       "current": {
-        "users": 4,
-        "sessions": 7,
-        "views": 7,
+        "users": 3,
+        "sessions": 5,
+        "views": 6,
         "searches": 0,
         "clicks": 0
       },
       "previous": {
         "users": 8,
         "sessions": 15,
-        "views": 17,
+        "views": 16,
         "searches": 20,
-        "clicks": 2
+        "clicks": 1
       },
       "daily": [
-        {
-          "date": "2026-10-24",
-          "users": 1,
-          "views": 1,
-          "searches": 0,
-          "clicks": 0
-        },
         {
           "date": "2026-10-25",
           "users": 3,
@@ -71,6 +64,13 @@
           "views": 0,
           "searches": 0,
           "clicks": 0
+        },
+        {
+          "date": "2026-10-31",
+          "users": 0,
+          "views": 0,
+          "searches": 0,
+          "clicks": 0
         }
       ],
       "tools": {
@@ -90,20 +90,13 @@
       },
       "filters": {
         "status": "ok",
-        "rows": [
-          {
-            "name": "データを取得・出力する",
-            "kind": "カテゴリ",
-            "count": 1,
-            "previous": 0
-          }
-        ],
+        "rows": [],
         "withheld": 0
       },
       "sources": [
         {
           "name": "note",
-          "count": 2
+          "count": 0
         },
         {
           "name": "検索エンジン",
@@ -119,15 +112,15 @@
         }
       ],
       "audience": {
-        "new": 2,
-        "returning": 2
+        "new": 1,
+        "returning": 1
       }
     },
     "30": {
-      "start": "2026-10-01",
-      "end": "2026-10-30",
-      "previousStart": "2026-09-01",
-      "previousEnd": "2026-09-30",
+      "start": "2026-10-02",
+      "end": "2026-10-31",
+      "previousStart": "2026-09-02",
+      "previousEnd": "2026-10-01",
       "current": {
         "users": 17,
         "sessions": 41,
@@ -143,13 +136,6 @@
         "clicks": 11
       },
       "daily": [
-        {
-          "date": "2026-10-01",
-          "users": 0,
-          "views": 0,
-          "searches": 0,
-          "clicks": 0
-        },
         {
           "date": "2026-10-02",
           "users": 1,
@@ -352,6 +338,13 @@
           "views": 0,
           "searches": 0,
           "clicks": 0
+        },
+        {
+          "date": "2026-10-31",
+          "users": 0,
+          "views": 0,
+          "searches": 0,
+          "clicks": 0
         }
       ],
       "tools": {
@@ -490,10 +483,10 @@
       }
     },
     "today": {
-      "start": "2026-10-31",
-      "end": "2026-10-31",
-      "previousStart": "2026-10-30",
-      "previousEnd": "2026-10-30",
+      "start": "2026-11-01",
+      "end": "2026-11-01",
+      "previousStart": "2026-10-31",
+      "previousEnd": "2026-10-31",
       "current": {
         "users": 0,
         "sessions": 0,
@@ -510,7 +503,7 @@
       },
       "daily": [
         {
-          "date": "2026-10-31",
+          "date": "2026-11-01",
           "users": 0,
           "views": 0,
           "searches": 0,
@@ -559,7 +552,7 @@
         "new": 0,
         "returning": 0
       },
-      "throughHour": 23
+      "throughHour": 4
     }
   },
   "warnings": []
