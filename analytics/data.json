@@ -1,35 +1,28 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-01T05:57:49.985125+00:00",
+  "generatedAt": "2026-11-01T15:04:50.060917+00:00",
   "timezone": "Asia/Tokyo",
   "periods": {
     "7": {
-      "start": "2026-10-25",
-      "end": "2026-10-31",
-      "previousStart": "2026-10-18",
-      "previousEnd": "2026-10-24",
+      "start": "2026-10-26",
+      "end": "2026-11-01",
+      "previousStart": "2026-10-19",
+      "previousEnd": "2026-10-25",
       "current": {
-        "users": 3,
-        "sessions": 5,
-        "views": 6,
+        "users": 2,
+        "sessions": 3,
+        "views": 3,
         "searches": 0,
         "clicks": 0
       },
       "previous": {
         "users": 8,
-        "sessions": 15,
-        "views": 16,
+        "sessions": 16,
+        "views": 18,
         "searches": 20,
         "clicks": 1
       },
       "daily": [
-        {
-          "date": "2026-10-25",
-          "users": 3,
-          "views": 4,
-          "searches": 0,
-          "clicks": 0
-        },
         {
           "date": "2026-10-26",
           "users": 0,
@@ -71,6 +64,13 @@
           "views": 0,
           "searches": 0,
           "clicks": 0
+        },
+        {
+          "date": "2026-11-01",
+          "users": 1,
+          "views": 1,
+          "searches": 0,
+          "clicks": 0
         }
       ],
       "tools": {
@@ -104,7 +104,7 @@
         },
         {
           "name": "直接アクセス",
-          "count": 5
+          "count": 3
         },
         {
           "name": "その他",
@@ -112,37 +112,30 @@
         }
       ],
       "audience": {
-        "new": 1,
+        "new": 0,
         "returning": 1
       }
     },
     "30": {
-      "start": "2026-10-02",
-      "end": "2026-10-31",
-      "previousStart": "2026-09-02",
-      "previousEnd": "2026-10-01",
+      "start": "2026-10-03",
+      "end": "2026-11-01",
+      "previousStart": "2026-09-03",
+      "previousEnd": "2026-10-02",
       "current": {
-        "users": 17,
+        "users": 16,
         "sessions": 41,
         "views": 46,
         "searches": 21,
-        "clicks": 10
+        "clicks": 8
       },
       "previous": {
-        "users": 7,
-        "sessions": 20,
-        "views": 24,
+        "users": 8,
+        "sessions": 21,
+        "views": 25,
         "searches": 1,
-        "clicks": 11
+        "clicks": 13
       },
       "daily": [
-        {
-          "date": "2026-10-02",
-          "users": 1,
-          "views": 1,
-          "searches": 0,
-          "clicks": 2
-        },
         {
           "date": "2026-10-03",
           "users": 3,
@@ -345,6 +338,13 @@
           "views": 0,
           "searches": 0,
           "clicks": 0
+        },
+        {
+          "date": "2026-11-01",
+          "users": 1,
+          "views": 1,
+          "searches": 0,
+          "clicks": 0
         }
       ],
       "tools": {
@@ -363,13 +363,6 @@
             "category": "保存・管理する",
             "count": 1,
             "previous": 0
-          },
-          {
-            "name": "おへんじ帖",
-            "author": "はしゃも｜感情構造エンジニア",
-            "category": "交流・通知を管理する",
-            "count": 1,
-            "previous": 2
           },
           {
             "name": "サムネ盛丸（モリマル）",
@@ -393,7 +386,7 @@
             "previous": 0
           }
         ],
-        "withheld": 4
+        "withheld": 3
       },
       "keywords": {
         "status": "ok",
@@ -409,16 +402,16 @@
         "status": "ok",
         "rows": [
           {
-            "name": "無料",
-            "kind": "料金",
-            "count": 4,
-            "previous": 0
-          },
-          {
             "name": "活動を分析・記録する",
             "kind": "カテゴリ",
             "count": 3,
             "previous": 0
+          },
+          {
+            "name": "無料",
+            "kind": "料金",
+            "count": 3,
+            "previous": 1
           },
           {
             "name": "お気に入りのみ：on",
@@ -439,20 +432,8 @@
             "previous": 0
           },
           {
-            "name": "交流・通知を管理する",
-            "kind": "カテゴリ",
-            "count": 1,
-            "previous": 0
-          },
-          {
             "name": "月額・メンバーシップ",
             "kind": "料金",
-            "count": 1,
-            "previous": 0
-          },
-          {
-            "name": "画像・デザインを作る",
-            "kind": "カテゴリ",
             "count": 1,
             "previous": 0
           }
@@ -462,7 +443,7 @@
       "sources": [
         {
           "name": "note",
-          "count": 13
+          "count": 12
         },
         {
           "name": "検索エンジン",
@@ -470,7 +451,7 @@
         },
         {
           "name": "直接アクセス",
-          "count": 28
+          "count": 29
         },
         {
           "name": "その他",
@@ -478,81 +459,13 @@
         }
       ],
       "audience": {
-        "new": 15,
+        "new": 14,
         "returning": 7
       }
     },
     "today": {
-      "start": "2026-11-01",
-      "end": "2026-11-01",
-      "previousStart": "2026-10-31",
-      "previousEnd": "2026-10-31",
-      "current": {
-        "users": 0,
-        "sessions": 0,
-        "views": 0,
-        "searches": 0,
-        "clicks": 0
-      },
-      "previous": {
-        "users": 0,
-        "sessions": 0,
-        "views": 0,
-        "searches": 0,
-        "clicks": 0
-      },
-      "daily": [
-        {
-          "date": "2026-11-01",
-          "users": 0,
-          "views": 0,
-          "searches": 0,
-          "clicks": 0
-        }
-      ],
-      "tools": {
-        "status": "ok",
-        "rows": [],
-        "withheld": 0
-      },
-      "keywords": {
-        "status": "ok",
-        "rows": [],
-        "withheld": 0
-      },
-      "zeroSearches": {
-        "status": "ok",
-        "rows": [],
-        "withheld": 0
-      },
-      "filters": {
-        "status": "ok",
-        "rows": [],
-        "withheld": 0
-      },
-      "sources": [
-        {
-          "name": "note",
-          "count": 0
-        },
-        {
-          "name": "検索エンジン",
-          "count": 0
-        },
-        {
-          "name": "直接アクセス",
-          "count": 0
-        },
-        {
-          "name": "その他",
-          "count": 0
-        }
-      ],
-      "audience": {
-        "new": 0,
-        "returning": 0
-      },
-      "throughHour": 14
+      "status": "pending",
+      "reason": "今日の最初の1時間が終わると集計します"
     }
   },
   "warnings": []
