@@ -1,5 +1,407 @@
 [
   {
+    "date": "2026-11-03",
+    "summary": "追加11件　更新13件　掲載対象外2件",
+    "changes": {
+      "added": [
+        "noteナレーター",
+        "高評価数・価格を一覧表示するツール（TEC CAFE）",
+        "Note FF Signal",
+        "note Builder Creative Studio",
+        "GAHAKU BUILDER v1.1",
+        "SEOキーワードオプティマイザ",
+        "購入前わくわく記事プレビューツール",
+        "note企画室（ぽっぽ）",
+        "note工房（ぽっぽ）",
+        "noteリライトStudio",
+        "noteからSubstack（たかひろ・Macショートカット）"
+      ],
+      "updated": [
+        "観測は続く。",
+        "noteハッシュタグリサーチツール",
+        "ポン出しビルダー＋ v5",
+        "note Cube Blocks",
+        "noteプロフィール1000項目診断",
+        "KOTAYA式note分析マニュアル v4.0",
+        "レイニャ式「記事棚卸しツール」Ver.1.1",
+        "けいさんぽくん",
+        "無名S note INSIGHT",
+        "売れ筋探偵 for note",
+        "めっちゃハロウィン",
+        "Felikko note記事作成ツール",
+        "note運営サイドパネル"
+      ],
+      "removed": [
+        "文章スタイル・インサイト",
+        "RPG 認定noter名鑑"
+      ]
+    },
+    "checkedUnchanged": [
+      "おへんじ帖",
+      "note共同マガジン通知フィルター",
+      "noteReader",
+      "YOMIASA",
+      "おはヨミ",
+      "おはヨミ next",
+      "推し庭",
+      "note-saver",
+      "投稿待ちストック管理ツール／PostCare",
+      "noteしおり",
+      "note Audio Player",
+      "Note Reader Enhancer",
+      "noteの記事で目次を固定表示するChrome拡張機能",
+      "おだやかnoteセット",
+      "積み上げノート",
+      "note TREE",
+      "NoteGrow",
+      "Observe",
+      "note統計情報取得ツール",
+      "ダッシュボード（アクセス状況）分析ツール",
+      "NoteSync",
+      "note売上分析ダッシュボード",
+      "NoteBubble",
+      "noteアナライザー",
+      "note統計ダッシュボード",
+      "note / stats",
+      "Note Access Data Exporter",
+      "Note Article List Exporter",
+      "Note Magazine Data Exporter",
+      "Note記事一括取得スクリプト",
+      "noteダッシュボードCSV出力アドオン",
+      "書庫（WXRリーダー）",
+      "Note Article Master",
+      "note log／おすすめページKIT",
+      "ねんころ式タイトル＆タグ錬成ツール WEB版",
+      "タグくる",
+      "noteタグ自動生成・入力ツール",
+      "Creator Toolkit for note",
+      "note工房",
+      "noteテーマガチャ",
+      "Note Prompt Builder",
+      "Logee（ロジー）",
+      "noteアシスト",
+      "noteフォーマットヘルパー",
+      "Naibu Link",
+      "Mini-Link",
+      "リッチテキスト画像クリッパー",
+      "SAMUNE PRESS v14",
+      "noteサムネメーカー",
+      "Noteサムネ専属秘書",
+      "サムネ盛丸（モリマル）",
+      "Wanko-note",
+      "PostStudio",
+      "Table Studio",
+      "Markdown ➡ テーブル変換くん v4.3",
+      "CSV → note LaTeX 表組みコード生成",
+      "爆ジェンサポート",
+      "note 表インサーター v0.4",
+      "表介 2.0",
+      "表子 2.0",
+      "noteを縦書きに変えるツール",
+      "NoteGIF Optimizer",
+      "MP4 to GIF Converter（もふとニャコ）",
+      "GIF4n",
+      "Movie to GIF",
+      "MP4toGIF（Purebitsoft）",
+      "gif-shin",
+      "MP4 to GIF Converter 2（k3）",
+      "MP4→GIF変換ツール",
+      "動画をGIFに変換して透かしを入れるツール",
+      "note用MP4→GIF変換スクリプト",
+      "noteからSubstackへの書式変換ツール",
+      "SNS投稿作成ツール",
+      "note人気キーワード発見ツール",
+      "Daily Driver",
+      "note Creator Summary",
+      "Note Commander",
+      "タイトル13型診断",
+      "SEOスコア",
+      "ハッシュタグランキング",
+      "クリエイター分析",
+      "ハッシュタグ TOP 100",
+      "noteダッシュボードAI分析ツール",
+      "noteスキ率自動計算ツール",
+      "note記録自動化ツール",
+      "note音声読み上げブックマークレット",
+      "note ⇔ Substack コピー",
+      "note記事設計図ツール Ver.2",
+      "note記事 下書きドック",
+      "Markdown表を画像化・再編集",
+      "有料note改善ログ",
+      "note一次情報発掘ツール",
+      "スキレーダー📡",
+      "note執事",
+      "note新指標自動収集テンプレート",
+      "Creator Meter.",
+      "note記事のマークダウン変換ツール（note to Markdown）",
+      "Visual Header Studio",
+      "「スキ営業」「フォロー営業」通知フィルター",
+      "note スキ消し防止",
+      "note Card Tatami",
+      "note通知バッチ化",
+      "よこ置き",
+      "note Deep Search",
+      "スキマップ",
+      "Creator Insight for note",
+      "note-offline-blog-builder",
+      "note-to-obsidian",
+      "noteダッシュボード日次データ収集ツール",
+      "記事の居場所",
+      "LINEプレミアムピッカー",
+      "Pirates' Editor for note（Pen）",
+      "note表メーカー",
+      "note販売分析ダッシュボード📘",
+      "伝わる化チェッカー Lite",
+      "記事採点ツール（ぱぱゴリ）",
+      "すらすらリーダー",
+      "有料コンテンツコンセプト＆章立て自動生成ツール",
+      "SELF-INTRO SHEET BUILDER",
+      "KINOKO SPECIMEN BUILDER",
+      "note見出し画像メーカー",
+      "note購入台帳",
+      "NOTE用表作成ツール",
+      "SNS Image Resizer",
+      "note記事カルテ",
+      "note to Markdown（花冷・Chrome拡張）",
+      "noteのアクセスをCSVに",
+      "note スキ率アナライザー",
+      "順位チェッカー（とまじぃ）",
+      "さつまいもくん",
+      "Kotoba Writer",
+      "SPEECH STRIP BUILDER v2.1",
+      "SHINDAN FLOW BUILDER",
+      "EDITORIAL POSTER BUILDER v2",
+      "ベルろぐ",
+      "noteテンプレ作成ツール（試作）"
+    ],
+    "removedDetails": [
+      {
+        "tool": "文章スタイル・インサイト",
+        "reason": "作者本文に「有料部分にプロンプト本体」「1プロンプト」と明記。独立したアプリやGPT等の提供ではなく、掲載対象外のコピペ用プロンプト単体と確認。",
+        "source": "https://note.com/hyu_nisworks/n/nc7b099431b5c"
+      },
+      {
+        "tool": "RPG 認定noter名鑑",
+        "reason": "リンク先の現行記事は画像生成AIへ貼り付ける1本のプロンプト。独立ツールの利用導線は確認できず、掲載対象外のプロンプト単体として削除。",
+        "source": "https://note.com/ss_yr/n/nf34d092b4032"
+      }
+    ],
+    "updatedDetails": [
+      {
+        "tool": "観測は続く。",
+        "reason": "v2正式公開を確認。作者トップへのリンクを機能・利用条件の分かる正式公開記事へ変更。",
+        "before": {
+          "説明": "自分の記事にスキをした人の一覧やスキのランキング等を確認できるツール",
+          "公開状況": "メンバーシップ限定（月500円）",
+          "note記事リンク": "https://note.com/hasyamo",
+          "サムネURL": "https://assets.st-note.com/production/uploads/images/293589917/6c9d4c9e754e63c7ce41a77331ff15a2.png?fit=bounds&format=jpeg&height=1024&quality=85&width=1024"
+        },
+        "after": {
+          "説明": "noteのスキ・コメント・マガジン追加を1時間ごとに記録するWebアプリ（v2）。記事本文を検索する書庫、関連する過去記事、外部AIへ渡すMarkdown分析パックに対応。PV表示や自動返信はなく、有料記事の書庫は公開部分のみ",
+          "公開状況": "メンバーシップ限定（月500円・作者による登録後に利用開始）",
+          "note記事リンク": "https://note.com/hasyamo/n/ncd201a1b6225",
+          "サムネURL": "https://assets.st-note.com/production/uploads/images/328308493/rectangle_large_type_2_d41595cbacedc06da6856e22f9c2683d.png?fit=bounds&quality=85&width=1280"
+        }
+      },
+      {
+        "tool": "noteハッシュタグリサーチツール",
+        "reason": "元記事に表示される作者表記を確認。",
+        "before": {
+          "作者": "shintaroさん"
+        },
+        "after": {
+          "作者": "Shintaro"
+        }
+      },
+      {
+        "tool": "ポン出しビルダー＋ v5",
+        "reason": "元記事の現在の見出し画像へ更新。",
+        "before": {
+          "サムネURL": "https://assets.st-note.com/production/uploads/images/291706233/rectangle_large_type_2_1956d8dfec2ccc8fb1dbe3a797794fc9.png?fit=bounds&quality=85&width=1280"
+        },
+        "after": {
+          "サムネURL": "https://assets.st-note.com/production/uploads/images/299741600/rectangle_large_type_2_d8cc21385e6203a18b403352e797e1b7.png?fit=bounds&quality=85&width=1280"
+        }
+      },
+      {
+        "tool": "note Cube Blocks",
+        "reason": "元記事の現在の見出し画像へ更新。",
+        "before": {
+          "サムネURL": "https://assets.st-note.com/production/uploads/images/299162484/rectangle_large_type_2_fef715d8bab3b06610ac77acd588ada6.png?width=1280"
+        },
+        "after": {
+          "サムネURL": "https://assets.st-note.com/production/uploads/images/288672024/rectangle_large_type_2_a4562e2984778a28245868604b6a1dcb.png?fit=bounds&quality=85&width=1280"
+        }
+      },
+      {
+        "tool": "noteプロフィール1000項目診断",
+        "reason": "元記事の現在の見出し画像へ更新。",
+        "before": {
+          "サムネURL": "https://assets.st-note.com/production/uploads/images/305526231/rectangle_large_type_2_ecc3a594a31723f9f43aad48f9222671.png?width=1280"
+        },
+        "after": {
+          "サムネURL": "https://assets.st-note.com/production/uploads/images/311110984/rectangle_large_type_2_822a3b0701d8bf08f7e18a6411387f8c.png?fit=bounds&quality=85&width=1280"
+        }
+      },
+      {
+        "tool": "KOTAYA式note分析マニュアル v4.0",
+        "reason": "元記事の現在の見出し画像へ更新。",
+        "before": {
+          "サムネURL": "https://assets.st-note.com/production/uploads/images/297268782/rectangle_large_type_2_be1c621756d43b97536060538cd5e91e.png?width=1280"
+        },
+        "after": {
+          "サムネURL": "https://assets.st-note.com/production/uploads/images/316557906/rectangle_large_type_2_b624f4583d51cf7eb7f9b5cfd4859a89.png?fit=bounds&quality=85&width=1280"
+        }
+      },
+      {
+        "tool": "レイニャ式「記事棚卸しツール」Ver.1.1",
+        "reason": "元記事の現在の見出し画像へ更新。",
+        "before": {
+          "サムネURL": "https://assets.st-note.com/production/uploads/images/312395855/rectangle_large_type_2_1995cae97cc779cdf0db9a710f293cdc.png?width=1280"
+        },
+        "after": {
+          "サムネURL": "https://assets.st-note.com/production/uploads/images/318830612/rectangle_large_type_2_5ef9e865c030aae92ca01cee28aea997.png?fit=bounds&quality=85&width=1280"
+        }
+      },
+      {
+        "tool": "けいさんぽくん",
+        "reason": "販売欄で通常価格4,280円・拡散割1,280円を確認。期限切れの980円案内は採用せず現行の購入条件を明示。",
+        "before": {
+          "公開状況": "無料版あり・Pro版は有料（1280円〜）"
+        },
+        "after": {
+          "公開状況": "無料版あり・Pro版は有料（通常4280円／X拡散割1280円）"
+        }
+      },
+      {
+        "tool": "無名S note INSIGHT",
+        "reason": "作者本人の現在のクリエイター名へ更新。",
+        "before": {
+          "作者": "【無名 S note】18日でフォロワー1000名🚨連続収益中！48マガ・13共マガ運営 参加72🙆"
+        },
+        "after": {
+          "作者": "【無名 S note】18日でフォロワー4桁🚨連続利益化中！48マガ・18共マガ運営 参加73🙆"
+        }
+      },
+      {
+        "tool": "売れ筋探偵 for note",
+        "reason": "11月2日更新の作者本文から購入シグナル・手動記録・販売件数を取得できない制約を明確化。",
+        "before": {
+          "説明": "noteの公開情報から高評価を手掛かりに実際に売れている記事を調べ、一覧化・定点観測・CSV／Markdown出力ができるWindows用ツール"
+        },
+        "after": {
+          "説明": "note公開記事の高評価・価格・購入シグナルを比較し、手動の定点観測・CSV／Markdown出力・公開本文の保存ができるWindows用ツール。販売件数や売上額は取得せず、有料部分は保存しない"
+        }
+      },
+      {
+        "tool": "めっちゃハロウィン",
+        "reason": "公開画面で「今年のかくれんぼ受付は終了」「みんなのかくれんぼはまだ遊べる」を確認。新規作成停止と既存ゲームのプレイ継続を区別。",
+        "before": {
+          "説明": "ぬいを隠した10秒のかくれんぼゲームを作り、URLをnote記事に貼って読者と遊べるWebツール。結果をコメント用にコピーできる。季節限定で、終了後はURLを展示へ切り替える予定",
+          "公開状況": "無料"
+        },
+        "after": {
+          "説明": "ぬいを隠した10秒のかくれんぼをnote記事のURLで共有するWebツール。2026年の新規作成受付は終了したが、既存ゲームは現在もプレイ可能。結果をコメント用にコピーでき、プレイ期間終了後は展示へ切り替える予定",
+          "公開状況": "無料（新規作成は受付停止・既存ゲームはプレイ可）"
+        }
+      },
+      {
+        "tool": "Felikko note記事作成ツール",
+        "reason": "同一作者のより新しい紹介記事へ変更。対応サイトとAIキーの条件を反映。月300円はツール個別販売ページで再確認。",
+        "before": {
+          "説明": "メルカリ・ラクマ・Yahoo!フリマの商品URLから、note用紹介文・見出し画像・商品写真やカードの挿入を支援するWindows／Mac向けツール。公開または下書き保存を選べる",
+          "note記事リンク": "https://note.com/corazon3/n/n0cb13286b28b",
+          "サムネURL": "https://assets.st-note.com/production/uploads/images/324096541/rectangle_large_type_2_aad44b51d0421a569371a445daf44724.png?fit=bounds&quality=85&width=1280"
+        },
+        "after": {
+          "説明": "メルカリ・ラクマ・Yahoo!フリマ・ヤフオクの商品URLからnote紹介文・見出し画像・写真や商品カードを作成するWindows／Mac向けツール。公開・下書き保存を選択でき、AI生成には自分のOpenRouterキーを使う。キーなしでは定型文で作成",
+          "note記事リンク": "https://note.com/corazon3/n/n808be3908cc4",
+          "サムネURL": "https://assets.st-note.com/production/uploads/images/324101755/rectangle_large_type_2_b96a007e788394d7c4188bf0215a3f0b.png?fit=bounds&quality=85&width=1280"
+        }
+      },
+      {
+        "tool": "note運営サイドパネル",
+        "reason": "元記事の作者名と見出し画像を更新。機能や480円の販売条件に変更は確認されず。",
+        "before": {
+          "作者": "ぜろ｜noteを育てて伝える",
+          "サムネURL": "https://assets.st-note.com/production/uploads/images/320994579/rectangle_large_type_2_5525f4ae6beffb6dcd843922696e5d68.png?fit=bounds&quality=85&width=1280"
+        },
+        "after": {
+          "作者": "ぜろ",
+          "サムネURL": "https://assets.st-note.com/production/uploads/images/329468285/rectangle_large_type_2_3815d4373016ce050014dcd05d9665ba.png?fit=bounds&quality=85&width=1280"
+        }
+      }
+    ],
+    "updatedArticleLinks": [
+      {
+        "tool": "観測は続く。",
+        "from": "https://note.com/hasyamo",
+        "to": "https://note.com/hasyamo/n/ncd201a1b6225"
+      },
+      {
+        "tool": "Felikko note記事作成ツール",
+        "from": "https://note.com/corazon3/n/n0cb13286b28b",
+        "to": "https://note.com/corazon3/n/n808be3908cc4"
+      }
+    ],
+    "pending": [
+      "LsHeaderResizer：紹介記事を再取得したが404。作者RSSから代替紹介先を確認できず、公開終了と断定せず掲載継続・再確認待ち。",
+      "noteの投稿をWordPressへ投稿するプラグイン：紹介記事と作者RSSが今回も404。公開終了と断定せず掲載継続・再確認待ち。",
+      "すずしろ：紹介記事と作者RSSを再確認。正式販売前の少人数モニター募集のままで一般配布待ち。",
+      "赤柴のスキ発掘隊：作者本文と新着RSSを再確認したが、第三者向けの配布・利用導線は確認できず掲載保留を継続。",
+      "note未読通知チェッカー（k3）：第3回記事と新着RSSを再確認。公開配布のファイルや入手リンクがないため掲載保留を継続。",
+      "note記事メーカー（無在庫輸出入・Base・家電・ジモティ・古着せどりマスター）：作者新着記事と公開案内を再調査したが、各ツールの一般配布先を確認できず掲載保留を継続。",
+      "ぽんの投稿QCツール：作者本文と新着RSSを再確認したが、自分用ツールの紹介にとどまり第三者向けの配布を確認できず掲載見送り。",
+      "Fuchsの固定クリエイター新着表示拡張：10月30日の作者本文は開発・試用の報告で、配布ファイルやストア公開先を確認できず新規掲載保留。",
+      "GAHAKU BUILDERの現行月額：作者本文でスタンダード以上のメンバー特典と確認したが、プラン画面で金額を取得できなかったため金額は記載せず。",
+      "noteリライトStudio：Brain販売先は403で確認できず。作者のBASE販売ページは公開中・5000円・購入後の案内PDFを確認できたため、その条件で掲載。",
+      "SEOキーワードオプティマイザ：元記事のOG画像は当サイトの許可対象外ホストの自動生成画像で、記事の見出し画像を確認できなかったためサムネイルは非表示。"
+    ],
+    "details": [
+      "既存153件の紹介先144URLと作者95組のRSSを巡回し、239URL中236URLを取得。紹介記事2URLとWordPress作者RSS1URLが404。",
+      "変更なし136件を個別記録。既存2件は一次情報が404のため変更なし件数に含めず確認待ちとして区別。",
+      "掲載作者の新着RSSを確認し、投稿数が多い作者は公開記事一覧を追加確認。新規候補はnote全体の検索からも調査。以前公開された未掲載ツールも含む。",
+      "新規掲載は作者本人の本文と公開配布先・有料記事の購入欄で確認。noteナレーターはChromeウェブストア、SEOツールはZIP配布先、MacショートカットはiCloud配布先を確認。",
+      "高評価表示拡張は正式名称が記載されていないため、記事の機能名と作者名で掲載。ぽっぽの2製品は別機能・同一セット販売であり、同一URLの重複は意図的。",
+      "めっちゃハロウィンは日付だけで公開終了と判断せず、実際の公開画面で新規受付停止と既存ゲームのプレイ継続を確認。",
+      "紹介記事の有料価格とツール自体の価格を区別。無料のGIF4n・note統計ダッシュボード・下書きドックは、有料記事でも無料ツールの配布・利用案内が残るため無料のまま。",
+      "Felikkoは新記事の一般リンク先が980円の他ツールを案内しているが、現行の個別ツール一覧でnote記事作成300円・初回7日無料を再確認。",
+      "CSVの既存形式は基本7列＋サムネURLの8列。サムネイル機能を保つため既存形式を維持して全行を検証。デザイン・機能は変更せず、データとキャッシュ用の版番号のみ更新。",
+      "有料商品の購入、メンバーシップ加入、拡張機能のインストール、他者ツールの自動取得処理の全実行は行っていない。利用条件と配布導線の公開確認であり全機能の動作保証ではない。"
+    ],
+    "verification": {
+      "csv": {
+        "rows": 162,
+        "columns": 8,
+        "uniqueToolNames": 162,
+        "encoding": "UTF-8 BOM・文字化けなし",
+        "sharedSourceGroups": "同一記事内の別製品のみ。新たな重複登録なし"
+      },
+      "newOrReplacedArticleLinks": {
+        "count": 12,
+        "httpStatus": 200
+      },
+      "newOrReplacedThumbnails": {
+        "count": 17,
+        "allHTTP200": true,
+        "allImageContentTypes": true
+      },
+      "frontendBeforePublish": {
+        "renderedCards": 162,
+        "search": "pass",
+        "categoryFilter": "pass",
+        "priceFilter": "pass",
+        "addedFilter": 11,
+        "updatedFilter": 13,
+        "updateFilterOrder": "pass",
+        "reset": "pass",
+        "latestDate": "2026.11.03"
+      },
+      "publicSite": "公開後に画面と配信ファイルを確認し、会話内で結果を報告"
+    },
+    "source": "ローラー更新依頼"
+  },
+  {
     "date": "2026-10-25",
     "summary": "追加3件　更新3件",
     "changes": {
