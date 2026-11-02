@@ -1,7 +1,7 @@
 [
   {
     "date": "2026-11-03",
-    "summary": "追加11件　更新13件　掲載対象外2件",
+    "summary": "追加11件　更新14件　掲載対象外1件",
     "changes": {
       "added": [
         "noteナレーター",
@@ -29,11 +29,11 @@
         "売れ筋探偵 for note",
         "めっちゃハロウィン",
         "Felikko note記事作成ツール",
-        "note運営サイドパネル"
+        "note運営サイドパネル",
+        "RPG 認定noter名鑑"
       ],
       "removed": [
-        "文章スタイル・インサイト",
-        "RPG 認定noter名鑑"
+        "文章スタイル・インサイト"
       ]
     },
     "checkedUnchanged": [
@@ -179,11 +179,6 @@
         "tool": "文章スタイル・インサイト",
         "reason": "作者本文に「有料部分にプロンプト本体」「1プロンプト」と明記。独立したアプリやGPT等の提供ではなく、掲載対象外のコピペ用プロンプト単体と確認。",
         "source": "https://note.com/hyu_nisworks/n/nc7b099431b5c"
-      },
-      {
-        "tool": "RPG 認定noter名鑑",
-        "reason": "リンク先の現行記事は画像生成AIへ貼り付ける1本のプロンプト。独立ツールの利用導線は確認できず、掲載対象外のプロンプト単体として削除。",
-        "source": "https://note.com/ss_yr/n/nf34d092b4032"
       }
     ],
     "updatedDetails": [
@@ -284,6 +279,16 @@
         }
       },
       {
+        "tool": "RPG 認定noter名鑑",
+        "reason": "作者本人からの掲載依頼に基づく掲載であることを確認したため継続。作者本人の現在のクリエイター名へ更新。",
+        "before": {
+          "作者": "【無名 S note】18日でフォロワー1000名🚨連続収益中！48マガ・13共マガ運営 参加72🙆"
+        },
+        "after": {
+          "作者": "【無名 S note】18日でフォロワー4桁🚨連続利益化中！48マガ・18共マガ運営 参加73🙆"
+        }
+      },
+      {
         "tool": "売れ筋探偵 for note",
         "reason": "11月2日更新の作者本文から購入シグナル・手動記録・販売件数を取得できない制約を明確化。",
         "before": {
@@ -359,7 +364,7 @@
     ],
     "details": [
       "既存153件の紹介先144URLと作者95組のRSSを巡回し、239URL中236URLを取得。紹介記事2URLとWordPress作者RSS1URLが404。",
-      "変更なし136件を個別記録。既存2件は一次情報が404のため変更なし件数に含めず確認待ちとして区別。",
+      "変更なし136件を個別記録。既存2件は一次情報が404のため変更なし件数に含めず確認待ちとして区別。RPG 認定noter名鑑は作者本人からの掲載依頼に基づき掲載を継続。",
       "掲載作者の新着RSSを確認し、投稿数が多い作者は公開記事一覧を追加確認。新規候補はnote全体の検索からも調査。以前公開された未掲載ツールも含む。",
       "新規掲載は作者本人の本文と公開配布先・有料記事の購入欄で確認。noteナレーターはChromeウェブストア、SEOツールはZIP配布先、MacショートカットはiCloud配布先を確認。",
       "高評価表示拡張は正式名称が記載されていないため、記事の機能名と作者名で掲載。ぽっぽの2製品は別機能・同一セット販売であり、同一URLの重複は意図的。",
@@ -372,9 +377,9 @@
     ],
     "verification": {
       "csv": {
-        "rows": 162,
+        "rows": 163,
         "columns": 8,
-        "uniqueToolNames": 162,
+        "uniqueToolNames": 163,
         "encoding": "UTF-8 BOM・文字化けなし",
         "sharedSourceGroups": "同一記事内の別製品のみ。新たな重複登録なし"
       },
@@ -388,27 +393,27 @@
         "allImageContentTypes": true
       },
       "frontendBeforePublish": {
-        "renderedCards": 162,
+        "renderedCards": 163,
         "search": "pass",
         "categoryFilter": "pass",
         "priceFilter": "pass",
         "addedFilter": 11,
-        "updatedFilter": 13,
+        "updatedFilter": 14,
         "updateFilterOrder": "pass",
         "reset": "pass",
         "latestDate": "2026.11.03"
       },
       "publicSite": {
         "checkedDate": "2026-11-03",
-        "allCards": 162,
+        "allCards": 163,
         "latestDate": "2026.11.03",
         "search": "noteナレーターで1件",
         "categoryFilter": "交流・通知を管理するで7件",
         "combinedSearchAndPrice": "高評価数・価格と500円以下で1件",
         "addedFilter": 11,
-        "updatedFilter": 13,
+        "updatedFilter": 14,
         "updateFilterOrder": "記録順と一致",
-        "reset": "全162件に復帰",
+        "reset": "全163件に復帰",
         "cardLinks": "全カードのリンクがhttps://note.com/でデータと一致",
         "visibleBrokenImages": 0,
         "publishedFilesMatchSource": {
