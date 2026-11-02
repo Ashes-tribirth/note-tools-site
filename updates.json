@@ -367,7 +367,8 @@
       "紹介記事の有料価格とツール自体の価格を区別。無料のGIF4n・note統計ダッシュボード・下書きドックは、有料記事でも無料ツールの配布・利用案内が残るため無料のまま。",
       "Felikkoは新記事の一般リンク先が980円の他ツールを案内しているが、現行の個別ツール一覧でnote記事作成300円・初回7日無料を再確認。",
       "CSVの既存形式は基本7列＋サムネURLの8列。サムネイル機能を保つため既存形式を維持して全行を検証。デザイン・機能は変更せず、データとキャッシュ用の版番号のみ更新。",
-      "有料商品の購入、メンバーシップ加入、拡張機能のインストール、他者ツールの自動取得処理の全実行は行っていない。利用条件と配布導線の公開確認であり全機能の動作保証ではない。"
+      "有料商品の購入、メンバーシップ加入、拡張機能のインストール、他者ツールの自動取得処理の全実行は行っていない。利用条件と配布導線の公開確認であり全機能の動作保証ではない。",
+      "GitHubのAnalytics checksで、ubuntu-latestがUbuntu 26.04へ移行し固定版Playwright 1.51.1がブラウザを準備できない問題を確認。検証用runnerだけUbuntu 24.04に固定し、7件の既存テスト・JavaScript構文検証・320/390/768/1440幅の既存ブラウザ検証がすべて成功。デザイン・機能の変更なし。"
     ],
     "verification": {
       "csv": {
@@ -397,7 +398,33 @@
         "reset": "pass",
         "latestDate": "2026.11.03"
       },
-      "publicSite": "公開後に画面と配信ファイルを確認し、会話内で結果を報告"
+      "publicSite": {
+        "checkedDate": "2026-11-03",
+        "allCards": 162,
+        "latestDate": "2026.11.03",
+        "search": "noteナレーターで1件",
+        "categoryFilter": "交流・通知を管理するで7件",
+        "combinedSearchAndPrice": "高評価数・価格と500円以下で1件",
+        "addedFilter": 11,
+        "updatedFilter": 13,
+        "updateFilterOrder": "記録順と一致",
+        "reset": "全162件に復帰",
+        "cardLinks": "全カードのリンクがhttps://note.com/でデータと一致",
+        "visibleBrokenImages": 0,
+        "publishedFilesMatchSource": {
+          "note tools.csv": true,
+          "updates.json": true,
+          "app.js": true,
+          "index.html": true
+        }
+      },
+      "githubCI": {
+        "result": "pass",
+        "codeCommit": "01808d7945603bc8e4e42f50e1eb2a97d59f2866",
+        "runId": 41543328188,
+        "runner": "ubuntu-24.04",
+        "pagesDeployment": "success"
+      }
     },
     "source": "ローラー更新依頼"
   },
