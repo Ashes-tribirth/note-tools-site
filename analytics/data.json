@@ -1,17 +1,17 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-02T05:57:03.817707+00:00",
+  "generatedAt": "2026-11-02T18:17:32.511581+00:00",
   "timezone": "Asia/Tokyo",
   "periods": {
     "7": {
-      "start": "2026-10-26",
-      "end": "2026-11-01",
-      "previousStart": "2026-10-19",
-      "previousEnd": "2026-10-25",
+      "start": "2026-10-27",
+      "end": "2026-11-02",
+      "previousStart": "2026-10-20",
+      "previousEnd": "2026-10-26",
       "current": {
         "users": 2,
-        "sessions": 3,
-        "views": 3,
+        "sessions": 5,
+        "views": 5,
         "searches": 0,
         "clicks": 0
       },
@@ -23,13 +23,6 @@
         "clicks": 1
       },
       "daily": [
-        {
-          "date": "2026-10-26",
-          "users": 0,
-          "views": 0,
-          "searches": 0,
-          "clicks": 0
-        },
         {
           "date": "2026-10-27",
           "users": 1,
@@ -71,6 +64,13 @@
           "views": 1,
           "searches": 0,
           "clicks": 0
+        },
+        {
+          "date": "2026-11-02",
+          "users": 1,
+          "views": 2,
+          "searches": 0,
+          "clicks": 0
         }
       ],
       "tools": {
@@ -104,7 +104,7 @@
         },
         {
           "name": "直接アクセス",
-          "count": 3
+          "count": 5
         },
         {
           "name": "その他",
@@ -113,36 +113,29 @@
       ],
       "audience": {
         "new": 0,
-        "returning": 1
+        "returning": 2
       }
     },
     "30": {
-      "start": "2026-10-03",
-      "end": "2026-11-01",
-      "previousStart": "2026-09-03",
-      "previousEnd": "2026-10-02",
+      "start": "2026-10-04",
+      "end": "2026-11-02",
+      "previousStart": "2026-09-04",
+      "previousEnd": "2026-10-03",
       "current": {
-        "users": 16,
-        "sessions": 41,
-        "views": 46,
-        "searches": 21,
-        "clicks": 8
+        "users": 14,
+        "sessions": 39,
+        "views": 44,
+        "searches": 20,
+        "clicks": 3
       },
       "previous": {
-        "users": 8,
-        "sessions": 21,
-        "views": 25,
-        "searches": 1,
-        "clicks": 13
+        "users": 11,
+        "sessions": 25,
+        "views": 29,
+        "searches": 2,
+        "clicks": 18
       },
       "daily": [
-        {
-          "date": "2026-10-03",
-          "users": 3,
-          "views": 4,
-          "searches": 1,
-          "clicks": 5
-        },
         {
           "date": "2026-10-04",
           "users": 0,
@@ -345,6 +338,13 @@
           "views": 1,
           "searches": 0,
           "clicks": 0
+        },
+        {
+          "date": "2026-11-02",
+          "users": 1,
+          "views": 2,
+          "searches": 0,
+          "clicks": 0
         }
       ],
       "tools": {
@@ -365,33 +365,19 @@
             "previous": 0
           },
           {
-            "name": "サムネ盛丸（モリマル）",
-            "author": "M橋D輔さん",
-            "category": "画像・デザインを作る",
-            "count": 1,
-            "previous": 0
-          },
-          {
             "name": "スキマップ",
             "author": "ふな",
             "category": "活動を分析・記録する",
             "count": 1,
             "previous": 0
-          },
-          {
-            "name": "売れ筋探偵 for note",
-            "author": "ナマケモノ",
-            "category": "記事を書く・編集する",
-            "count": 1,
-            "previous": 0
           }
         ],
-        "withheld": 3
+        "withheld": 0
       },
       "keywords": {
         "status": "ok",
         "rows": [],
-        "withheld": 21
+        "withheld": 20
       },
       "zeroSearches": {
         "status": "ok",
@@ -402,22 +388,16 @@
         "status": "ok",
         "rows": [
           {
-            "name": "活動を分析・記録する",
-            "kind": "カテゴリ",
-            "count": 3,
-            "previous": 0
-          },
-          {
-            "name": "無料",
-            "kind": "料金",
-            "count": 3,
-            "previous": 1
-          },
-          {
             "name": "お気に入りのみ：on",
             "kind": "表示条件",
             "count": 2,
             "previous": 0
+          },
+          {
+            "name": "活動を分析・記録する",
+            "kind": "カテゴリ",
+            "count": 2,
+            "previous": 1
           },
           {
             "name": "お気に入りのみ：off",
@@ -436,6 +416,12 @@
             "kind": "料金",
             "count": 1,
             "previous": 0
+          },
+          {
+            "name": "無料",
+            "kind": "料金",
+            "count": 1,
+            "previous": 3
           }
         ],
         "withheld": 0
@@ -443,7 +429,7 @@
       "sources": [
         {
           "name": "note",
-          "count": 12
+          "count": 10
         },
         {
           "name": "検索エンジン",
@@ -459,15 +445,15 @@
         }
       ],
       "audience": {
-        "new": 14,
-        "returning": 7
+        "new": 11,
+        "returning": 6
       }
     },
     "today": {
-      "start": "2026-11-02",
-      "end": "2026-11-02",
-      "previousStart": "2026-11-01",
-      "previousEnd": "2026-11-01",
+      "start": "2026-11-03",
+      "end": "2026-11-03",
+      "previousStart": "2026-11-02",
+      "previousEnd": "2026-11-02",
       "current": {
         "users": 0,
         "sessions": 0,
@@ -484,7 +470,7 @@
       },
       "daily": [
         {
-          "date": "2026-11-02",
+          "date": "2026-11-03",
           "users": 0,
           "views": 0,
           "searches": 0,
@@ -533,7 +519,7 @@
         "new": 0,
         "returning": 0
       },
-      "throughHour": 14
+      "throughHour": 3
     }
   },
   "warnings": []
