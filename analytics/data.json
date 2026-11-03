@@ -1,35 +1,28 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-03T11:53:46.308447+00:00",
+  "generatedAt": "2026-11-03T19:28:53.877006+00:00",
   "timezone": "Asia/Tokyo",
   "periods": {
     "7": {
-      "start": "2026-10-27",
-      "end": "2026-11-02",
-      "previousStart": "2026-10-20",
-      "previousEnd": "2026-10-26",
+      "start": "2026-10-28",
+      "end": "2026-11-03",
+      "previousStart": "2026-10-21",
+      "previousEnd": "2026-10-27",
       "current": {
-        "users": 2,
-        "sessions": 5,
-        "views": 5,
-        "searches": 0,
-        "clicks": 0
+        "users": 3,
+        "sessions": 6,
+        "views": 13,
+        "searches": 3,
+        "clicks": 3
       },
       "previous": {
-        "users": 8,
-        "sessions": 16,
-        "views": 18,
+        "users": 7,
+        "sessions": 12,
+        "views": 12,
         "searches": 20,
         "clicks": 1
       },
       "daily": [
-        {
-          "date": "2026-10-27",
-          "users": 1,
-          "views": 2,
-          "searches": 0,
-          "clicks": 0
-        },
         {
           "date": "2026-10-28",
           "users": 0,
@@ -71,17 +64,46 @@
           "views": 2,
           "searches": 0,
           "clicks": 0
+        },
+        {
+          "date": "2026-11-03",
+          "users": 3,
+          "views": 10,
+          "searches": 3,
+          "clicks": 3
         }
       ],
       "tools": {
         "status": "ok",
-        "rows": [],
+        "rows": [
+          {
+            "name": "noteReader",
+            "author": "ふな",
+            "category": "記事を探す・読む",
+            "count": 1,
+            "previous": 0
+          },
+          {
+            "name": "おはヨミ next",
+            "author": "はしゃも｜感情構造エンジニア",
+            "category": "記事を探す・読む",
+            "count": 1,
+            "previous": 0
+          },
+          {
+            "name": "ポン出しビルダー＋ v5",
+            "author": "KITAcore｜キタコレ＠ログプレイヤー",
+            "category": "画像・デザインを作る",
+            "count": 1,
+            "previous": 0
+          }
+        ],
         "withheld": 0
       },
       "keywords": {
         "status": "ok",
         "rows": [],
-        "withheld": 0
+        "withheld": 3
       },
       "zeroSearches": {
         "status": "ok",
@@ -90,7 +112,20 @@
       },
       "filters": {
         "status": "ok",
-        "rows": [],
+        "rows": [
+          {
+            "name": "1～500円",
+            "kind": "料金",
+            "count": 1,
+            "previous": 0
+          },
+          {
+            "name": "交流・通知を管理する",
+            "kind": "カテゴリ",
+            "count": 1,
+            "previous": 0
+          }
+        ],
         "withheld": 0
       },
       "sources": [
@@ -104,7 +139,7 @@
         },
         {
           "name": "直接アクセス",
-          "count": 5
+          "count": 6
         },
         {
           "name": "その他",
@@ -112,21 +147,21 @@
         }
       ],
       "audience": {
-        "new": 0,
+        "new": 1,
         "returning": 2
       }
     },
     "30": {
-      "start": "2026-10-04",
-      "end": "2026-11-02",
-      "previousStart": "2026-09-04",
-      "previousEnd": "2026-10-03",
+      "start": "2026-10-05",
+      "end": "2026-11-03",
+      "previousStart": "2026-09-05",
+      "previousEnd": "2026-10-04",
       "current": {
-        "users": 14,
-        "sessions": 39,
-        "views": 44,
-        "searches": 20,
-        "clicks": 3
+        "users": 15,
+        "sessions": 42,
+        "views": 54,
+        "searches": 23,
+        "clicks": 6
       },
       "previous": {
         "users": 11,
@@ -136,13 +171,6 @@
         "clicks": 18
       },
       "daily": [
-        {
-          "date": "2026-10-04",
-          "users": 0,
-          "views": 0,
-          "searches": 0,
-          "clicks": 0
-        },
         {
           "date": "2026-10-05",
           "users": 1,
@@ -345,6 +373,13 @@
           "views": 2,
           "searches": 0,
           "clicks": 0
+        },
+        {
+          "date": "2026-11-03",
+          "users": 3,
+          "views": 10,
+          "searches": 3,
+          "clicks": 3
         }
       ],
       "tools": {
@@ -358,9 +393,23 @@
             "previous": 0
           },
           {
+            "name": "noteReader",
+            "author": "ふな",
+            "category": "記事を探す・読む",
+            "count": 1,
+            "previous": 0
+          },
+          {
             "name": "noteしおり",
             "author": "AIを使える形に整える@オトーワン",
             "category": "保存・管理する",
+            "count": 1,
+            "previous": 0
+          },
+          {
+            "name": "おはヨミ next",
+            "author": "はしゃも｜感情構造エンジニア",
+            "category": "記事を探す・読む",
             "count": 1,
             "previous": 0
           },
@@ -370,6 +419,13 @@
             "category": "活動を分析・記録する",
             "count": 1,
             "previous": 0
+          },
+          {
+            "name": "ポン出しビルダー＋ v5",
+            "author": "KITAcore｜キタコレ＠ログプレイヤー",
+            "category": "画像・デザインを作る",
+            "count": 1,
+            "previous": 0
           }
         ],
         "withheld": 0
@@ -377,7 +433,7 @@
       "keywords": {
         "status": "ok",
         "rows": [],
-        "withheld": 20
+        "withheld": 23
       },
       "zeroSearches": {
         "status": "ok",
@@ -400,6 +456,12 @@
             "previous": 1
           },
           {
+            "name": "1～500円",
+            "kind": "料金",
+            "count": 1,
+            "previous": 0
+          },
+          {
             "name": "お気に入りのみ：off",
             "kind": "表示条件",
             "count": 1,
@@ -410,6 +472,12 @@
             "kind": "カテゴリ",
             "count": 1,
             "previous": 0
+          },
+          {
+            "name": "交流・通知を管理する",
+            "kind": "カテゴリ",
+            "count": 1,
+            "previous": 1
           },
           {
             "name": "月額・メンバーシップ",
@@ -437,7 +505,7 @@
         },
         {
           "name": "直接アクセス",
-          "count": 29
+          "count": 32
         },
         {
           "name": "その他",
@@ -445,15 +513,15 @@
         }
       ],
       "audience": {
-        "new": 11,
+        "new": 12,
         "returning": 6
       }
     },
     "today": {
-      "start": "2026-11-03",
-      "end": "2026-11-03",
-      "previousStart": "2026-11-02",
-      "previousEnd": "2026-11-02",
+      "start": "2026-11-04",
+      "end": "2026-11-04",
+      "previousStart": "2026-11-03",
+      "previousEnd": "2026-11-03",
       "current": {
         "users": 0,
         "sessions": 0,
@@ -462,15 +530,15 @@
         "clicks": 0
       },
       "previous": {
-        "users": 1,
-        "sessions": 1,
-        "views": 1,
+        "users": 0,
+        "sessions": 0,
+        "views": 0,
         "searches": 0,
         "clicks": 0
       },
       "daily": [
         {
-          "date": "2026-11-03",
+          "date": "2026-11-04",
           "users": 0,
           "views": 0,
           "searches": 0,
@@ -519,7 +587,7 @@
         "new": 0,
         "returning": 0
       },
-      "throughHour": 20
+      "throughHour": 4
     }
   },
   "warnings": []
