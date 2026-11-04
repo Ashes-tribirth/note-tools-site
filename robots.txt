@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ashes-tribirth.github.io/note-tools-site/sitemap.xml
