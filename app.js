@@ -230,7 +230,7 @@ function renderUpdateLog(updates) {
 
   elements.updateLog.innerHTML = updates.map(update => {
     const date = escapeHTML(update.date || '');
-    return `<p><time datetime="${date}">${formatShortDate(date)}</time><span>${renderUpdateSummary(update)}</span></p>`;
+    return `<p><time datetime="${date}">${escapeHTML(formatShortDate(update.date || ''))}</time><span>${renderUpdateSummary(update)}</span></p>`;
   }).join('');
 }
 
