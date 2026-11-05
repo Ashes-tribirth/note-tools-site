@@ -43,6 +43,8 @@ const elements = {
   search: document.getElementById('searchInput'),
   category: document.getElementById('categoryFilter'),
   price: document.getElementById('priceFilter'),
+  sort: document.getElementById('sortOrder'),
+  purposes: document.querySelector('.purpose-buttons'),
   thumbnails: document.getElementById('thumbnailDisplay'),
   favoritesOnly: document.getElementById('favoriteFilter'),
   reset: document.getElementById('resetBtn'),
@@ -318,7 +320,16 @@ function createCard(tool, showThumbnails, favorites) {
   return `<article class="card">${thumbnail}<div class="card-inner"><div class="card-top"><div class="card-title-wrap"><button class="favorite-btn${isFavorite ? ' is-favorite' : ''}" type="button" data-key="${escapeHTML(encodeURIComponent(key))}" aria-label="${isFavorite ? 'お気に入りから削除' : 'お気に入りに追加'}" aria-pressed="${isFavorite}">${isFavorite ? '♥' : '♡'}</button>${title}</div><div class="badge-stack"><span class="badge badge-${badgeClass}">${escapeHTML(badgeText)}</span>${availability}</div></div>${bodyStart}<div class="card-author">${escapeHTML(tool.author)}</div><div class="card-desc">${escapeHTML(tool.description)}</div>${statusDetail}<div class="card-category">${escapeHTML(tool.category)}</div>${bodyEnd}</div></article>`;
 }
 
+function syncPurposeButtons() {
+  elements.purposes?.querySelectorAll('[data-purpose]').forEach(button => {
+    const active = elements.category.value === button.dataset.purpose;
+    button.setAttribute('aria-pressed', String(active));
+    button.classList.toggle('is-active', active);
+  });
+}
+
 function renderTools() {
+  syncPurposeButtons();
   const search = elements.search.value.toLowerCase();
   const category = elements.category.value;
   const price = elements.price.value;
@@ -336,6 +347,14 @@ function renderTools() {
     (!changeTargets || changeTargets.has(tool.name))
   );
 
+  if (elements.sort.value === 'updated') {
+    filtered.sort((a, b) => b.updatedAt.localeCompare(a.updatedAt) || a.name.localeCompare(b.name, 'ja'));
+  } else if (elements.sort.value === 'name') {
+    filtered.sort((a, b) => a.name.localeCompare(b.name, 'ja'));
+  } else if (elements.sort.value === 'author') {
+    filtered.sort((a, b) => a.author.localeCompare(b.author, 'ja') || a.name.localeCompare(b.name, 'ja'));
+  }
+
   if (activeChangeFilter) {
     const order = new Map(activeChangeFilter.names.map((name, index) => [name, index]));
     filtered.sort((a, b) => (order.get(a.name) ?? Number.MAX_SAFE_INTEGER) - (order.get(b.name) ?? Number.MAX_SAFE_INTEGER));
@@ -343,7 +362,7 @@ function renderTools() {
 
   currentResultCount = filtered.length;
   elements.count.textContent = `${filtered.length} 件`;
-  elements.reset.hidden = !(search || category || price || favoritesOnly || activeChangeFilter);
+  elements.reset.hidden = !(search || category || price || favoritesOnly || activeChangeFilter || elements.sort.value !== 'default');
 
   elements.grid.innerHTML = filtered.length
     ? filtered.map(tool => createCard(tool, showThumbnails, favorites)).join('')
@@ -355,6 +374,7 @@ function resetFilters() {
   elements.category.value = '';
   elements.price.value = '';
   elements.favoritesOnly.checked = false;
+  elements.sort.value = 'default';
   activeChangeFilter = null;
   renderUpdateLog(updateLogEntries);
   renderTools();
@@ -384,6 +404,18 @@ function trackCompassEvent(name, params = {}) {
 
 function attachListeners() {
   let searchTimer;
+  elements.purposes?.addEventListener('click', event => {
+    const button = event.target.closest('button[data-purpose]');
+    if (!button) return;
+    const purpose = button.dataset.purpose;
+    elements.category.value = elements.category.value === purpose ? '' : purpose;
+    trackCompassEvent('compass_purpose', { purpose, selected: elements.category.value === purpose });
+    renderTools();
+  });
+  elements.sort.addEventListener('change', () => {
+    trackCompassEvent('compass_sort', { order: elements.sort.value });
+    renderTools();
+  });
   elements.search.addEventListener('input', () => {
     renderTools();
     clearTimeout(searchTimer);
