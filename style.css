@@ -606,3 +606,24 @@ select:focus {
   .select-filters { grid-template-columns: 1fr; }
   #sortOrder { grid-column: auto; }
 }
+
+/* Distinguish the purpose shortcuts from the detailed search controls. */
+.detailed-search-heading {
+  padding-top: 1.15rem;
+  margin-bottom: 0.85rem;
+  border-top: 1px solid #E9E6F1;
+}
+.detailed-search-heading h2 {
+  margin-bottom: 0.3rem;
+  color: #4F485B;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+.detailed-search-heading .quick-guide {
+  margin-bottom: 0;
+  font-size: 0.79rem;
+}
+.filter-row + .update-log {
+  margin-top: 1.2rem;
+  margin-bottom: 0;
+}
