@@ -50,6 +50,10 @@ const elements = {
   reset: document.getElementById('resetBtn'),
   count: document.getElementById('resultCount'),
   grid: document.getElementById('toolsGrid'),
+  resultsOverview: document.getElementById('resultsOverview'),
+  resultsCount: document.getElementById('resultSummaryCount'),
+  resultsReset: document.getElementById('resultsResetBtn'),
+  activeFilters: document.getElementById('activeFilters'),
   updatedAt: document.getElementById('pageUpdatedAt'),
   updateLog: document.getElementById('updateLogList')
 };
@@ -328,6 +332,37 @@ function syncPurposeButtons() {
   });
 }
 
+function renderActiveFilters() {
+  const filters = [];
+  const query = elements.search.value.trim();
+  if (query) filters.push({ id: 'search', label: `キーワード: ${query}` });
+  if (elements.category.value) filters.push({ id: 'category', label: elements.category.value });
+  if (elements.price.value) filters.push({ id: 'price', label: elements.price.value });
+  if (elements.favoritesOnly.checked) filters.push({ id: 'favorites', label: 'お気に入りのみ' });
+  if (activeChangeFilter) {
+    const kind = activeChangeFilter.type === 'added' ? '追加' : '更新';
+    filters.push({ id: 'update', label: `${formatShortDate(activeChangeFilter.date)}の${kind}` });
+  }
+  elements.activeFilters.replaceChildren();
+  filters.forEach(filter => {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'filter-chip';
+    button.dataset.filter = filter.id;
+    button.textContent = `${filter.label} ×`;
+    button.setAttribute('aria-label', `${filter.label}の条件を解除`);
+    elements.activeFilters.append(button);
+  });
+  elements.activeFilters.hidden = filters.length === 0;
+}
+
+function scrollToResults() {
+  requestAnimationFrame(() => {
+    const behavior = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+    elements.resultsOverview.scrollIntoView({ behavior, block: 'start' });
+  });
+}
+
 function renderTools() {
   syncPurposeButtons();
   const search = elements.search.value.toLowerCase();
@@ -347,6 +382,12 @@ function renderTools() {
     (!changeTargets || changeTargets.has(tool.name))
   );
 
+  if (activeChangeFilter) {
+    const order = new Map(activeChangeFilter.names.map((name, index) => [name, index]));
+    filtered.sort((a, b) => (order.get(a.name) ?? Number.MAX_SAFE_INTEGER) - (order.get(b.name) ?? Number.MAX_SAFE_INTEGER));
+  }
+
+  // An explicit sort choice takes precedence over the update-log's default order.
   if (elements.sort.value === 'updated') {
     filtered.sort((a, b) => b.updatedAt.localeCompare(a.updatedAt) || a.name.localeCompare(b.name, 'ja'));
   } else if (elements.sort.value === 'name') {
@@ -355,18 +396,17 @@ function renderTools() {
     filtered.sort((a, b) => a.author.localeCompare(b.author, 'ja') || a.name.localeCompare(b.name, 'ja'));
   }
 
-  if (activeChangeFilter) {
-    const order = new Map(activeChangeFilter.names.map((name, index) => [name, index]));
-    filtered.sort((a, b) => (order.get(a.name) ?? Number.MAX_SAFE_INTEGER) - (order.get(b.name) ?? Number.MAX_SAFE_INTEGER));
-  }
-
   currentResultCount = filtered.length;
+  const hasControls = !!(search || category || price || favoritesOnly || activeChangeFilter || elements.sort.value !== 'default');
   elements.count.textContent = `${filtered.length} 件`;
-  elements.reset.hidden = !(search || category || price || favoritesOnly || activeChangeFilter || elements.sort.value !== 'default');
+  elements.resultsCount.textContent = `${filtered.length} 件`;
+  elements.reset.hidden = !hasControls;
+  elements.resultsReset.hidden = !hasControls;
+  renderActiveFilters();
 
   elements.grid.innerHTML = filtered.length
     ? filtered.map(tool => createCard(tool, showThumbnails, favorites)).join('')
-    : '<div class="empty-state">該当するツールが見つかりません</div>';
+    : '<div class="empty-state" role="status"><p>条件に合うツールが見つかりませんでした。</p><p>検索語を短くするか、条件を解除してみてください。</p><button id="emptyResetBtn" type="button">条件をクリアしてすべて表示</button></div>';
 }
 
 function resetFilters() {
@@ -408,9 +448,18 @@ function attachListeners() {
     const button = event.target.closest('button[data-purpose]');
     if (!button) return;
     const purpose = button.dataset.purpose;
-    elements.category.value = elements.category.value === purpose ? '' : purpose;
-    trackCompassEvent('compass_purpose', { purpose, selected: elements.category.value === purpose });
+    const wasSelected = elements.category.value === purpose;
+    // Purpose shortcuts start a fresh search; detailed filters can be added afterward.
+    elements.search.value = '';
+    elements.price.value = '';
+    elements.favoritesOnly.checked = false;
+    elements.sort.value = 'default';
+    activeChangeFilter = null;
+    elements.category.value = wasSelected ? '' : purpose;
+    renderUpdateLog(updateLogEntries);
+    trackCompassEvent('compass_purpose', { purpose, selected: !wasSelected });
     renderTools();
+    scrollToResults();
   });
   elements.sort.addEventListener('change', () => {
     trackCompassEvent('compass_sort', { order: elements.sort.value });
@@ -450,6 +499,27 @@ function attachListeners() {
     trackCompassEvent('compass_filter_reset');
     resetFilters();
   });
+  elements.resultsReset.addEventListener('click', () => {
+    trackCompassEvent('compass_filter_reset');
+    resetFilters();
+  });
+  elements.activeFilters.addEventListener('click', event => {
+    const button = event.target.closest('button[data-filter]');
+    if (!button || !elements.activeFilters.contains(button)) return;
+    switch (button.dataset.filter) {
+      case 'search': elements.search.value = ''; break;
+      case 'category': elements.category.value = ''; break;
+      case 'price': elements.price.value = ''; break;
+      case 'favorites': elements.favoritesOnly.checked = false; break;
+      case 'update':
+        activeChangeFilter = null;
+        renderUpdateLog(updateLogEntries);
+        break;
+      default: return;
+    }
+    trackCompassEvent('compass_filter_remove', { filter_type: button.dataset.filter });
+    renderTools();
+  });
 
   elements.thumbnails.addEventListener('change', event => {
     localStorage.setItem(THUMBNAIL_KEY, event.target.checked ? 'show' : 'hide');
@@ -464,6 +534,12 @@ function attachListeners() {
   });
 
   elements.grid.addEventListener('click', event => {
+    const emptyReset = event.target.closest('#emptyResetBtn');
+    if (emptyReset) {
+      trackCompassEvent('compass_filter_reset');
+      resetFilters();
+      return;
+    }
     const button = event.target.closest('.favorite-btn');
     if (button) {
       event.preventDefault();
