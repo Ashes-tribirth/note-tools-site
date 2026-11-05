@@ -25,6 +25,11 @@ const assert=require('node:assert/strict');
  await page.route('https://**/*',r=>r.abort());
  await page.goto('http://127.0.0.1:8765/');await page.waitForSelector('.card');
  const count=await page.locator('.card').count();assert(count>0);
+ for(const width of [320,390,768,1440]) {
+  await page.setViewportSize({width,height:900});
+  assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'Compass horizontal overflow '+width);
+ }
+ await page.setViewportSize({width:390,height:844});
  await page.evaluate(()=>{window.captured=[];window.compassAnalytics={event:(name,params)=>captured.push({name,params})};});
  await page.locator('#searchInput').fill('zzzzzz-no-match');await page.waitForTimeout(850);
  let tracked=await page.evaluate(()=>captured);assert(tracked.some(e=>e.name==='compass_search_zero'&&e.params.result_count===0&&e.params.search_scope==='all'));
