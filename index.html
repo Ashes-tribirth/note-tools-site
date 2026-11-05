@@ -27,7 +27,7 @@
 <link rel="icon" type="image/png" href="./favi_sky_Compass_light.png" media="(prefers-color-scheme: light)">
 <link rel="icon" type="image/png" href="./favi_sky_Compass_dark.png" media="(prefers-color-scheme: dark)">
 <link rel="apple-touch-icon" href="./sky-compass.png">
-<link rel="stylesheet" href="./style.css?v=20261105-discovery">
+<link rel="stylesheet" href="./style.css?v=20261105-discovery2">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z4E1HBRD0J"></script>
 <script src="./analytics.js?v=20260918" defer></script>
 <script src="./app.js?v=20261105-discovery" defer></script>
@@ -42,7 +42,6 @@
 
   <main>
     <section class="controls" aria-label="ツール検索と絞り込み">
-      <p class="quick-guide">使い方：目的やキーワードから探す → 気になるツールの記事を開く。♡でお気に入り保存もできます。別の条件で探すときは「条件をクリア」を押してください。</p>
       <div class="purpose-search" role="group" aria-label="目的から探す">
         <h2>何をしたいですか？</h2>
         <div class="purpose-buttons">
@@ -53,12 +52,10 @@
           <button type="button" data-purpose="保存・管理する" aria-pressed="false">保存・管理する</button>
         </div>
       </div>
-      <section class="update-log" aria-labelledby="updateLogTitle">
-        <h2 id="updateLogTitle">最近の更新</h2>
-        <div id="updateLogList" class="update-log-list" tabindex="0" aria-live="polite">
-          <p>更新履歴を読み込み中</p>
-        </div>
-      </section>
+      <div class="detailed-search-heading">
+        <h2>もっと詳しく探す</h2>
+        <p class="quick-guide">キーワード・カテゴリ・料金を組み合わせて探せます。気になるツールの記事を開いて詳細を確認してください。♡でお気に入り保存もできます。別のツールを探すときは「条件をクリア」を押してください。</p>
+      </div>
       <div class="search-wrap">
         <input type="text" id="searchInput" placeholder="ツール名・作者・キーワードで検索">
       </div>
@@ -85,6 +82,12 @@
           <span id="resultCount"></span>
         </div>
       </div>
+      <section class="update-log" aria-labelledby="updateLogTitle">
+        <h2 id="updateLogTitle">最近の更新</h2>
+        <div id="updateLogList" class="update-log-list" tabindex="0" aria-live="polite">
+          <p>更新履歴を読み込み中</p>
+        </div>
+      </section>
     </section>
 
     <div class="grid-wrap">
