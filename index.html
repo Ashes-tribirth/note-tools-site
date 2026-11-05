@@ -27,10 +27,10 @@
 <link rel="icon" type="image/png" href="./favi_sky_Compass_light.png" media="(prefers-color-scheme: light)">
 <link rel="icon" type="image/png" href="./favi_sky_Compass_dark.png" media="(prefers-color-scheme: dark)">
 <link rel="apple-touch-icon" href="./sky-compass.png">
-<link rel="stylesheet" href="./style.css">
+<link rel="stylesheet" href="./style.css?v=20261105-discovery">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z4E1HBRD0J"></script>
 <script src="./analytics.js?v=20260918" defer></script>
-<script src="./app.js?v=20261104-security" defer></script>
+<script src="./app.js?v=20261105-discovery" defer></script>
 </head>
 <body>
   <header class="header">
@@ -42,6 +42,17 @@
 
   <main>
     <section class="controls" aria-label="ツール検索と絞り込み">
+      <p class="quick-guide">使い方：目的やキーワードから探す → 気になるツールの記事を開く。♡でお気に入り保存もできます。</p>
+      <div class="purpose-search" role="group" aria-label="目的から探す">
+        <h2>何をしたいですか？</h2>
+        <div class="purpose-buttons">
+          <button type="button" data-purpose="記事を書く・編集する" aria-pressed="false">記事を書く</button>
+          <button type="button" data-purpose="画像・デザインを作る" aria-pressed="false">画像を作る</button>
+          <button type="button" data-purpose="活動を分析・記録する" aria-pressed="false">活動を分析する</button>
+          <button type="button" data-purpose="記事を探す・読む" aria-pressed="false">記事を探す・読む</button>
+          <button type="button" data-purpose="保存・管理する" aria-pressed="false">保存・管理する</button>
+        </div>
+      </div>
       <section class="update-log" aria-labelledby="updateLogTitle">
         <h2 id="updateLogTitle">最近の更新</h2>
         <div id="updateLogList" class="update-log-list" tabindex="0" aria-live="polite">
@@ -55,6 +66,7 @@
         <div class="select-filters">
           <select id="categoryFilter" aria-label="カテゴリ"><option value="">すべてのカテゴリ</option></select>
           <select id="priceFilter" aria-label="料金"><option value="">すべての料金</option></select>
+          <select id="sortOrder" aria-label="並べ替え"><option value="default">標準の順番</option><option value="updated">情報更新が新しい順</option><option value="name">ツール名順</option><option value="author">作者名順</option></select>
         </div>
         <div class="toggle-filters" aria-label="表示設定">
           <label class="toggle-control toggle-thumbnail">
