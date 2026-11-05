@@ -32,6 +32,34 @@ const assert=require('node:assert/strict');
  await page.locator('#resetBtn').click();assert.equal(await page.locator('.card').count(),count);
  await page.locator('#categoryFilter').selectOption({index:1});await page.locator('#searchInput').fill('zzzz-no-match');await page.waitForTimeout(850);tracked=await page.evaluate(()=>captured);assert(tracked.some(e=>e.name==='compass_search_zero'&&e.params.search_scope==='filtered'));
  await page.locator('#resetBtn').click();await page.locator('.favorite-btn').first().click();await page.locator('.toggle-favorite').click();assert.equal(await page.locator('.card').count(),1);await page.locator('#resetBtn').click();
+ // UX: purpose shortcut starts clean, reveals results, and allows individual reset.
+ await page.setViewportSize({width:390,height:844});
+ await page.locator('#priceFilter').selectOption({index:1});
+ await page.locator('#searchInput').fill('deliberate-no-match');
+ await page.locator('[data-purpose="画像・デザインを作る"]').click();
+ assert.equal(await page.locator('#searchInput').inputValue(),'');
+ assert.equal(await page.locator('#priceFilter').inputValue(),'');
+ assert.equal(await page.locator('#categoryFilter').inputValue(),'画像・デザインを作る');
+ assert(await page.locator('#activeFilters [data-filter="category"]').isVisible());
+ assert((await page.locator('.card').count())>0);
+ await page.waitForFunction(()=>window.scrollY>0);
+ await page.locator('#activeFilters [data-filter="category"]').click();
+ assert.equal(await page.locator('#categoryFilter').inputValue(),'');
+ assert.equal(await page.locator('.card').count(),count);
+ // UX: no matches offers direct recovery.
+ await page.locator('#searchInput').fill('definitely-absent-test-phrase');
+ assert.equal(await page.locator('.card').count(),0);
+ assert(await page.locator('#emptyResetBtn').isVisible());
+ await page.locator('#emptyResetBtn').click();
+ assert.equal(await page.locator('.card').count(),count);
+ // UX: explicit name sorting works even while the update-log filter is active.
+ await page.locator('.update-log-filter').first().click();
+ assert((await page.locator('.card').count())>1);
+ await page.locator('#sortOrder').selectOption('name');
+ const names=await page.locator('.card-title').allTextContents();
+ assert.deepEqual(names,[...names].sort((a,b)=>a.localeCompare(b,'ja')));
+ await page.locator('#resultsResetBtn').click();
+ assert.equal(await page.locator('.card').count(),count);
  assert.deepEqual(errors,[]);console.log(JSON.stringify({result:'passed',existingCards:count,widths:[320,390,768,1440],checks:['periods','charts','rankings','missing','stale','zero results','masked search','filters','favorites','no JS errors']}));
  await browser.close();
 })();
