@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-04T19:43:15.242792+00:00",
+  "generatedAt": "2026-11-05T00:53:42.282833+00:00",
   "timezone": "Asia/Tokyo",
   "periods": {
     "7": {
@@ -587,7 +587,7 @@
         "new": 0,
         "returning": 0
       },
-      "throughHour": 4
+      "throughHour": 9
     }
   },
   "warnings": []
