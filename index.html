@@ -27,10 +27,10 @@
 <link rel="icon" type="image/png" href="./favi_sky_Compass_light.png" media="(prefers-color-scheme: light)">
 <link rel="icon" type="image/png" href="./favi_sky_Compass_dark.png" media="(prefers-color-scheme: dark)">
 <link rel="apple-touch-icon" href="./sky-compass.png">
-<link rel="stylesheet" href="./style.css?v=20261105-discovery2">
+<link rel="stylesheet" href="./style.css?v=20261105-ux2">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z4E1HBRD0J"></script>
 <script src="./analytics.js?v=20260918" defer></script>
-<script src="./app.js?v=20261105-discovery" defer></script>
+<script src="./app.js?v=20261105-ux2" defer></script>
 </head>
 <body>
   <header class="header">
@@ -41,7 +41,7 @@
   </header>
 
   <main>
-    <section class="controls" aria-label="ツール検索と絞り込み">
+    <section class="controls" id="searchControls" aria-label="ツール検索と絞り込み">
       <div class="purpose-search" role="group" aria-label="目的から探す">
         <h2>何をしたいですか？</h2>
         <div class="purpose-buttons">
@@ -54,7 +54,7 @@
       </div>
       <div class="detailed-search-heading">
         <h2>もっと詳しく探す</h2>
-        <p class="quick-guide">キーワード・カテゴリ・料金を組み合わせて探せます。気になるツールの記事を開いて詳細を確認してください。♡でお気に入り保存もできます。別のツールを探すときは「条件をクリア」を押してください。</p>
+        <p class="quick-guide">キーワード・カテゴリ・料金を組み合わせて探せます。♡でお気に入り保存。別の条件で探すときは「条件をクリア」を押してください。</p>
       </div>
       <div class="search-wrap">
         <input type="text" id="searchInput" placeholder="ツール名・作者・キーワードで検索">
@@ -91,6 +91,16 @@
     </section>
 
     <div class="grid-wrap">
+      <div class="results-overview" id="resultsOverview">
+        <div class="results-heading">
+          <h2>検索結果 <span id="resultSummaryCount" aria-live="polite">読み込み中</span></h2>
+          <div class="results-actions">
+            <a href="#searchControls">条件を変更</a>
+            <button type="button" id="resultsResetBtn" hidden>条件をクリア</button>
+          </div>
+        </div>
+        <div id="activeFilters" class="active-filters" aria-label="適用中の検索条件" hidden></div>
+      </div>
       <div id="toolsGrid"><div class="loading-state">読み込み中...</div></div>
     </div>
 
