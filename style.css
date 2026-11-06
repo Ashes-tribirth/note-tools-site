@@ -621,8 +621,9 @@ select:focus {
 }
 .detailed-search-heading .quick-guide {
   margin-bottom: 0;
-  font-size: 0.79rem;
+  font-size: 0.84rem;
 }
+.detailed-search-heading .quick-guide strong { color: #4F485B; }
 .filter-row + .update-log {
   margin-top: 1.2rem;
   margin-bottom: 0;
