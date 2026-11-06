@@ -719,3 +719,56 @@ select:focus {
   .grid-wrap { padding: 1rem 1rem 3rem; }
   #toolsGrid { grid-template-columns: minmax(0, 1fr); }
 }
+
+/* Compact, purpose-first discovery: keep the tools visible above the fold. */
+.header { padding: 2rem 1.5rem 1.5rem; }
+.header .eyebrow { margin-bottom: 0.45rem; font-size: 0.72rem; }
+.header h1 { margin-bottom: 0.45rem; font-size: 1.85rem; }
+.header p { font-size: 0.85rem; }
+.page-updated { margin-top: 0.65rem !important; }
+.controls { padding: 1.25rem 2rem 0.35rem; }
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0, 0, 0, 0); white-space: nowrap; clip-path: inset(50%);
+}
+.search-wrap { margin-bottom: 0.85rem; }
+#searchInput {
+  border-radius: 11px; background: #FFFFFF; padding: 0.78rem 0.9rem;
+}
+.purpose-search { margin-bottom: 0.85rem; }
+.purpose-search h2 { margin-bottom: 0.42rem; font-size: 0.85rem; }
+.purpose-buttons { gap: 0.4rem; }
+.purpose-buttons button { padding: 0.43rem 0.7rem; font-size: 0.77rem; }
+.advanced-search {
+  border: 1px solid #E9E6F1; border-radius: 10px;
+  background: rgba(255,255,255,0.75);
+}
+.advanced-search summary {
+  cursor: pointer; padding: 0.7rem 0.85rem; color: #5B4E72;
+  font-size: 0.86rem; font-weight: 700;
+}
+.advanced-search summary span { margin-left: 0.35rem; color: #91899B; font-size: 0.72rem; font-weight: 400; }
+.advanced-search-content { padding: 0 0.7rem 0.75rem; }
+.advanced-search .quick-guide { font-size: 0.78rem; margin: 0.15rem 0.25rem 0.65rem; line-height: 1.6; }
+.advanced-search .filter-row { box-shadow: none; }
+.advanced-search summary:focus-visible,
+.update-log summary:focus-visible { outline: 2px solid #7865B0; outline-offset: 2px; }
+.grid-wrap { padding-top: 0.7rem; }
+.results-overview { margin-bottom: 0.55rem; padding: 0.65rem 0.85rem; }
+.results-heading h2 { font-size: 0.88rem; }
+#resetBtn { font-size: 0.77rem; padding: 0.35rem 0.6rem; }
+#resetBtn[hidden] { display: none; }
+.update-log {
+  margin: 0 0 0.75rem; padding: 0.0rem 0.85rem;
+  box-shadow: none; background: rgba(255,255,255,0.55);
+}
+.update-log summary { padding: 0.52rem 0; cursor: pointer; font-size: 0.8rem; font-weight: 600; }
+.update-log-list { margin: 0 0 0.45rem; }
+@media (max-width: 640px) {
+  .header { padding: 1.45rem 1rem 1.1rem; }
+  .header h1 { font-size: 1.6rem; }
+  .header .eyebrow { font-size: 0.68rem; }
+  .controls { padding: 0.95rem 1rem 0.2rem; }
+  .grid-wrap { padding-top: 0.45rem; }
+  .advanced-search summary span { font-size: 0.69rem; }
+}
