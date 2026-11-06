@@ -27,10 +27,10 @@
 <link rel="icon" type="image/png" href="./favi_sky_Compass_light.png" media="(prefers-color-scheme: light)">
 <link rel="icon" type="image/png" href="./favi_sky_Compass_dark.png" media="(prefers-color-scheme: dark)">
 <link rel="apple-touch-icon" href="./sky-compass.png">
-<link rel="stylesheet" href="./style.css?v=20261105-ux2">
+<link rel="stylesheet" href="./style.css?v=20261106-compact">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z4E1HBRD0J"></script>
 <script src="./analytics.js?v=20260918" defer></script>
-<script src="./app.js?v=20261105-ux2" defer></script>
+<script src="./app.js?v=20261106-compact" defer></script>
 </head>
 <body>
   <header class="header">
@@ -42,65 +42,61 @@
 
   <main>
     <section class="controls" id="searchControls" aria-label="ツール検索と絞り込み">
+      <div class="search-wrap">
+        <label for="searchInput" class="visually-hidden">ツール名・作者・キーワードで検索</label>
+        <input type="search" id="searchInput" placeholder="ツール名・やりたいことを検索" autocomplete="off">
+      </div>
       <div class="purpose-search" role="group" aria-label="目的から探す">
-        <h2>何をしたいですか？</h2>
+        <h2>目的から探す</h2>
         <div class="purpose-buttons">
           <button type="button" data-purpose="記事を書く・編集する" aria-pressed="false">記事を書く</button>
           <button type="button" data-purpose="画像・デザインを作る" aria-pressed="false">画像を作る</button>
-          <button type="button" data-purpose="活動を分析・記録する" aria-pressed="false">活動を分析する</button>
-          <button type="button" data-purpose="記事を探す・読む" aria-pressed="false">記事を探す・読む</button>
-          <button type="button" data-purpose="保存・管理する" aria-pressed="false">保存・管理する</button>
+          <button type="button" data-purpose="活動を分析・記録する" aria-pressed="false">分析する</button>
+          <button type="button" data-purpose="記事を探す・読む" aria-pressed="false">記事を読む</button>
+          <button type="button" data-purpose="保存・管理する" aria-pressed="false">保存・管理</button>
         </div>
       </div>
-      <div class="detailed-search-heading">
-        <h2>もっと詳しく探す</h2>
-        <p class="quick-guide"><strong>使い方：</strong>キーワード・カテゴリ・料金で絞り込む → 気になるツールを押して紹介記事へ。別のツールを探すときは「条件をクリア」。♡でお気に入り保存。</p>
-      </div>
-      <div class="search-wrap">
-        <input type="text" id="searchInput" placeholder="ツール名・作者・キーワードで検索">
-      </div>
-      <div class="filter-row">
-        <div class="select-filters">
-          <select id="categoryFilter" aria-label="カテゴリ"><option value="">すべてのカテゴリ</option></select>
-          <select id="priceFilter" aria-label="料金"><option value="">すべての料金</option></select>
-          <select id="sortOrder" aria-label="並べ替え"><option value="default">標準の順番</option><option value="updated">情報更新が新しい順</option><option value="name">ツール名順</option><option value="author">作者名順</option></select>
+      <details class="advanced-search" id="advancedSearch">
+        <summary>もっと詳しく探す <span>カテゴリ・料金・並べ替え</span></summary>
+        <div class="advanced-search-content">
+          <p class="quick-guide"><strong>使い方：</strong>条件を組み合わせて絞り込みます。♡でお気に入り保存。探し直すときは「条件をクリア」。</p>
+          <div class="filter-row">
+            <div class="select-filters">
+              <select id="categoryFilter" aria-label="カテゴリ"><option value="">すべてのカテゴリ</option></select>
+              <select id="priceFilter" aria-label="料金"><option value="">すべての料金</option></select>
+              <select id="sortOrder" aria-label="並べ替え"><option value="default">標準の順番</option><option value="updated">情報更新が新しい順</option><option value="name">ツール名順</option><option value="author">作者名順</option></select>
+            </div>
+            <div class="toggle-filters" aria-label="表示設定">
+              <label class="toggle-control toggle-thumbnail">
+                <input type="checkbox" id="thumbnailDisplay" checked>
+                <span class="toggle-track" aria-hidden="true"><span class="toggle-knob"></span></span>
+                <span class="toggle-text">サムネ表示</span>
+              </label>
+              <label class="toggle-control toggle-favorite">
+                <input type="checkbox" id="favoriteFilter">
+                <span class="toggle-track" aria-hidden="true"><span class="toggle-knob"></span></span>
+                <span class="toggle-text">お気に入りのみ</span>
+              </label>
+            </div>
+          </div>
         </div>
-        <div class="toggle-filters" aria-label="表示設定">
-          <label class="toggle-control toggle-thumbnail">
-            <input type="checkbox" id="thumbnailDisplay" checked>
-            <span class="toggle-track" aria-hidden="true"><span class="toggle-knob"></span></span>
-            <span class="toggle-text">サムネ表示</span>
-          </label>
-          <label class="toggle-control toggle-favorite">
-            <input type="checkbox" id="favoriteFilter">
-            <span class="toggle-track" aria-hidden="true"><span class="toggle-knob"></span></span>
-            <span class="toggle-text">お気に入りのみ</span>
-          </label>
-        </div>
-        <div class="filter-meta">
-          <button id="resetBtn" hidden>条件をクリア</button>
-          <span id="resultCount"></span>
-        </div>
-      </div>
-      <section class="update-log" aria-labelledby="updateLogTitle">
-        <h2 id="updateLogTitle">最近の更新</h2>
-        <div id="updateLogList" class="update-log-list" tabindex="0" aria-live="polite">
-          <p>更新履歴を読み込み中</p>
-        </div>
-      </section>
+      </details>
     </section>
 
     <div class="grid-wrap">
       <div class="results-overview" id="resultsOverview">
         <div class="results-heading">
           <h2>検索結果 <span id="resultSummaryCount" aria-live="polite">読み込み中</span></h2>
-          <div class="results-actions">
-            <a href="#searchControls">条件を変更</a>
-            <button type="button" id="resultsResetBtn" hidden>条件をクリア</button>
-          </div>
+          <button type="button" id="resetBtn" hidden>条件をクリア</button>
         </div>
         <div id="activeFilters" class="active-filters" aria-label="適用中の検索条件" hidden></div>
       </div>
+      <details class="update-log" id="recentUpdates">
+        <summary id="updateLogTitle">最近の更新</summary>
+        <div id="updateLogList" class="update-log-list" tabindex="0" aria-live="polite">
+          <p>更新履歴を読み込み中</p>
+        </div>
+      </details>
       <div id="toolsGrid"><div class="loading-state">読み込み中...</div></div>
     </div>
 
