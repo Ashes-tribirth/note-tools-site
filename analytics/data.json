@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-06T12:04:03.036639+00:00",
+  "generatedAt": "2026-11-06T19:21:02.327449+00:00",
   "timezone": "Asia/Tokyo",
   "periods": {
     "7": {
-      "start": "2026-10-30",
-      "end": "2026-11-05",
-      "previousStart": "2026-10-23",
-      "previousEnd": "2026-10-29",
+      "start": "2026-10-31",
+      "end": "2026-11-06",
+      "previousStart": "2026-10-24",
+      "previousEnd": "2026-10-30",
       "current": {
         "users": 3,
         "sessions": 7,
@@ -23,13 +23,6 @@
         "clicks": 0
       },
       "daily": [
-        {
-          "date": "2026-10-30",
-          "users": 0,
-          "views": 0,
-          "searches": 0,
-          "clicks": 0
-        },
         {
           "date": "2026-10-31",
           "users": 0,
@@ -67,6 +60,13 @@
         },
         {
           "date": "2026-11-05",
+          "users": 0,
+          "views": 0,
+          "searches": 0,
+          "clicks": 0
+        },
+        {
+          "date": "2026-11-06",
           "users": 0,
           "views": 0,
           "searches": 0,
@@ -152,32 +152,25 @@
       }
     },
     "30": {
-      "start": "2026-10-07",
-      "end": "2026-11-05",
-      "previousStart": "2026-09-07",
-      "previousEnd": "2026-10-06",
+      "start": "2026-10-08",
+      "end": "2026-11-06",
+      "previousStart": "2026-09-08",
+      "previousEnd": "2026-10-07",
       "current": {
-        "users": 15,
-        "sessions": 42,
-        "views": 54,
+        "users": 14,
+        "sessions": 40,
+        "views": 51,
         "searches": 23,
         "clicks": 6
       },
       "previous": {
-        "users": 11,
-        "sessions": 26,
-        "views": 30,
+        "users": 12,
+        "sessions": 28,
+        "views": 33,
         "searches": 2,
         "clicks": 18
       },
       "daily": [
-        {
-          "date": "2026-10-07",
-          "users": 2,
-          "views": 3,
-          "searches": 0,
-          "clicks": 0
-        },
         {
           "date": "2026-10-08",
           "users": 0,
@@ -380,6 +373,13 @@
           "views": 0,
           "searches": 0,
           "clicks": 0
+        },
+        {
+          "date": "2026-11-06",
+          "users": 0,
+          "views": 0,
+          "searches": 0,
+          "clicks": 0
         }
       ],
       "tools": {
@@ -505,7 +505,7 @@
         },
         {
           "name": "直接アクセス",
-          "count": 31
+          "count": 29
         },
         {
           "name": "その他",
@@ -513,15 +513,15 @@
         }
       ],
       "audience": {
-        "new": 12,
+        "new": 11,
         "returning": 6
       }
     },
     "today": {
-      "start": "2026-11-06",
-      "end": "2026-11-06",
-      "previousStart": "2026-11-05",
-      "previousEnd": "2026-11-05",
+      "start": "2026-11-07",
+      "end": "2026-11-07",
+      "previousStart": "2026-11-06",
+      "previousEnd": "2026-11-06",
       "current": {
         "users": 0,
         "sessions": 0,
@@ -538,7 +538,7 @@
       },
       "daily": [
         {
-          "date": "2026-11-06",
+          "date": "2026-11-07",
           "users": 0,
           "views": 0,
           "searches": 0,
@@ -587,7 +587,7 @@
         "new": 0,
         "returning": 0
       },
-      "throughHour": 21
+      "throughHour": 4
     }
   },
   "warnings": []
