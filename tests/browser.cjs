@@ -31,12 +31,17 @@ const assert=require('node:assert/strict');
  }
  await page.setViewportSize({width:390,height:844});
  await page.evaluate(()=>{window.captured=[];window.compassAnalytics={event:(name,params)=>captured.push({name,params})};});
+ assert(await page.locator('#advancedSearch').evaluate(el=>!el.open));
+ assert(await page.locator('#recentUpdates').evaluate(el=>!el.open));
+ const cardTop=await page.locator('.card').first().evaluate(el=>el.getBoundingClientRect().top);
+ assert(cardTop<844,'First tool card should be visible on initial mobile screen: '+cardTop);
  await page.locator('#searchInput').fill('zzzzzz-no-match');await page.waitForTimeout(850);
  let tracked=await page.evaluate(()=>captured);assert(tracked.some(e=>e.name==='compass_search_zero'&&e.params.result_count===0&&e.params.search_scope==='all'));
  await page.locator('#searchInput').fill('private@example.com');await page.waitForTimeout(850);tracked=await page.evaluate(()=>captured);assert(tracked.some(e=>e.params.search_term==='[非収集]'));
- await page.locator('#resetBtn').click();assert.equal(await page.locator('.card').count(),count);
+ await page.locator('#emptyResetBtn').click();assert.equal(await page.locator('.card').count(),count);
+ await page.locator('#advancedSearch summary').click();assert(await page.locator('#categoryFilter').isVisible());
  await page.locator('#categoryFilter').selectOption({index:1});await page.locator('#searchInput').fill('zzzz-no-match');await page.waitForTimeout(850);tracked=await page.evaluate(()=>captured);assert(tracked.some(e=>e.name==='compass_search_zero'&&e.params.search_scope==='filtered'));
- await page.locator('#resetBtn').click();await page.locator('.favorite-btn').first().click();await page.locator('.toggle-favorite').click();assert.equal(await page.locator('.card').count(),1);await page.locator('#resetBtn').click();
+ await page.locator('#emptyResetBtn').click();await page.locator('.favorite-btn').first().click();await page.locator('.toggle-favorite').click();assert.equal(await page.locator('.card').count(),1);await page.locator('#resetBtn').click();
  // UX: purpose shortcut starts clean, reveals results, and allows individual reset.
  await page.setViewportSize({width:390,height:844});
  await page.locator('#priceFilter').selectOption({index:1});
@@ -58,12 +63,13 @@ const assert=require('node:assert/strict');
  await page.locator('#emptyResetBtn').click();
  assert.equal(await page.locator('.card').count(),count);
  // UX: explicit name sorting works even while the update-log filter is active.
+ await page.locator('#recentUpdates summary').click();
  await page.locator('.update-log-filter').first().click();
  assert((await page.locator('.card').count())>1);
  await page.locator('#sortOrder').selectOption('name');
  const names=await page.locator('.card-title').allTextContents();
  assert.deepEqual(names,[...names].sort((a,b)=>a.localeCompare(b,'ja')));
- await page.locator('#resultsResetBtn').click();
+ await page.locator('#resetBtn').click();
  assert.equal(await page.locator('.card').count(),count);
  assert.deepEqual(errors,[]);console.log(JSON.stringify({result:'passed',existingCards:count,widths:[320,390,768,1440],checks:['periods','charts','rankings','missing','stale','zero results','masked search','filters','favorites','no JS errors']}));
  await browser.close();
