@@ -48,11 +48,9 @@ const elements = {
   thumbnails: document.getElementById('thumbnailDisplay'),
   favoritesOnly: document.getElementById('favoriteFilter'),
   reset: document.getElementById('resetBtn'),
-  count: document.getElementById('resultCount'),
   grid: document.getElementById('toolsGrid'),
   resultsOverview: document.getElementById('resultsOverview'),
   resultsCount: document.getElementById('resultSummaryCount'),
-  resultsReset: document.getElementById('resultsResetBtn'),
   activeFilters: document.getElementById('activeFilters'),
   updatedAt: document.getElementById('pageUpdatedAt'),
   updateLog: document.getElementById('updateLogList')
@@ -398,10 +396,8 @@ function renderTools() {
 
   currentResultCount = filtered.length;
   const hasControls = !!(search || category || price || favoritesOnly || activeChangeFilter || elements.sort.value !== 'default');
-  elements.count.textContent = `${filtered.length} 件`;
   elements.resultsCount.textContent = `${filtered.length} 件`;
-  elements.reset.hidden = !hasControls;
-  elements.resultsReset.hidden = !hasControls;
+  elements.reset.hidden = !hasControls || filtered.length === 0;
   renderActiveFilters();
 
   elements.grid.innerHTML = filtered.length
@@ -496,10 +492,6 @@ function attachListeners() {
     trackCompassEvent('compass_filter', { filter_type: 'favorites', filter_value: elements.favoritesOnly.checked ? 'on' : 'off' });
   });
   elements.reset.addEventListener('click', () => {
-    trackCompassEvent('compass_filter_reset');
-    resetFilters();
-  });
-  elements.resultsReset.addEventListener('click', () => {
     trackCompassEvent('compass_filter_reset');
     resetFilters();
   });
