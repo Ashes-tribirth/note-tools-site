@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-07T05:54:10.785753+00:00",
+  "generatedAt": "2026-11-07T14:53:28.645599+00:00",
   "timezone": "Asia/Tokyo",
   "periods": {
     "7": {
@@ -523,10 +523,10 @@
       "previousStart": "2026-11-06",
       "previousEnd": "2026-11-06",
       "current": {
-        "users": 0,
-        "sessions": 0,
+        "users": 1,
+        "sessions": 1,
         "views": 0,
-        "searches": 0,
+        "searches": 1,
         "clicks": 0
       },
       "previous": {
@@ -539,9 +539,9 @@
       "daily": [
         {
           "date": "2026-11-07",
-          "users": 0,
+          "users": 1,
           "views": 0,
-          "searches": 0,
+          "searches": 1,
           "clicks": 0
         }
       ],
@@ -553,7 +553,7 @@
       "keywords": {
         "status": "ok",
         "rows": [],
-        "withheld": 0
+        "withheld": 1
       },
       "zeroSearches": {
         "status": "ok",
@@ -580,14 +580,14 @@
         },
         {
           "name": "その他",
-          "count": 0
+          "count": 1
         }
       ],
       "audience": {
         "new": 0,
-        "returning": 0
+        "returning": 1
       },
-      "throughHour": 14
+      "throughHour": 23
     }
   },
   "warnings": []
