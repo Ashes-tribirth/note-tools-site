@@ -52,7 +52,8 @@ const assert=require('node:assert/strict');
  assert.equal(await page.locator('#categoryFilter').inputValue(),'画像・デザインを作る');
  assert(await page.locator('#activeFilters [data-filter="category"]').isVisible());
  assert((await page.locator('.card').count())>0);
- await page.waitForFunction(()=>window.scrollY>0);
+ await page.waitForTimeout(750); // Allow smooth scrolling to finish without CSP-unsafe waitForFunction.
+ assert(await page.evaluate(() => window.scrollY > 0),'Purpose shortcut should scroll toward results');
  await page.locator('#activeFilters [data-filter="category"]').click();
  assert.equal(await page.locator('#categoryFilter').inputValue(),'');
  assert.equal(await page.locator('.card').count(),count);
