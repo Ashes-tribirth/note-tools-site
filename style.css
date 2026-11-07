@@ -556,3 +556,219 @@ select:focus {
   .toggle-filters { grid-template-columns: 1fr; }
   .toggle-control { justify-content: flex-start; }
 }
+
+/* Discovery controls: compact, accessible entry points */
+.quick-guide {
+  margin-bottom: 1rem;
+  color: #655D70;
+  font-size: 0.85rem;
+  line-height: 1.7;
+}
+.purpose-search { margin-bottom: 1.2rem; }
+.purpose-search h2 {
+  margin-bottom: 0.55rem;
+  color: #4F485B;
+  font-size: 0.95rem;
+}
+.purpose-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.purpose-buttons button {
+  padding: 0.56rem 0.85rem;
+  border: 1px solid #DCD5E8;
+  border-radius: 999px;
+  background: #FFFFFF;
+  color: #65557E;
+  font: inherit;
+  font-size: 0.81rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.purpose-buttons button:hover { background: #F4F0FA; }
+.purpose-buttons button.is-active {
+  border-color: #9B89C6;
+  background: #EDE6F8;
+  color: #4B3676;
+}
+.purpose-buttons button:focus-visible {
+  outline: 2px solid #7865B0;
+  outline-offset: 2px;
+}
+.select-filters { grid-template-columns: minmax(160px, 1.4fr) minmax(140px, 1fr) minmax(140px, 1fr); }
+#sortOrder { border-left: 3px solid #99A9CC; }
+@media (max-width: 780px) {
+  .select-filters { grid-template-columns: 1fr 1fr; }
+  #sortOrder { grid-column: 1 / -1; }
+}
+@media (max-width: 640px) {
+  .select-filters { grid-template-columns: 1fr; }
+  #sortOrder { grid-column: auto; }
+}
+
+/* Distinguish the purpose shortcuts from the detailed search controls. */
+.detailed-search-heading {
+  padding-top: 1.15rem;
+  margin-bottom: 0.85rem;
+  border-top: 1px solid #E9E6F1;
+}
+.detailed-search-heading h2 {
+  margin-bottom: 0.3rem;
+  color: #4F485B;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+.detailed-search-heading .quick-guide {
+  margin-bottom: 0;
+  font-size: 0.84rem;
+}
+.detailed-search-heading .quick-guide strong { color: #4F485B; }
+.filter-row + .update-log {
+  margin-top: 1.2rem;
+  margin-bottom: 0;
+}
+
+/* Results context and recovery actions, placed adjacent to the tool list. */
+.results-overview {
+  margin-bottom: 0.85rem;
+  padding: 0.8rem 0.95rem;
+  border: 1px solid #E9E6F1;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.88);
+  scroll-margin-top: 0.75rem;
+}
+.results-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+.results-heading h2 {
+  color: #504958;
+  font-size: 0.95rem;
+}
+#resultSummaryCount {
+  color: #857D93;
+  font-size: 0.8rem;
+}
+.results-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+.results-actions a, .results-actions button {
+  color: #65528C;
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+.results-actions button {
+  padding: 0.25rem 0.5rem;
+  border: 1px solid #DDD6ED;
+  border-radius: 6px;
+  background: #F6F3FB;
+  cursor: pointer;
+}
+.results-actions button[hidden], .active-filters[hidden] { display: none; }
+.active-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 0.75rem;
+}
+.filter-chip {
+  padding: 0.3rem 0.55rem;
+  border: 1px solid #DAD2EA;
+  border-radius: 999px;
+  background: #F4F0FA;
+  color: #534475;
+  font: inherit;
+  font-size: 0.76rem;
+  cursor: pointer;
+}
+.filter-chip:hover, .results-actions button:hover { background: #EDE6F8; }
+.filter-chip:focus-visible, .results-actions button:focus-visible, .results-actions a:focus-visible {
+  outline: 2px solid #7865B0;
+  outline-offset: 2px;
+}
+.empty-state { color: #615A69; }
+.empty-state p { margin-bottom: 0.55rem; }
+#emptyResetBtn {
+  margin-top: 0.3rem;
+  padding: 0.65rem 0.95rem;
+  border: 1px solid #CFC4E2;
+  border-radius: 8px;
+  background: #F4F0FA;
+  color: #514175;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.86rem;
+  font-weight: 600;
+}
+#emptyResetBtn:hover { background: #EDE6F8; }
+#emptyResetBtn:focus-visible { outline: 2px solid #7865B0; outline-offset: 2px; }
+@media (max-width: 640px) {
+  .results-overview { padding: 0.75rem; }
+}
+
+/* On narrow phones, the previous 300px card minimum exceeded the content area. */
+@media (max-width: 640px) {
+  .grid-wrap { padding: 1rem 1rem 3rem; }
+  #toolsGrid { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* Compact, purpose-first discovery: keep the tools visible above the fold. */
+.header { padding: 2rem 1.5rem 1.5rem; }
+.header .eyebrow { margin-bottom: 0.45rem; font-size: 0.72rem; }
+.header h1 { margin-bottom: 0.45rem; font-size: 1.85rem; }
+.header p { font-size: 0.85rem; }
+.page-updated { margin-top: 0.65rem !important; }
+.controls { padding: 1.25rem 2rem 0.35rem; }
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0, 0, 0, 0); white-space: nowrap; clip-path: inset(50%);
+}
+.search-wrap { margin-bottom: 0.85rem; }
+#searchInput {
+  border-radius: 11px; background: #FFFFFF; padding: 0.78rem 0.9rem;
+}
+.purpose-search { margin-bottom: 0.85rem; }
+.purpose-search h2 { margin-bottom: 0.42rem; font-size: 0.85rem; }
+.purpose-buttons { gap: 0.4rem; }
+.purpose-buttons button { padding: 0.43rem 0.7rem; font-size: 0.77rem; }
+.advanced-search {
+  border: 1px solid #E9E6F1; border-radius: 10px;
+  background: rgba(255,255,255,0.75);
+}
+.advanced-search summary {
+  cursor: pointer; padding: 0.7rem 0.85rem; color: #5B4E72;
+  font-size: 0.86rem; font-weight: 700;
+}
+.advanced-search summary span { margin-left: 0.35rem; color: #91899B; font-size: 0.72rem; font-weight: 400; }
+.advanced-search-content { padding: 0 0.7rem 0.75rem; }
+.advanced-search .quick-guide { font-size: 0.78rem; margin: 0.15rem 0.25rem 0.65rem; line-height: 1.6; }
+.advanced-search .filter-row { box-shadow: none; }
+.advanced-search summary:focus-visible,
+.update-log summary:focus-visible { outline: 2px solid #7865B0; outline-offset: 2px; }
+.grid-wrap { padding-top: 0.7rem; }
+.results-overview { margin-bottom: 0.55rem; padding: 0.65rem 0.85rem; }
+.results-heading h2 { font-size: 0.88rem; }
+#resetBtn { font-size: 0.77rem; padding: 0.35rem 0.6rem; }
+#resetBtn[hidden] { display: none; }
+.update-log {
+  margin: 0 0 0.75rem; padding: 0.0rem 0.85rem;
+  box-shadow: none; background: rgba(255,255,255,0.55);
+}
+.update-log summary { padding: 0.52rem 0; cursor: pointer; font-size: 0.8rem; font-weight: 600; }
+.update-log-list { margin: 0 0 0.45rem; }
+@media (max-width: 640px) {
+  .header { padding: 1.45rem 1rem 1.1rem; }
+  .header h1 { font-size: 1.6rem; }
+  .header .eyebrow { font-size: 0.68rem; }
+  .controls { padding: 0.95rem 1rem 0.2rem; }
+  .grid-wrap { padding-top: 0.45rem; }
+  .advanced-search summary span { font-size: 0.69rem; }
+}
