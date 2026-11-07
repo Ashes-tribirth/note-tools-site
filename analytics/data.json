@@ -1,35 +1,28 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-07T14:53:28.645599+00:00",
+  "generatedAt": "2026-11-07T20:13:22.476930+00:00",
   "timezone": "Asia/Tokyo",
   "periods": {
     "7": {
-      "start": "2026-10-31",
-      "end": "2026-11-06",
-      "previousStart": "2026-10-24",
-      "previousEnd": "2026-10-30",
+      "start": "2026-11-01",
+      "end": "2026-11-07",
+      "previousStart": "2026-10-25",
+      "previousEnd": "2026-10-31",
       "current": {
         "users": 3,
-        "sessions": 7,
-        "views": 14,
-        "searches": 3,
+        "sessions": 8,
+        "views": 15,
+        "searches": 4,
         "clicks": 3
       },
       "previous": {
-        "users": 4,
-        "sessions": 7,
-        "views": 7,
+        "users": 3,
+        "sessions": 5,
+        "views": 6,
         "searches": 0,
         "clicks": 0
       },
       "daily": [
-        {
-          "date": "2026-10-31",
-          "users": 0,
-          "views": 0,
-          "searches": 0,
-          "clicks": 0
-        },
         {
           "date": "2026-11-01",
           "users": 1,
@@ -71,6 +64,13 @@
           "views": 0,
           "searches": 0,
           "clicks": 0
+        },
+        {
+          "date": "2026-11-07",
+          "users": 1,
+          "views": 1,
+          "searches": 1,
+          "clicks": 0
         }
       ],
       "tools": {
@@ -103,7 +103,7 @@
       "keywords": {
         "status": "ok",
         "rows": [],
-        "withheld": 3
+        "withheld": 4
       },
       "zeroSearches": {
         "status": "ok",
@@ -143,7 +143,7 @@
         },
         {
           "name": "その他",
-          "count": 1
+          "count": 3
         }
       ],
       "audience": {
@@ -152,15 +152,15 @@
       }
     },
     "30": {
-      "start": "2026-10-08",
-      "end": "2026-11-06",
-      "previousStart": "2026-09-08",
-      "previousEnd": "2026-10-07",
+      "start": "2026-10-09",
+      "end": "2026-11-07",
+      "previousStart": "2026-09-09",
+      "previousEnd": "2026-10-08",
       "current": {
         "users": 14,
-        "sessions": 40,
-        "views": 51,
-        "searches": 23,
+        "sessions": 41,
+        "views": 52,
+        "searches": 24,
         "clicks": 6
       },
       "previous": {
@@ -171,13 +171,6 @@
         "clicks": 18
       },
       "daily": [
-        {
-          "date": "2026-10-08",
-          "users": 0,
-          "views": 0,
-          "searches": 0,
-          "clicks": 0
-        },
         {
           "date": "2026-10-09",
           "users": 0,
@@ -380,6 +373,13 @@
           "views": 0,
           "searches": 0,
           "clicks": 0
+        },
+        {
+          "date": "2026-11-07",
+          "users": 1,
+          "views": 1,
+          "searches": 1,
+          "clicks": 0
         }
       ],
       "tools": {
@@ -433,7 +433,7 @@
       "keywords": {
         "status": "ok",
         "rows": [],
-        "withheld": 23
+        "withheld": 24
       },
       "zeroSearches": {
         "status": "ok",
@@ -509,7 +509,7 @@
         },
         {
           "name": "その他",
-          "count": 1
+          "count": 3
         }
       ],
       "audience": {
@@ -518,15 +518,15 @@
       }
     },
     "today": {
-      "start": "2026-11-07",
-      "end": "2026-11-07",
-      "previousStart": "2026-11-06",
-      "previousEnd": "2026-11-06",
+      "start": "2026-11-08",
+      "end": "2026-11-08",
+      "previousStart": "2026-11-07",
+      "previousEnd": "2026-11-07",
       "current": {
-        "users": 1,
-        "sessions": 1,
+        "users": 0,
+        "sessions": 0,
         "views": 0,
-        "searches": 1,
+        "searches": 0,
         "clicks": 0
       },
       "previous": {
@@ -538,10 +538,10 @@
       },
       "daily": [
         {
-          "date": "2026-11-07",
-          "users": 1,
+          "date": "2026-11-08",
+          "users": 0,
           "views": 0,
-          "searches": 1,
+          "searches": 0,
           "clicks": 0
         }
       ],
@@ -553,7 +553,7 @@
       "keywords": {
         "status": "ok",
         "rows": [],
-        "withheld": 1
+        "withheld": 0
       },
       "zeroSearches": {
         "status": "ok",
@@ -580,14 +580,14 @@
         },
         {
           "name": "その他",
-          "count": 1
+          "count": 0
         }
       ],
       "audience": {
         "new": 0,
-        "returning": 1
+        "returning": 0
       },
-      "throughHour": 23
+      "throughHour": 5
     }
   },
   "warnings": []
