@@ -1,35 +1,28 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-10T12:35:02.048947+00:00",
+  "generatedAt": "2026-11-10T21:47:27.537054+00:00",
   "timezone": "Asia/Tokyo",
   "periods": {
     "7": {
-      "start": "2026-11-03",
-      "end": "2026-11-09",
-      "previousStart": "2026-10-27",
-      "previousEnd": "2026-11-02",
+      "start": "2026-11-04",
+      "end": "2026-11-10",
+      "previousStart": "2026-10-28",
+      "previousEnd": "2026-11-03",
       "current": {
         "users": 4,
-        "sessions": 6,
-        "views": 13,
-        "searches": 4,
-        "clicks": 3
+        "sessions": 7,
+        "views": 8,
+        "searches": 1,
+        "clicks": 1
       },
       "previous": {
-        "users": 2,
-        "sessions": 5,
-        "views": 5,
-        "searches": 0,
-        "clicks": 0
+        "users": 3,
+        "sessions": 6,
+        "views": 13,
+        "searches": 3,
+        "clicks": 3
       },
       "daily": [
-        {
-          "date": "2026-11-03",
-          "users": 3,
-          "views": 10,
-          "searches": 3,
-          "clicks": 3
-        },
         {
           "date": "2026-11-04",
           "users": 1,
@@ -71,29 +64,22 @@
           "views": 1,
           "searches": 0,
           "clicks": 0
+        },
+        {
+          "date": "2026-11-10",
+          "users": 2,
+          "views": 5,
+          "searches": 0,
+          "clicks": 1
         }
       ],
       "tools": {
         "status": "ok",
         "rows": [
           {
-            "name": "noteReader",
-            "author": "ふな",
-            "category": "記事を探す・読む",
-            "count": 1,
-            "previous": 0
-          },
-          {
-            "name": "おはヨミ next",
-            "author": "はしゃも｜感情構造エンジニア",
-            "category": "記事を探す・読む",
-            "count": 1,
-            "previous": 0
-          },
-          {
-            "name": "ポン出しビルダー＋ v5",
+            "name": "note log／おすすめページKIT",
             "author": "KITAcore｜キタコレ＠ログプレイヤー",
-            "category": "画像・デザインを作る",
+            "category": "保存・管理する",
             "count": 1,
             "previous": 0
           }
@@ -103,7 +89,7 @@
       "keywords": {
         "status": "ok",
         "rows": [],
-        "withheld": 4
+        "withheld": 1
       },
       "zeroSearches": {
         "status": "ok",
@@ -112,26 +98,13 @@
       },
       "filters": {
         "status": "ok",
-        "rows": [
-          {
-            "name": "1～500円",
-            "kind": "料金",
-            "count": 1,
-            "previous": 0
-          },
-          {
-            "name": "交流・通知を管理する",
-            "kind": "カテゴリ",
-            "count": 1,
-            "previous": 0
-          }
-        ],
+        "rows": [],
         "withheld": 0
       },
       "sources": [
         {
           "name": "note",
-          "count": 0
+          "count": 4
         },
         {
           "name": "検索エンジン",
@@ -139,29 +112,29 @@
         },
         {
           "name": "直接アクセス",
-          "count": 4
+          "count": 1
         },
         {
           "name": "その他",
-          "count": 2
+          "count": 3
         }
       ],
       "audience": {
-        "new": 2,
+        "new": 3,
         "returning": 2
       }
     },
     "30": {
-      "start": "2026-10-11",
-      "end": "2026-11-09",
-      "previousStart": "2026-09-11",
-      "previousEnd": "2026-10-10",
+      "start": "2026-10-12",
+      "end": "2026-11-10",
+      "previousStart": "2026-09-12",
+      "previousEnd": "2026-10-11",
       "current": {
-        "users": 15,
-        "sessions": 42,
-        "views": 53,
+        "users": 17,
+        "sessions": 46,
+        "views": 58,
         "searches": 24,
-        "clicks": 6
+        "clicks": 7
       },
       "previous": {
         "users": 12,
@@ -171,13 +144,6 @@
         "clicks": 18
       },
       "daily": [
-        {
-          "date": "2026-10-11",
-          "users": 0,
-          "views": 0,
-          "searches": 0,
-          "clicks": 0
-        },
         {
           "date": "2026-10-12",
           "users": 0,
@@ -380,6 +346,13 @@
           "views": 1,
           "searches": 0,
           "clicks": 0
+        },
+        {
+          "date": "2026-11-10",
+          "users": 2,
+          "views": 5,
+          "searches": 0,
+          "clicks": 1
         }
       ],
       "tools": {
@@ -389,6 +362,13 @@
             "name": "note Creator Summary",
             "author": "ひゅー｜挑戦と思考整理を楽しむ。note",
             "category": "活動を分析・記録する",
+            "count": 1,
+            "previous": 0
+          },
+          {
+            "name": "note log／おすすめページKIT",
+            "author": "KITAcore｜キタコレ＠ログプレイヤー",
+            "category": "保存・管理する",
             "count": 1,
             "previous": 0
           },
@@ -497,7 +477,7 @@
       "sources": [
         {
           "name": "note",
-          "count": 10
+          "count": 14
         },
         {
           "name": "検索エンジン",
@@ -509,23 +489,23 @@
         },
         {
           "name": "その他",
-          "count": 2
+          "count": 3
         }
       ],
       "audience": {
-        "new": 12,
-        "returning": 6
+        "new": 14,
+        "returning": 7
       }
     },
     "today": {
-      "start": "2026-11-10",
-      "end": "2026-11-10",
-      "previousStart": "2026-11-09",
-      "previousEnd": "2026-11-09",
+      "start": "2026-11-11",
+      "end": "2026-11-11",
+      "previousStart": "2026-11-10",
+      "previousEnd": "2026-11-10",
       "current": {
-        "users": 1,
-        "sessions": 1,
-        "views": 1,
+        "users": 0,
+        "sessions": 0,
+        "views": 0,
         "searches": 0,
         "clicks": 0
       },
@@ -538,9 +518,9 @@
       },
       "daily": [
         {
-          "date": "2026-11-10",
-          "users": 1,
-          "views": 1,
+          "date": "2026-11-11",
+          "users": 0,
+          "views": 0,
           "searches": 0,
           "clicks": 0
         }
@@ -568,7 +548,7 @@
       "sources": [
         {
           "name": "note",
-          "count": 1
+          "count": 0
         },
         {
           "name": "検索エンジン",
@@ -587,7 +567,7 @@
         "new": 0,
         "returning": 0
       },
-      "throughHour": 21
+      "throughHour": 6
     }
   },
   "warnings": []
