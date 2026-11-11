@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-10T21:47:27.537054+00:00",
+  "generatedAt": "2026-11-11T06:08:26.402923+00:00",
   "timezone": "Asia/Tokyo",
   "periods": {
     "7": {
@@ -11,7 +11,7 @@
       "current": {
         "users": 4,
         "sessions": 7,
-        "views": 8,
+        "views": 9,
         "searches": 1,
         "clicks": 1
       },
@@ -68,7 +68,7 @@
         {
           "date": "2026-11-10",
           "users": 2,
-          "views": 5,
+          "views": 6,
           "searches": 0,
           "clicks": 1
         }
@@ -116,7 +116,7 @@
         },
         {
           "name": "その他",
-          "count": 3
+          "count": 2
         }
       ],
       "audience": {
@@ -132,7 +132,7 @@
       "current": {
         "users": 17,
         "sessions": 46,
-        "views": 58,
+        "views": 59,
         "searches": 24,
         "clicks": 7
       },
@@ -350,7 +350,7 @@
         {
           "date": "2026-11-10",
           "users": 2,
-          "views": 5,
+          "views": 6,
           "searches": 0,
           "clicks": 1
         }
@@ -489,7 +489,7 @@
         },
         {
           "name": "その他",
-          "count": 3
+          "count": 2
         }
       ],
       "audience": {
@@ -567,7 +567,7 @@
         "new": 0,
         "returning": 0
       },
-      "throughHour": 6
+      "throughHour": 15
     }
   },
   "warnings": []
