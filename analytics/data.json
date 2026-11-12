@@ -1,17 +1,17 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-12T07:05:46.439064+00:00",
+  "generatedAt": "2026-11-12T16:46:37.501848+00:00",
   "timezone": "Asia/Tokyo",
   "periods": {
     "7": {
-      "start": "2026-11-05",
-      "end": "2026-11-11",
-      "previousStart": "2026-10-29",
-      "previousEnd": "2026-11-04",
+      "start": "2026-11-06",
+      "end": "2026-11-12",
+      "previousStart": "2026-10-30",
+      "previousEnd": "2026-11-05",
       "current": {
         "users": 5,
-        "sessions": 11,
-        "views": 12,
+        "sessions": 12,
+        "views": 13,
         "searches": 1,
         "clicks": 1
       },
@@ -23,13 +23,6 @@
         "clicks": 3
       },
       "daily": [
-        {
-          "date": "2026-11-05",
-          "users": 0,
-          "views": 0,
-          "searches": 0,
-          "clicks": 0
-        },
         {
           "date": "2026-11-06",
           "users": 0,
@@ -69,6 +62,13 @@
           "date": "2026-11-11",
           "users": 3,
           "views": 4,
+          "searches": 0,
+          "clicks": 0
+        },
+        {
+          "date": "2026-11-12",
+          "users": 1,
+          "views": 1,
           "searches": 0,
           "clicks": 0
         }
@@ -112,7 +112,7 @@
         },
         {
           "name": "直接アクセス",
-          "count": 3
+          "count": 4
         },
         {
           "name": "その他",
@@ -125,10 +125,10 @@
       }
     },
     "30": {
-      "start": "2026-10-13",
-      "end": "2026-11-11",
-      "previousStart": "2026-09-13",
-      "previousEnd": "2026-10-12",
+      "start": "2026-10-14",
+      "end": "2026-11-12",
+      "previousStart": "2026-09-14",
+      "previousEnd": "2026-10-13",
       "current": {
         "users": 17,
         "sessions": 51,
@@ -138,19 +138,12 @@
       },
       "previous": {
         "users": 12,
-        "sessions": 28,
-        "views": 33,
+        "sessions": 29,
+        "views": 34,
         "searches": 2,
         "clicks": 18
       },
       "daily": [
-        {
-          "date": "2026-10-13",
-          "users": 1,
-          "views": 1,
-          "searches": 0,
-          "clicks": 0
-        },
         {
           "date": "2026-10-14",
           "users": 3,
@@ -353,6 +346,13 @@
           "views": 4,
           "searches": 0,
           "clicks": 0
+        },
+        {
+          "date": "2026-11-12",
+          "users": 1,
+          "views": 1,
+          "searches": 0,
+          "clicks": 0
         }
       ],
       "tools": {
@@ -498,10 +498,10 @@
       }
     },
     "today": {
-      "start": "2026-11-12",
-      "end": "2026-11-12",
-      "previousStart": "2026-11-11",
-      "previousEnd": "2026-11-11",
+      "start": "2026-11-13",
+      "end": "2026-11-13",
+      "previousStart": "2026-11-12",
+      "previousEnd": "2026-11-12",
       "current": {
         "users": 0,
         "sessions": 0,
@@ -518,7 +518,7 @@
       },
       "daily": [
         {
-          "date": "2026-11-12",
+          "date": "2026-11-13",
           "users": 0,
           "views": 0,
           "searches": 0,
@@ -567,10 +567,8 @@
         "new": 0,
         "returning": 0
       },
-      "throughHour": 16
+      "throughHour": 1
     }
   },
-  "warnings": [
-    "一部の集計にサンプリングが適用されています"
-  ]
+  "warnings": []
 }
