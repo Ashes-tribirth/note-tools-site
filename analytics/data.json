@@ -1,35 +1,28 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-14T11:25:57.540805+00:00",
+  "generatedAt": "2026-11-14T17:58:09.271655+00:00",
   "timezone": "Asia/Tokyo",
   "periods": {
     "7": {
-      "start": "2026-11-07",
-      "end": "2026-11-13",
-      "previousStart": "2026-10-31",
-      "previousEnd": "2026-11-06",
+      "start": "2026-11-08",
+      "end": "2026-11-14",
+      "previousStart": "2026-11-01",
+      "previousEnd": "2026-11-07",
       "current": {
-        "users": 5,
-        "sessions": 12,
-        "views": 13,
-        "searches": 1,
+        "users": 4,
+        "sessions": 10,
+        "views": 11,
+        "searches": 0,
         "clicks": 1
       },
       "previous": {
         "users": 3,
-        "sessions": 7,
-        "views": 14,
-        "searches": 3,
+        "sessions": 8,
+        "views": 15,
+        "searches": 4,
         "clicks": 3
       },
       "daily": [
-        {
-          "date": "2026-11-07",
-          "users": 1,
-          "views": 1,
-          "searches": 1,
-          "clicks": 0
-        },
         {
           "date": "2026-11-08",
           "users": 0,
@@ -60,13 +53,20 @@
         },
         {
           "date": "2026-11-12",
-          "users": 1,
-          "views": 1,
+          "users": 0,
+          "views": 0,
           "searches": 0,
           "clicks": 0
         },
         {
           "date": "2026-11-13",
+          "users": 0,
+          "views": 0,
+          "searches": 0,
+          "clicks": 0
+        },
+        {
+          "date": "2026-11-14",
           "users": 0,
           "views": 0,
           "searches": 0,
@@ -89,7 +89,7 @@
       "keywords": {
         "status": "ok",
         "rows": [],
-        "withheld": 1
+        "withheld": 0
       },
       "zeroSearches": {
         "status": "ok",
@@ -112,45 +112,38 @@
         },
         {
           "name": "直接アクセス",
-          "count": 4
+          "count": 3
         },
         {
           "name": "その他",
-          "count": 1
+          "count": 0
         }
       ],
       "audience": {
         "new": 3,
-        "returning": 2
+        "returning": 1
       }
     },
     "30": {
-      "start": "2026-10-15",
-      "end": "2026-11-13",
-      "previousStart": "2026-09-15",
-      "previousEnd": "2026-10-14",
+      "start": "2026-10-16",
+      "end": "2026-11-14",
+      "previousStart": "2026-09-16",
+      "previousEnd": "2026-10-15",
       "current": {
-        "users": 15,
-        "sessions": 45,
-        "views": 56,
+        "users": 14,
+        "sessions": 40,
+        "views": 50,
         "searches": 24,
         "clicks": 6
       },
       "previous": {
-        "users": 14,
-        "sessions": 35,
-        "views": 41,
+        "users": 15,
+        "sessions": 39,
+        "views": 46,
         "searches": 2,
         "clicks": 19
       },
       "daily": [
-        {
-          "date": "2026-10-15",
-          "users": 2,
-          "views": 5,
-          "searches": 0,
-          "clicks": 0
-        },
         {
           "date": "2026-10-16",
           "users": 0,
@@ -342,13 +335,20 @@
         },
         {
           "date": "2026-11-12",
-          "users": 1,
-          "views": 1,
+          "users": 0,
+          "views": 0,
           "searches": 0,
           "clicks": 0
         },
         {
           "date": "2026-11-13",
+          "users": 0,
+          "views": 0,
+          "searches": 0,
+          "clicks": 0
+        },
+        {
+          "date": "2026-11-14",
           "users": 0,
           "views": 0,
           "searches": 0,
@@ -466,7 +466,7 @@
         },
         {
           "name": "直接アクセス",
-          "count": 30
+          "count": 25
         },
         {
           "name": "その他",
@@ -474,15 +474,15 @@
         }
       ],
       "audience": {
-        "new": 12,
+        "new": 11,
         "returning": 6
       }
     },
     "today": {
-      "start": "2026-11-14",
-      "end": "2026-11-14",
-      "previousStart": "2026-11-13",
-      "previousEnd": "2026-11-13",
+      "start": "2026-11-15",
+      "end": "2026-11-15",
+      "previousStart": "2026-11-14",
+      "previousEnd": "2026-11-14",
       "current": {
         "users": 0,
         "sessions": 0,
@@ -499,7 +499,7 @@
       },
       "daily": [
         {
-          "date": "2026-11-14",
+          "date": "2026-11-15",
           "users": 0,
           "views": 0,
           "searches": 0,
@@ -548,7 +548,7 @@
         "new": 0,
         "returning": 0
       },
-      "throughHour": 20
+      "throughHour": 2
     }
   },
   "warnings": []
