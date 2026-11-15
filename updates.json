@@ -1,5 +1,136 @@
 [
   {
+    "date": "2026-11-16",
+    "summary": "追加4件　更新8件",
+    "changes": {
+      "added": [
+        "気になる人リスト for note",
+        "noteワークベンチ",
+        "noteの数字を自動記録するスクリプト（humble whale358）",
+        "更新未公開のnote下書きを探すブックマークレット"
+      ],
+      "updated": [
+        "note購入台帳／本棚 for note",
+        "Pirates' Editor for note（Pen）",
+        "NoteBubble",
+        "動画をGIFに変換して透かしを入れるツール",
+        "購入前わくわく記事プレビューツール",
+        "無名S note INSIGHT",
+        "RPG 認定noter名鑑",
+        "Note FF Signal"
+      ]
+    },
+    "checkedUnchanged": [
+      "ベルろぐ",
+      "noteテンプレ作成ツール（試作）",
+      "noteナレーター"
+    ],
+    "updatedDetails": [
+      {
+        "tool": "note購入台帳／本棚 for note",
+        "before": {
+          "ツール名": "note購入台帳",
+          "説明": "note購入履歴をブックマークレットで読み込み、支出合計・著者やタイトルの検索・未読／読んだ／使ったの管理・お気に入りを確認するWebツール。データはブラウザ内に保存し端末間同期はしない",
+          "note記事リンク": "https://note.com/moto0716/n/nbecae7c5547f",
+          "サムネURL": "https://assets.st-note.com/production/uploads/images/322582480/rectangle_large_type_2_6de736ce0dad054075e1cdef3ea7030f.jpg?fit=bounds&quality=85&width=1280"
+        },
+        "after": {
+          "ツール名": "note購入台帳／本棚 for note",
+          "説明": "購入履歴の支出・検索・未読／読んだ／使った・お気に入りを管理するWeb台帳と、読書位置を保存するPC向けChrome拡張。拡張は次回「続きから読む」を押して復帰できる。データはブラウザ内に保存し端末間同期はしない",
+          "note記事リンク": "https://note.com/moto0716/n/na8a7818020a0",
+          "サムネURL": "https://assets.st-note.com/production/uploads/images/333847392/rectangle_large_type_2_1f6283144cd65880eba0811607f1f92d.png?fit=bounds&quality=85&width=1280"
+        }
+      },
+      {
+        "tool": "Pirates' Editor for note（Pen）",
+        "before": {
+          "説明": "noteのIMP・PV・スキ・コメントなどを記録し、期間比較・記事別推移・未返信コメント・投稿予定を確認するChrome拡張機能／Webツール。過去記録の補填は拡張版でv1.0.0まで限定無料。指定作者のフォローで魔王軍テーマと入隊証作成を解放（名称表示はDemonに切替）",
+          "note記事リンク": "https://note.com/jeanjeanjean/n/nc04ceadd19e0",
+          "サムネURL": "https://assets.st-note.com/production/uploads/images/320698342/rectangle_large_type_2_fb28d7d7bbd3a458854d137b6650ea06.png?fit=bounds&quality=85&width=1280"
+        },
+        "after": {
+          "説明": "noteのIMP・PV・スキ・コメントなどを記録するChrome拡張／Webツール（v0.8.0）。期間内の記事一覧コピー、月・週ごとの比較、共有画像の色と日次グラフに対応。過去記録の補填は正規版で有料機能に移す予定",
+          "note記事リンク": "https://note.com/jeanjeanjean/n/nff2d0e6981df",
+          "サムネURL": "https://assets.st-note.com/production/uploads/images/332107145/rectangle_large_type_2_198be9fb06a453d46c074d91545eb78e.png?fit=bounds&quality=85&width=1280"
+        }
+      },
+      {
+        "tool": "NoteBubble",
+        "before": {
+          "作者": "木田貴之さん",
+          "説明": "noteの執筆支援に加え、日次PV・投稿時間帯などの分析、目次・しおり・表示調整を追加するChrome拡張機能。PROではAI要約・PV自動記録・端末間同期に対応",
+          "note記事リンク": "https://note.com/kida_lw/n/nb31bc189cd1d",
+          "サムネURL": "https://assets.st-note.com/production/uploads/images/291748757/rectangle_large_type_2_feef23e98c776a2d97e54dfd81a3ce23.png?fit=bounds&quality=85&width=1280"
+        },
+        "after": {
+          "作者": "木田貴之",
+          "説明": "note編集画面の校正・検索置換・表の画像化・SEO・スニペットと、アクセス分析・CSV出力・読書支援を追加するChrome拡張。AIリライト・AI執筆・PV自動記録・端末間同期は有料。ペルソナ作成は無料枠あり",
+          "note記事リンク": "https://note.com/kida_lw/n/nf50ee901272d",
+          "サムネURL": "https://assets.st-note.com/production/uploads/images/332997130/rectangle_large_type_2_331c402e8d2f67069ddf25d576672438.png?fit=bounds&quality=85&width=1280"
+        }
+      },
+      {
+        "tool": "動画をGIFに変換して透かしを入れるツール",
+        "before": {
+          "説明": "動画をGIFへ変換し著作権表記などの透かしを入れられるPythonツール"
+        },
+        "after": {
+          "説明": "動画をGIFへ変換し著作権表記などの透かしを入れられるPythonツール。配布はGoogle Driveの申請・共有方式へ変更。利用規約同意とGoogleアカウントのメールアドレス、有料作品はキーワード申請が必要"
+        }
+      },
+      {
+        "tool": "購入前わくわく記事プレビューツール",
+        "before": {
+          "作者": "77歳でAIに挑戦|アッケ"
+        },
+        "after": {
+          "作者": "70歳を超えてでAIに挑戦|アッケ"
+        }
+      },
+      {
+        "tool": "無名S note INSIGHT",
+        "before": {
+          "作者": "【無名 S note】18日でフォロワー4桁🚨連続利益化中！48マガ・18共マガ運営 参加73🙆"
+        },
+        "after": {
+          "作者": "【無名 S note】18日でフォロワー4桁🚨連続『利益化中』48マガ・18共マガ運営 参加73🙆"
+        }
+      },
+      {
+        "tool": "RPG 認定noter名鑑",
+        "before": {
+          "作者": "【無名 S note】18日でフォロワー4桁🚨連続利益化中！48マガ・18共マガ運営 参加73🙆"
+        },
+        "after": {
+          "作者": "【無名 S note】18日でフォロワー4桁🚨連続『利益化中』48マガ・18共マガ運営 参加73🙆"
+        }
+      },
+      {
+        "tool": "Note FF Signal",
+        "before": {
+          "作者": "タートルSNSラボ｜インスタ運用"
+        },
+        "after": {
+          "作者": "横浜SNSラボ｜インスタ運用"
+        }
+      }
+    ],
+    "pending": [
+      "LsHeaderResizer、noteの投稿をWordPressへ投稿するプラグイン：紹介記事404が継続。掲載を維持して再確認待ち。",
+      "Creator Insight for note、順位チェッカー（とまじぃ）：今回紹介記事404。公開終了と断定せず掲載継続。",
+      "AI MAKER LABのnote発信サポートツール、Kijitama Note Browser：確認した作者記事では配布前のため掲載保留。",
+      "note−AmazonレビューStudio：販売中表示は確認したが、現行価格・API条件の確認が不十分なため保留。"
+    ],
+    "details": [
+      "11月15日の巡回で既存163件の紹介先154URL・作者RSS102URLを確認。256URL中250URLを取得、紹介先4URL・RSS2URLが404。RSSの11月3日以降587記事の見出しから関連候補を抽出し、対象本文を追加確認。",
+      "取得成功を内容変更なしとは扱わず、内容を照合した変更なし3件を記録。全件の機能実行や有料商品の購入はしていない。",
+      "新規4件と既存の機能・作者表記・提供条件を作者本文に基づき反映。購入台帳と本棚は統合系統として既存項目を更新。",
+      "CSVは既存の基本7列＋サムネURLの8列を維持。既存の意図的な同一紹介URLは維持し、新たな重複は追加していない。",
+      "RPG 認定noter名鑑は作者本人からの掲載依頼に基づき掲載継続。"
+    ],
+    "source": "ローラー指示スレッド"
+  },
+  {
     "date": "2026-11-03",
     "summary": "追加11件　更新14件　掲載対象外1件",
     "changes": {
