@@ -242,7 +242,7 @@ async function loadUpdateLog() {
   if (!elements.updateLog) return;
 
   try {
-    const response = await fetch('./updates.json?v=20261116-roller');
+    const response = await fetch('./updates.json?v=20261116-removals');
     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
     updateLogEntries = await response.json();
     renderUpdateLog(updateLogEntries);
@@ -565,7 +565,7 @@ function restoreDisplaySettings() {
 
 async function loadTools() {
   try {
-    const response = await fetch('./note%20tools.csv?v=20261116-roller');
+    const response = await fetch('./note%20tools.csv?v=20261116-removals');
     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
 
     const rows = parseCSV(await response.text())
@@ -585,6 +585,7 @@ async function loadTools() {
 restoreDisplaySettings();
 loadUpdateLog();
 loadTools();
+
 
 
 
