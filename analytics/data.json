@@ -1,35 +1,28 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-16T06:21:20.874970+00:00",
+  "generatedAt": "2026-11-16T18:28:55.393565+00:00",
   "timezone": "Asia/Tokyo",
   "periods": {
     "7": {
-      "start": "2026-11-09",
-      "end": "2026-11-15",
-      "previousStart": "2026-11-02",
-      "previousEnd": "2026-11-08",
+      "start": "2026-11-10",
+      "end": "2026-11-16",
+      "previousStart": "2026-11-03",
+      "previousEnd": "2026-11-09",
       "current": {
-        "users": 4,
-        "sessions": 11,
-        "views": 12,
-        "searches": 0,
+        "users": 7,
+        "sessions": 17,
+        "views": 24,
+        "searches": 9,
         "clicks": 1
       },
       "previous": {
-        "users": 3,
-        "sessions": 7,
-        "views": 14,
+        "users": 4,
+        "sessions": 6,
+        "views": 13,
         "searches": 4,
         "clicks": 3
       },
       "daily": [
-        {
-          "date": "2026-11-09",
-          "users": 1,
-          "views": 1,
-          "searches": 0,
-          "clicks": 0
-        },
         {
           "date": "2026-11-10",
           "users": 2,
@@ -71,6 +64,13 @@
           "views": 0,
           "searches": 0,
           "clicks": 0
+        },
+        {
+          "date": "2026-11-16",
+          "users": 5,
+          "views": 13,
+          "searches": 9,
+          "clicks": 0
         }
       ],
       "tools": {
@@ -88,23 +88,59 @@
       },
       "keywords": {
         "status": "ok",
-        "rows": [],
-        "withheld": 0
+        "rows": [
+          {
+            "name": "コメント",
+            "count": 4,
+            "previous": 0
+          },
+          {
+            "name": "分析",
+            "count": 1,
+            "previous": 0
+          },
+          {
+            "name": "無料",
+            "count": 1,
+            "previous": 0
+          }
+        ],
+        "withheld": 3
       },
       "zeroSearches": {
         "status": "ok",
-        "rows": [],
-        "withheld": 0
+        "rows": [
+          {
+            "name": "コメント",
+            "scope": "all",
+            "count": 1,
+            "previous": 0
+          }
+        ],
+        "withheld": 1
       },
       "filters": {
         "status": "ok",
-        "rows": [],
+        "rows": [
+          {
+            "name": "保存・管理する",
+            "kind": "カテゴリ",
+            "count": 1,
+            "previous": 0
+          },
+          {
+            "name": "無料",
+            "kind": "料金",
+            "count": 1,
+            "previous": 0
+          }
+        ],
         "withheld": 0
       },
       "sources": [
         {
           "name": "note",
-          "count": 7
+          "count": 9
         },
         {
           "name": "検索エンジン",
@@ -112,45 +148,38 @@
         },
         {
           "name": "直接アクセス",
-          "count": 4
+          "count": 7
         },
         {
           "name": "その他",
-          "count": 0
+          "count": 3
         }
       ],
       "audience": {
-        "new": 3,
-        "returning": 1
+        "new": 5,
+        "returning": 3
       }
     },
     "30": {
-      "start": "2026-10-17",
-      "end": "2026-11-15",
-      "previousStart": "2026-09-17",
-      "previousEnd": "2026-10-16",
+      "start": "2026-10-18",
+      "end": "2026-11-16",
+      "previousStart": "2026-09-18",
+      "previousEnd": "2026-10-17",
       "current": {
-        "users": 14,
-        "sessions": 41,
-        "views": 51,
-        "searches": 24,
-        "clicks": 6
+        "users": 16,
+        "sessions": 46,
+        "views": 62,
+        "searches": 33,
+        "clicks": 5
       },
       "previous": {
-        "users": 15,
-        "sessions": 39,
-        "views": 46,
+        "users": 16,
+        "sessions": 41,
+        "views": 48,
         "searches": 2,
-        "clicks": 19
+        "clicks": 20
       },
       "daily": [
-        {
-          "date": "2026-10-17",
-          "users": 1,
-          "views": 2,
-          "searches": 0,
-          "clicks": 1
-        },
         {
           "date": "2026-10-18",
           "users": 2,
@@ -353,6 +382,13 @@
           "views": 0,
           "searches": 0,
           "clicks": 0
+        },
+        {
+          "date": "2026-11-16",
+          "users": 5,
+          "views": 13,
+          "searches": 9,
+          "clicks": 0
         }
       ],
       "tools": {
@@ -369,13 +405,6 @@
             "name": "noteReader",
             "author": "ふな",
             "category": "記事を探す・読む",
-            "count": 1,
-            "previous": 0
-          },
-          {
-            "name": "noteしおり",
-            "author": "AIを使える形に整える@オトーワン",
-            "category": "保存・管理する",
             "count": 1,
             "previous": 0
           },
@@ -405,13 +434,36 @@
       },
       "keywords": {
         "status": "ok",
-        "rows": [],
-        "withheld": 24
+        "rows": [
+          {
+            "name": "コメント",
+            "count": 4,
+            "previous": 0
+          },
+          {
+            "name": "分析",
+            "count": 1,
+            "previous": 0
+          },
+          {
+            "name": "無料",
+            "count": 1,
+            "previous": 0
+          }
+        ],
+        "withheld": 27
       },
       "zeroSearches": {
         "status": "ok",
-        "rows": [],
-        "withheld": 19
+        "rows": [
+          {
+            "name": "コメント",
+            "scope": "all",
+            "count": 1,
+            "previous": 0
+          }
+        ],
+        "withheld": 20
       },
       "filters": {
         "status": "ok",
@@ -441,6 +493,12 @@
             "previous": 1
           },
           {
+            "name": "保存・管理する",
+            "kind": "カテゴリ",
+            "count": 1,
+            "previous": 0
+          },
+          {
             "name": "月額・メンバーシップ",
             "kind": "料金",
             "count": 1,
@@ -451,6 +509,12 @@
             "kind": "カテゴリ",
             "count": 1,
             "previous": 2
+          },
+          {
+            "name": "無料",
+            "kind": "料金",
+            "count": 1,
+            "previous": 4
           }
         ],
         "withheld": 0
@@ -466,27 +530,27 @@
         },
         {
           "name": "直接アクセス",
-          "count": 26
+          "count": 30
         },
         {
           "name": "その他",
-          "count": 2
+          "count": 5
         }
       ],
       "audience": {
-        "new": 11,
+        "new": 13,
         "returning": 6
       }
     },
     "today": {
-      "start": "2026-11-16",
-      "end": "2026-11-16",
-      "previousStart": "2026-11-15",
-      "previousEnd": "2026-11-15",
+      "start": "2026-11-17",
+      "end": "2026-11-17",
+      "previousStart": "2026-11-16",
+      "previousEnd": "2026-11-16",
       "current": {
-        "users": 1,
-        "sessions": 1,
-        "views": 1,
+        "users": 0,
+        "sessions": 0,
+        "views": 0,
         "searches": 0,
         "clicks": 0
       },
@@ -499,9 +563,9 @@
       },
       "daily": [
         {
-          "date": "2026-11-16",
-          "users": 1,
-          "views": 1,
+          "date": "2026-11-17",
+          "users": 0,
+          "views": 0,
           "searches": 0,
           "clicks": 0
         }
@@ -529,7 +593,7 @@
       "sources": [
         {
           "name": "note",
-          "count": 1
+          "count": 0
         },
         {
           "name": "検索エンジン",
@@ -541,14 +605,14 @@
         },
         {
           "name": "その他",
-          "count": 1
+          "count": 0
         }
       ],
       "audience": {
-        "new": 1,
+        "new": 0,
         "returning": 0
       },
-      "throughHour": 15
+      "throughHour": 3
     }
   },
   "warnings": []
