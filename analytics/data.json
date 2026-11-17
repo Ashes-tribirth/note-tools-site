@@ -1,35 +1,28 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-17T13:18:03.490893+00:00",
+  "generatedAt": "2026-11-17T23:29:32.210120+00:00",
   "timezone": "Asia/Tokyo",
   "periods": {
     "7": {
-      "start": "2026-11-10",
-      "end": "2026-11-16",
-      "previousStart": "2026-11-03",
-      "previousEnd": "2026-11-09",
+      "start": "2026-11-11",
+      "end": "2026-11-17",
+      "previousStart": "2026-11-04",
+      "previousEnd": "2026-11-10",
       "current": {
         "users": 7,
         "sessions": 17,
-        "views": 24,
+        "views": 44,
         "searches": 9,
-        "clicks": 1
+        "clicks": 0
       },
       "previous": {
         "users": 4,
-        "sessions": 6,
-        "views": 13,
-        "searches": 4,
-        "clicks": 3
+        "sessions": 7,
+        "views": 9,
+        "searches": 1,
+        "clicks": 1
       },
       "daily": [
-        {
-          "date": "2026-11-10",
-          "users": 2,
-          "views": 6,
-          "searches": 0,
-          "clicks": 1
-        },
         {
           "date": "2026-11-11",
           "users": 3,
@@ -71,19 +64,18 @@
           "views": 13,
           "searches": 9,
           "clicks": 0
+        },
+        {
+          "date": "2026-11-17",
+          "users": 1,
+          "views": 26,
+          "searches": 0,
+          "clicks": 0
         }
       ],
       "tools": {
         "status": "ok",
-        "rows": [
-          {
-            "name": "note log／おすすめページKIT",
-            "author": "KITAcore｜キタコレ＠ログプレイヤー",
-            "category": "保存・管理する",
-            "count": 1,
-            "previous": 0
-          }
-        ],
+        "rows": [],
         "withheld": 0
       },
       "keywords": {
@@ -140,7 +132,7 @@
       "sources": [
         {
           "name": "note",
-          "count": 9
+          "count": 5
         },
         {
           "name": "検索エンジン",
@@ -148,27 +140,27 @@
         },
         {
           "name": "直接アクセス",
-          "count": 7
+          "count": 11
         },
         {
           "name": "その他",
-          "count": 1
+          "count": 4
         }
       ],
       "audience": {
-        "new": 5,
-        "returning": 3
+        "new": 3,
+        "returning": 2
       }
     },
     "30": {
-      "start": "2026-10-18",
-      "end": "2026-11-16",
-      "previousStart": "2026-09-18",
-      "previousEnd": "2026-10-17",
+      "start": "2026-10-19",
+      "end": "2026-11-17",
+      "previousStart": "2026-09-19",
+      "previousEnd": "2026-10-18",
       "current": {
-        "users": 16,
-        "sessions": 46,
-        "views": 62,
+        "users": 15,
+        "sessions": 48,
+        "views": 86,
         "searches": 33,
         "clicks": 5
       },
@@ -177,16 +169,9 @@
         "sessions": 41,
         "views": 48,
         "searches": 2,
-        "clicks": 20
+        "clicks": 19
       },
       "daily": [
-        {
-          "date": "2026-10-18",
-          "users": 2,
-          "views": 2,
-          "searches": 0,
-          "clicks": 0
-        },
         {
           "date": "2026-10-19",
           "users": 0,
@@ -389,6 +374,13 @@
           "views": 13,
           "searches": 9,
           "clicks": 0
+        },
+        {
+          "date": "2026-11-17",
+          "users": 1,
+          "views": 26,
+          "searches": 0,
+          "clicks": 0
         }
       ],
       "tools": {
@@ -530,42 +522,42 @@
         },
         {
           "name": "直接アクセス",
-          "count": 30
+          "count": 32
         },
         {
           "name": "その他",
-          "count": 3
+          "count": 6
         }
       ],
       "audience": {
-        "new": 13,
+        "new": 12,
         "returning": 6
       }
     },
     "today": {
-      "start": "2026-11-17",
-      "end": "2026-11-17",
-      "previousStart": "2026-11-16",
-      "previousEnd": "2026-11-16",
+      "start": "2026-11-18",
+      "end": "2026-11-18",
+      "previousStart": "2026-11-17",
+      "previousEnd": "2026-11-17",
       "current": {
-        "users": 1,
-        "sessions": 1,
-        "views": 4,
+        "users": 0,
+        "sessions": 0,
+        "views": 0,
         "searches": 0,
         "clicks": 0
       },
       "previous": {
-        "users": 3,
-        "sessions": 3,
-        "views": 3,
-        "searches": 8,
+        "users": 0,
+        "sessions": 0,
+        "views": 0,
+        "searches": 0,
         "clicks": 0
       },
       "daily": [
         {
-          "date": "2026-11-17",
-          "users": 1,
-          "views": 4,
+          "date": "2026-11-18",
+          "users": 0,
+          "views": 0,
           "searches": 0,
           "clicks": 0
         }
@@ -601,18 +593,18 @@
         },
         {
           "name": "直接アクセス",
-          "count": 1
+          "count": 0
         },
         {
           "name": "その他",
-          "count": 1
+          "count": 0
         }
       ],
       "audience": {
         "new": 0,
-        "returning": 1
+        "returning": 0
       },
-      "throughHour": 22
+      "throughHour": 8
     }
   },
   "warnings": []
