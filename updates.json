@@ -1,5 +1,23 @@
 [
   {
+    "date": "2026-11-20",
+    "summary": "追加4件",
+    "changes": {
+      "added": [
+        "dayplot",
+        "note Market Lab Free",
+        "Last One Click",
+        "Source Article Studio"
+      ]
+    },
+    "details": [
+      "作者本人の公開記事を確認し、noteのアクセス解析・市場調査・下書き作成を助ける4ツールを新規追加。",
+      "dayplotは無料版28日分と有料版300円、note Market Lab Freeは無料版20件までの登録上限を明記。",
+      "Last One ClickはChromeウェブストア公開、Source Article StudioはCodex CLIプラグインの配布を確認。",
+      "公開状況を確認できない機能や未公開の後継エンジンは登録対象に含めていない。"
+    ]
+  },
+  {
     "date": "2026-11-16",
     "summary": "掲載取り下げ4件",
     "changes": {
