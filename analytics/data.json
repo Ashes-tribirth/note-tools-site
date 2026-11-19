@@ -1,35 +1,28 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-19T12:58:28.773495+00:00",
+  "generatedAt": "2026-11-19T23:01:57.835084+00:00",
   "timezone": "Asia/Tokyo",
   "periods": {
     "7": {
-      "start": "2026-11-12",
-      "end": "2026-11-18",
-      "previousStart": "2026-11-05",
-      "previousEnd": "2026-11-11",
+      "start": "2026-11-13",
+      "end": "2026-11-19",
+      "previousStart": "2026-11-06",
+      "previousEnd": "2026-11-12",
       "current": {
         "users": 5,
-        "sessions": 12,
-        "views": 40,
+        "sessions": 11,
+        "views": 39,
         "searches": 9,
         "clicks": 0
       },
       "previous": {
         "users": 5,
-        "sessions": 11,
-        "views": 12,
+        "sessions": 12,
+        "views": 13,
         "searches": 1,
         "clicks": 1
       },
       "daily": [
-        {
-          "date": "2026-11-12",
-          "users": 1,
-          "views": 1,
-          "searches": 0,
-          "clicks": 0
-        },
         {
           "date": "2026-11-13",
           "users": 0,
@@ -67,6 +60,13 @@
         },
         {
           "date": "2026-11-18",
+          "users": 0,
+          "views": 0,
+          "searches": 0,
+          "clicks": 0
+        },
+        {
+          "date": "2026-11-19",
           "users": 0,
           "views": 0,
           "searches": 0,
@@ -140,7 +140,7 @@
         },
         {
           "name": "直接アクセス",
-          "count": 9
+          "count": 8
         },
         {
           "name": "その他",
@@ -153,32 +153,25 @@
       }
     },
     "30": {
-      "start": "2026-10-20",
-      "end": "2026-11-18",
-      "previousStart": "2026-09-20",
-      "previousEnd": "2026-10-19",
+      "start": "2026-10-21",
+      "end": "2026-11-19",
+      "previousStart": "2026-09-21",
+      "previousEnd": "2026-10-20",
       "current": {
-        "users": 15,
-        "sessions": 48,
-        "views": 86,
+        "users": 14,
+        "sessions": 42,
+        "views": 78,
         "searches": 33,
         "clicks": 5
       },
       "previous": {
-        "users": 16,
-        "sessions": 40,
-        "views": 46,
+        "users": 17,
+        "sessions": 45,
+        "views": 53,
         "searches": 2,
         "clicks": 19
       },
       "daily": [
-        {
-          "date": "2026-10-20",
-          "users": 3,
-          "views": 8,
-          "searches": 0,
-          "clicks": 0
-        },
         {
           "date": "2026-10-21",
           "users": 3,
@@ -381,6 +374,13 @@
           "views": 0,
           "searches": 0,
           "clicks": 0
+        },
+        {
+          "date": "2026-11-19",
+          "users": 0,
+          "views": 0,
+          "searches": 0,
+          "clicks": 0
         }
       ],
       "tools": {
@@ -467,12 +467,6 @@
             "previous": 0
           },
           {
-            "name": "お気に入りのみ：on",
-            "kind": "表示条件",
-            "count": 1,
-            "previous": 1
-          },
-          {
             "name": "データを取得・出力する",
             "kind": "カテゴリ",
             "count": 1,
@@ -487,12 +481,6 @@
           {
             "name": "保存・管理する",
             "kind": "カテゴリ",
-            "count": 1,
-            "previous": 0
-          },
-          {
-            "name": "月額・メンバーシップ",
-            "kind": "料金",
             "count": 1,
             "previous": 0
           },
@@ -522,7 +510,7 @@
         },
         {
           "name": "直接アクセス",
-          "count": 32
+          "count": 26
         },
         {
           "name": "その他",
@@ -530,15 +518,15 @@
         }
       ],
       "audience": {
-        "new": 12,
+        "new": 11,
         "returning": 6
       }
     },
     "today": {
-      "start": "2026-11-19",
-      "end": "2026-11-19",
-      "previousStart": "2026-11-18",
-      "previousEnd": "2026-11-18",
+      "start": "2026-11-20",
+      "end": "2026-11-20",
+      "previousStart": "2026-11-19",
+      "previousEnd": "2026-11-19",
       "current": {
         "users": 0,
         "sessions": 0,
@@ -555,7 +543,7 @@
       },
       "daily": [
         {
-          "date": "2026-11-19",
+          "date": "2026-11-20",
           "users": 0,
           "views": 0,
           "searches": 0,
@@ -604,7 +592,7 @@
         "new": 0,
         "returning": 0
       },
-      "throughHour": 21
+      "throughHour": 8
     }
   },
   "warnings": []
