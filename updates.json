@@ -1,5 +1,25 @@
 [
   {
+    "date": "2026-11-24",
+    "summary": "追加3件　更新2件",
+    "changes": {
+      "added": [
+        "note Circle",
+        "スキ予報",
+        "note Contest Tag Highlighter"
+      ],
+      "updated": [
+        "note企画室（ぽっぽ）",
+        "note工房（ぽっぽ）"
+      ]
+    },
+    "details": [
+      "作者本人の記事を確認して3件を追加。note Circleの詳細分析はメンバー向け、スキ予報はAI用APIキーが必要、note Contest Tag HighlighterはPC版Chrome用。",
+      "ぽっぽさんのnote ID変更に伴う404を確認し、2件の記事リンクと作者表記を現在のものへ更新。元記事は有料販売を継続。",
+      "掲載元記事167件の到達状況を確認し、旧IDの2件以外は再試行を含めて200。掲載作者102アカウントの新着1ページ目を照合。"
+    ]
+  },
+  {
     "date": "2026-11-20",
     "summary": "追加4件",
     "changes": {
